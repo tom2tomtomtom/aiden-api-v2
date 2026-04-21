@@ -1,0 +1,37 @@
+{
+  "intents": {
+    "seeking_creative_feedback": {
+      "triggers": ["what do you think", "your opinion", "rate this", "feedback on", "thoughts on"]
+    },
+    "collaborative_building": {
+      "triggers": ["what if we", "how about", "building on", "yes and", "and also"]
+    },
+    "synthesis_request": {
+      "triggers": ["write it up", "put it together", "give me the", "now write", "deliver the", "final version", "synthesize"]
+    },
+    "stuck_signal": {
+      "triggers": ["stuck", "blocked", "same ideas", "been done", "cliche", "hit a wall", "help me see"]
+    },
+    "proof_seeking": {
+      "triggers": ["prove it", "validate this", "show me stats", "real stats", "actual facts", "real proof"]
+    },
+    "defending_choice": {
+      "triggers": ["i believe", "i stand by", "my position", "i disagree", "no actually"]
+    },
+    "exploring_options": {
+      "triggers": ["options", "alternatives", "what else", "other approaches", "different angle"]
+    },
+    "challenging_assumption": {
+      "triggers": ["but what if", "playing devil", "counterpoint", "on the other hand", "challenge that"]
+    },
+    "seeking_depth": {
+      "triggers": ["tell me more", "dig deeper", "unpack", "elaborate", "why specifically"]
+    },
+    "rapid_response": {
+      "triggers": ["quick", "brief", "short", "one line", "tldr", "in a word"]
+    },
+    "emotional_appeal": {
+      "triggers": ["feel", "emotion", "heart", "move people", "make them cry", "touch"]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "emotions": {
+    "excited": { "markers": ["!", "amazing", "love this", "brilliant", "YES", "fantastic"] },
+    "frustrated": { "markers": ["annoying", "stupid", "hate", "ugh", "terrible", "useless"] },
+    "curious": { "markers": ["interesting", "curious", "wonder", "tell me more", "fascinating"] },
+    "uncertain": { "markers": ["maybe", "not sure", "think so", "probably", "perhaps"] },
+    "challenged": { "markers": ["wrong", "disagree", "actually", "but", "however"] },
+    "collaborative": { "markers": ["we", "us", "together", "build on", "what if we"] },
+    "casual": { "markers": ["hey", "hi", "sup", "just wondering", "quick question"] }
+  },
+  "defaultEmotion": "neutral"
+}

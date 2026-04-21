@@ -1,0 +1,20 @@
+{
+  "complexKeywords": [
+    "analyze", "analysis", "comprehensive", "detailed", "thorough", "strategy",
+    "examine", "evaluation", "assessment", "comparison", "research", "study",
+    "explain", "describe", "elaborate", "discuss", "insights", "implications"
+  ],
+  "analyticalPatterns": [
+    "how to", "how do i", "how can i", "what is the best way",
+    "what are the", "how does", "why does", "what would"
+  ],
+  "thresholds": {
+    "simpleMaxWords": 3,
+    "moderateMinWords": 4,
+    "complexMinWords": 8
+  },
+  "brevityInfluences": [
+    "BE_ULTRA_BRIEF", "BE_BRIEF", "RESPOND_BRIEFLY", "MATCH_BREVITY"
+  ],
+  "brevitySuppressionMultiplier": 0.1
+}
