@@ -27,6 +27,7 @@ import strategyRouter from './routes/generate/strategy.js';
 import territoriesRouter from './routes/generate/territories.js';
 import bigIdeaRouter from './routes/generate/big-idea.js';
 import copySuiteRouter from './routes/generate/copy-suite.js';
+import feedbackRouter from './routes/feedback.js';
 
 // ── Create App ────────────────────────────────────────────────────────────────
 
@@ -75,6 +76,7 @@ export function createApp(): express.Application {
   protectedRouter.use(territoriesRouter);
   protectedRouter.use(bigIdeaRouter);
   protectedRouter.use(copySuiteRouter);
+  protectedRouter.use(feedbackRouter);
 
   app.use('/api/v1', protectedRouter);
 
