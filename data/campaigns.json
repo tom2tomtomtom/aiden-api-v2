@@ -1,0 +1,4289 @@
+[
+  {
+    "id": "vw-think-small-1959",
+    "campaign_name": "Think Small",
+    "brand": "Volkswagen",
+    "agency": "DDB",
+    "year": 1959,
+    "category": "iconic_campaign",
+    "verticals": [
+      "automotive",
+      "challenger"
+    ],
+    "tags": [
+      "print",
+      "positioning",
+      "honesty",
+      "minimalism"
+    ],
+    "era": "golden_age",
+    "insight": "Americans were secretly exhausted by the bigness arms race. Owning the smallness wasn't just honest — it was liberating.",
+    "execution_summary": "Tiny car on vast white page. Two words. Minimal copy that leaned into every supposed weakness.",
+    "why_it_worked": "Reversed the power dynamic. Instead of bragging, it confided. Self-deprecating honesty created trust.",
+    "creative_principle": "When your product has an obvious weakness everyone can see, own it. Make it the headline. Vulnerability creates trust.",
+    "contrarian_element": "Used white space when every car ad was crammed with features. Made smallness aspirational in an era of excess.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "convention→kill",
+      "spark→distill",
+      "specific→power"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "positioning",
+      "honesty",
+      "reframe"
+    ]
+  },
+  {
+    "id": "avis-we-try-harder-1962",
+    "campaign_name": "We Try Harder",
+    "brand": "Avis",
+    "agency": "DDB",
+    "year": 1962,
+    "category": "challenger_campaign",
+    "verticals": [
+      "automotive",
+      "travel",
+      "challenger"
+    ],
+    "tags": [
+      "print",
+      "positioning",
+      "honesty",
+      "challenger"
+    ],
+    "era": "golden_age",
+    "insight": "Being number two isn't a weakness if you frame effort as a value proposition. People root for the underdog who admits it.",
+    "execution_summary": "Openly admitted being #2 to Hertz and turned that into a reason to choose them — they try harder because they have to.",
+    "why_it_worked": "Turned market position into emotional positioning. Customers felt they'd get better service from the hungrier competitor.",
+    "creative_principle": "Admit your weakness before your competitor can use it against you. Then reframe it as your greatest motivation.",
+    "contrarian_element": "No brand had ever publicly admitted being second-best and turned it into a selling point.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "truth→uncomfortable",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "positioning",
+      "honesty",
+      "underdog"
+    ]
+  },
+  {
+    "id": "absolut-vodka-1981",
+    "campaign_name": "Absolut Bottle",
+    "brand": "Absolut",
+    "agency": "TBWA",
+    "year": 1981,
+    "category": "iconic_campaign",
+    "verticals": [
+      "spirits",
+      "luxury"
+    ],
+    "tags": [
+      "print",
+      "visual",
+      "consistency",
+      "art"
+    ],
+    "era": "creative_revolution",
+    "insight": "A distinctive bottle shape is more ownable than any taste claim in a category where the product is essentially invisible.",
+    "execution_summary": "1,500+ ads over 25 years, all riffing on the bottle silhouette. Turned packaging into pop culture.",
+    "why_it_worked": "Created an infinitely extensible creative platform. Each ad was fresh but instantly recognizable.",
+    "creative_principle": "Find the one visual asset that's uniquely yours and make it the canvas for infinite creativity.",
+    "contrarian_element": "Ran the same campaign concept for 25 years when the industry demanded constant reinvention.",
+    "phantom_tags": [
+      "specific→power",
+      "constraint→freedom",
+      "pattern→break",
+      "reference→reinvent"
+    ],
+    "strategic_tags": [
+      "brand_building",
+      "visual_identity",
+      "consistency",
+      "platform"
+    ]
+  },
+  {
+    "id": "apple-1984-1984",
+    "campaign_name": "1984",
+    "brand": "Apple",
+    "agency": "Chiat/Day",
+    "year": 1984,
+    "category": "iconic_campaign",
+    "verticals": [
+      "tech",
+      "challenger"
+    ],
+    "tags": [
+      "tv",
+      "launch",
+      "cultural",
+      "cinematic"
+    ],
+    "era": "creative_revolution",
+    "insight": "People don't buy computers — they buy rebellion against conformity. The real enemy isn't IBM, it's thinking like everyone else.",
+    "execution_summary": "Ridley Scott-directed Super Bowl spot. Orwellian dystopia shattered by a woman with a hammer. Aired once.",
+    "why_it_worked": "Positioned a product launch as a cultural revolution. Made buying a computer feel like an act of defiance.",
+    "creative_principle": "Don't sell the product — sell the enemy. Give people something to fight against, not just something to buy.",
+    "contrarian_element": "Spent the entire Super Bowl budget on one ad that never showed the product and aired only once.",
+    "phantom_tags": [
+      "convention→kill",
+      "bold→defended",
+      "culture→future",
+      "story→hook"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "cultural_moment",
+      "launch",
+      "enemy_positioning"
+    ]
+  },
+  {
+    "id": "apple-think-different-1997",
+    "campaign_name": "Think Different",
+    "brand": "Apple",
+    "agency": "TBWA/Chiat/Day",
+    "year": 1997,
+    "category": "iconic_campaign",
+    "verticals": [
+      "tech",
+      "lifestyle"
+    ],
+    "tags": [
+      "tv",
+      "brand",
+      "manifesto",
+      "icons"
+    ],
+    "era": "creative_revolution",
+    "insight": "When your product can't compete on specs, compete on identity. People who think differently need tools that think differently.",
+    "execution_summary": "Black-and-white portraits of rebels and visionaries — Einstein, Gandhi, Lennon — with two words. No product shown.",
+    "why_it_worked": "Made Apple ownership an identity statement. Buying Apple meant joining a tribe of creative misfits.",
+    "creative_principle": "When you can't win the feature war, redefine what the war is about. Make your brand a badge of identity.",
+    "contrarian_element": "A tech company that showed zero technology — just human faces and an attitude.",
+    "phantom_tags": [
+      "upstream→reframe",
+      "convention→kill",
+      "human→timeless",
+      "spark→distill"
+    ],
+    "strategic_tags": [
+      "brand_identity",
+      "positioning",
+      "manifesto",
+      "tribe"
+    ]
+  },
+  {
+    "id": "nike-just-do-it-1988",
+    "campaign_name": "Just Do It",
+    "brand": "Nike",
+    "agency": "Wieden+Kennedy",
+    "year": 1988,
+    "category": "iconic_campaign",
+    "verticals": [
+      "sports",
+      "lifestyle",
+      "apparel"
+    ],
+    "tags": [
+      "tv",
+      "tagline",
+      "empowerment",
+      "universal"
+    ],
+    "era": "creative_revolution",
+    "insight": "The barrier to exercise isn't ability — it's overthinking. Three words that cut through every excuse.",
+    "execution_summary": "Three-word tagline applied across all media. Featured athletes and everyday people alike. Still running 35+ years later.",
+    "why_it_worked": "Universal enough to mean anything, specific enough to mean something. Works for a marathon runner and someone getting off the couch.",
+    "creative_principle": "The best taglines aren't about the product — they're about the feeling of using it. Compress a worldview into a phrase.",
+    "contrarian_element": "Inspired by a death row inmate's last words — turned something dark into universal motivation.",
+    "phantom_tags": [
+      "spark→distill",
+      "human→timeless",
+      "less→punch",
+      "gut→first"
+    ],
+    "strategic_tags": [
+      "brand_platform",
+      "tagline",
+      "empowerment",
+      "universality"
+    ]
+  },
+  {
+    "id": "got-milk-1993",
+    "campaign_name": "Got Milk?",
+    "brand": "California Milk Processor Board",
+    "agency": "Goodby Silverstein",
+    "year": 1993,
+    "category": "iconic_campaign",
+    "verticals": [
+      "food",
+      "commodity"
+    ],
+    "tags": [
+      "tv",
+      "print",
+      "deprivation",
+      "cultural"
+    ],
+    "era": "creative_revolution",
+    "insight": "People don't appreciate milk until it's gone. Deprivation marketing creates desire better than celebration.",
+    "execution_summary": "Scenarios where people desperately need milk and don't have it. The absence made the product valuable.",
+    "why_it_worked": "Sold the problem of not having the product rather than the benefit of having it. Created phantom craving.",
+    "creative_principle": "Sometimes the most powerful selling technique is showing the absence, not the presence. Make people feel the gap.",
+    "contrarian_element": "Marketed a commodity by showing how terrible life is without it, not how good it is with it.",
+    "phantom_tags": [
+      "opposite→opportunity",
+      "upstream→reframe",
+      "specific→power"
+    ],
+    "strategic_tags": [
+      "deprivation_marketing",
+      "commodity",
+      "reframe",
+      "category_creation"
+    ]
+  },
+  {
+    "id": "dove-real-beauty-2004",
+    "campaign_name": "Real Beauty",
+    "brand": "Dove",
+    "agency": "Ogilvy",
+    "year": 2004,
+    "category": "iconic_campaign",
+    "verticals": [
+      "beauty",
+      "personal_care"
+    ],
+    "tags": [
+      "integrated",
+      "purpose",
+      "social",
+      "honesty"
+    ],
+    "era": "digital_revolution",
+    "insight": "The beauty industry profits from insecurity it creates. A beauty brand that fights beauty standards earns trust the others can't.",
+    "execution_summary": "Used real women instead of models. Showed beauty industry manipulation. Sparked a global conversation about beauty standards.",
+    "why_it_worked": "Turned the category's biggest lie into a brand truth. Made competitors look like part of the problem.",
+    "creative_principle": "When your entire category has a dirty secret, be the brand brave enough to call it out. Category betrayal creates loyalty.",
+    "contrarian_element": "A beauty brand telling women they're already beautiful — directly attacking the industry's business model.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "convention→kill",
+      "opposite→opportunity",
+      "human→timeless"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "category_disruption",
+      "honesty",
+      "cultural"
+    ]
+  },
+  {
+    "id": "old-spice-man-2010",
+    "campaign_name": "The Man Your Man Could Smell Like",
+    "brand": "Old Spice",
+    "agency": "Wieden+Kennedy",
+    "year": 2010,
+    "category": "humor_campaign",
+    "verticals": [
+      "personal_care",
+      "grooming"
+    ],
+    "tags": [
+      "tv",
+      "viral",
+      "humor",
+      "digital"
+    ],
+    "era": "digital_revolution",
+    "insight": "Women buy men's body wash. Speak to her about him with absurd confidence that makes both laugh.",
+    "execution_summary": "Isaiah Mustafa in a single continuous shot transitioning through impossible scenarios. Followed by real-time video responses.",
+    "why_it_worked": "Found the actual buyer (women) and spoke to them through absurd male fantasy. The real-time response videos turned advertising into conversation.",
+    "creative_principle": "Find who actually makes the purchase decision, then create content so entertaining it becomes culture, not advertising.",
+    "contrarian_element": "Targeted women for a men's product and followed a Super Bowl ad with 186 personalized YouTube responses in 48 hours.",
+    "phantom_tags": [
+      "audience→empathy",
+      "format→break",
+      "more→surprise",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "audience_insight",
+      "humor",
+      "viral",
+      "real_time"
+    ]
+  },
+  {
+    "id": "dollar-shave-club-2012",
+    "campaign_name": "Our Blades Are F***ing Great",
+    "brand": "Dollar Shave Club",
+    "agency": "In-house",
+    "year": 2012,
+    "category": "challenger_campaign",
+    "verticals": [
+      "grooming",
+      "dtc",
+      "challenger"
+    ],
+    "tags": [
+      "video",
+      "launch",
+      "humor",
+      "dtc"
+    ],
+    "era": "digital_revolution",
+    "insight": "Men resent paying $20 for razor blades but feel powerless to change it. Give them permission to opt out with a laugh.",
+    "execution_summary": "$4,500 YouTube video. CEO walks through warehouse delivering deadpan comedy about why expensive razors are a scam.",
+    "why_it_worked": "Combined genuine price disruption with personality that made the brand feel like a friend, not a corporation.",
+    "creative_principle": "When you're outgunned on budget, lead with personality. Authenticity at low production value beats polish without soul.",
+    "contrarian_element": "A $4,500 video beat billion-dollar Gillette campaigns by being funnier and more honest.",
+    "phantom_tags": [
+      "convention→kill",
+      "constraint→freedom",
+      "weakness→weapon",
+      "gut→first"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "dtc",
+      "humor",
+      "authenticity"
+    ]
+  },
+  {
+    "id": "fearless-girl-2017",
+    "campaign_name": "Fearless Girl",
+    "brand": "State Street Global Advisors",
+    "agency": "McCann New York",
+    "year": 2017,
+    "category": "cultural_moment",
+    "verticals": [
+      "finance",
+      "purpose"
+    ],
+    "tags": [
+      "installation",
+      "cultural",
+      "purpose",
+      "earned_media"
+    ],
+    "era": "social_first",
+    "insight": "Wall Street's gender gap is invisible until you make it physical. A small statue facing a charging bull says everything words can't.",
+    "execution_summary": "Bronze statue of a girl facing the Charging Bull on Wall Street. Placed on International Women's Day. Generated $7.4M in earned media.",
+    "why_it_worked": "Created a permanent physical symbol for an abstract issue. Everyone understood it instantly — no copy needed.",
+    "creative_principle": "The most powerful messages need zero explanation. Create a symbol so clear it becomes shorthand for a movement.",
+    "contrarian_element": "A financial services firm created public art, not an ad. The medium was the message.",
+    "phantom_tags": [
+      "visual→verbal",
+      "spark→distill",
+      "bold→defended",
+      "culture→future"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "earned_media",
+      "symbolism",
+      "cultural_moment"
+    ]
+  },
+  {
+    "id": "nike-dream-crazy-2018",
+    "campaign_name": "Dream Crazy",
+    "brand": "Nike",
+    "agency": "Wieden+Kennedy",
+    "year": 2018,
+    "category": "cultural_moment",
+    "verticals": [
+      "sports",
+      "purpose"
+    ],
+    "tags": [
+      "tv",
+      "cultural",
+      "controversy",
+      "purpose"
+    ],
+    "era": "social_first",
+    "insight": "When a culture is divided, silence is more dangerous than sides. Brands that stand for something earn loyalty that neutrality never can.",
+    "execution_summary": "Featured Colin Kaepernick with the line 'Believe in something. Even if it means sacrificing everything.' Ignited culture war and stock surge.",
+    "why_it_worked": "Nike chose its audience over universal approval. The controversy was the amplification. People who burned shoes were never the customer.",
+    "creative_principle": "Don't try to please everyone. Choose your side loudly. The people who hate you amplify your message to the people who'll love you.",
+    "contrarian_element": "Deliberately chose the most polarizing athlete in America when every brand advisor would have said no.",
+    "phantom_tags": [
+      "bold→defended",
+      "creative→stubborn",
+      "truth→uncomfortable",
+      "tension→gold"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "polarization",
+      "brand_courage",
+      "cultural_moment"
+    ]
+  },
+  {
+    "id": "truth-anti-smoking-1998",
+    "campaign_name": "truth Anti-Smoking",
+    "brand": "truth",
+    "agency": "Arnold/Crispin Porter",
+    "year": 1998,
+    "category": "challenger_campaign",
+    "verticals": [
+      "health",
+      "public_service",
+      "challenger"
+    ],
+    "tags": [
+      "tv",
+      "guerrilla",
+      "youth",
+      "anti-establishment"
+    ],
+    "era": "creative_revolution",
+    "insight": "Telling teens not to smoke makes them want to smoke more. But telling them they're being manipulated by corporations makes them furious.",
+    "execution_summary": "Reframed anti-smoking as anti-corporate rebellion. Body bags outside Philip Morris HQ. Made Big Tobacco the enemy, not cigarettes.",
+    "why_it_worked": "Channeled teenage rebellion toward the real villain. Instead of preaching health, it weaponized the one thing teens hate most: being played.",
+    "creative_principle": "Don't fight the audience's instinct — redirect it. If they want to rebel, give them a better target for rebellion.",
+    "contrarian_element": "An anti-smoking campaign that never mentioned health or told anyone not to smoke.",
+    "phantom_tags": [
+      "upstream→reframe",
+      "opposite→opportunity",
+      "audience→empathy",
+      "convention→kill"
+    ],
+    "strategic_tags": [
+      "reframe",
+      "youth_culture",
+      "anti-establishment",
+      "behavior_change"
+    ]
+  },
+  {
+    "id": "cadbury-gorilla-2007",
+    "campaign_name": "Gorilla",
+    "brand": "Cadbury",
+    "agency": "Fallon London",
+    "year": 2007,
+    "category": "craft_excellence",
+    "verticals": [
+      "food",
+      "confectionery"
+    ],
+    "tags": [
+      "tv",
+      "emotion",
+      "joy",
+      "absurd"
+    ],
+    "era": "digital_revolution",
+    "insight": "Chocolate is about the feeling, not the taste. A gorilla playing Phil Collins drums captures the joy of chocolate better than any product shot.",
+    "execution_summary": "90 seconds of a gorilla playing drums to 'In the Air Tonight.' No product until the end card. Pure joy.",
+    "why_it_worked": "Created an emotional state (anticipation → release → joy) that perfectly mirrored the experience of eating chocolate without showing chocolate.",
+    "creative_principle": "Sometimes the bravest creative shows zero product. Evoke the feeling instead of describing the benefit.",
+    "contrarian_element": "A chocolate ad with no chocolate, no eating, no product demo — just a gorilla and Phil Collins.",
+    "phantom_tags": [
+      "gut→first",
+      "format→break",
+      "convention→kill",
+      "emotion→logic"
+    ],
+    "strategic_tags": [
+      "emotional_branding",
+      "joy",
+      "craft",
+      "bravery"
+    ]
+  },
+  {
+    "id": "bk-whopper-detour-2018",
+    "campaign_name": "Whopper Detour",
+    "brand": "Burger King",
+    "agency": "FCB New York",
+    "year": 2018,
+    "category": "platform_innovation",
+    "verticals": [
+      "food",
+      "qsr",
+      "challenger"
+    ],
+    "tags": [
+      "mobile",
+      "geofencing",
+      "competitor",
+      "digital"
+    ],
+    "era": "social_first",
+    "insight": "The best way to prove your burger is worth the trip is to send people to your competitor first.",
+    "execution_summary": "Geofenced every McDonald's in America. If you ordered a Whopper within 600 feet of McDonald's via the BK app, you got it for 1 cent.",
+    "why_it_worked": "Turned competitor locations into billboards for BK. Made downloading the app irresistibly fun. 1.5M app downloads in 9 days.",
+    "creative_principle": "Your competitor's strengths (more locations) can become your media channel if you're clever enough.",
+    "contrarian_element": "Sent customers TO the competitor to place an order FROM you.",
+    "phantom_tags": [
+      "opposite→opportunity",
+      "more→surprise",
+      "platform→native",
+      "weakness→weapon"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "mobile",
+      "geofencing",
+      "competitor_judo"
+    ]
+  },
+  {
+    "id": "wendys-twitter-2017",
+    "campaign_name": "Wendy's Twitter Roasts",
+    "brand": "Wendy's",
+    "agency": "VML (in-house social)",
+    "year": 2017,
+    "category": "brand_voice",
+    "verticals": [
+      "food",
+      "qsr"
+    ],
+    "tags": [
+      "social",
+      "twitter",
+      "humor",
+      "roast"
+    ],
+    "era": "social_first",
+    "insight": "Brands on social media are boring because they're terrified. A fast-food chain with zero chill is more entertaining than most comedians.",
+    "execution_summary": "Savage, witty roasts of competitors and followers. Turned a corporate Twitter feed into must-follow entertainment.",
+    "why_it_worked": "Proved that brand personality beats brand safety. People followed a fast-food account for entertainment, not promotions.",
+    "creative_principle": "On social, personality IS the product. Be genuinely funny, not corporate-funny. Risk a few complaints to earn millions of fans.",
+    "contrarian_element": "A billion-dollar corporation acting like a snarky teenager — and being rewarded for it.",
+    "phantom_tags": [
+      "convention→kill",
+      "platform→native",
+      "bold→defended",
+      "gut→first"
+    ],
+    "strategic_tags": [
+      "brand_voice",
+      "social_media",
+      "humor",
+      "real_time"
+    ]
+  },
+  {
+    "id": "rei-optoutside-2015",
+    "campaign_name": "#OptOutside",
+    "brand": "REI",
+    "agency": "Venables Bell & Partners",
+    "year": 2015,
+    "category": "cultural_moment",
+    "verticals": [
+      "retail",
+      "outdoor",
+      "purpose"
+    ],
+    "tags": [
+      "purpose",
+      "anti-consumerism",
+      "cultural",
+      "earned_media"
+    ],
+    "era": "social_first",
+    "insight": "The outdoor industry selling stuff on the day people should be outside is hypocritical. Closing on Black Friday is the most authentic thing a retailer can do.",
+    "execution_summary": "Closed all 143 stores on Black Friday. Paid employees to go outside. Invited America to join.",
+    "why_it_worked": "The sacrifice was real (forgoing millions in revenue), which made it credible. Walking away from money speaks louder than any campaign.",
+    "creative_principle": "The most powerful brand statement isn't what you say — it's what you're willing to sacrifice. Actions trump advertising.",
+    "contrarian_element": "A retailer voluntarily losing its biggest sales day to prove its values are real.",
+    "phantom_tags": [
+      "bold→defended",
+      "truth→uncomfortable",
+      "opposite→opportunity",
+      "creative→stubborn"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "authenticity",
+      "sacrifice",
+      "anti-consumerism"
+    ]
+  },
+  {
+    "id": "always-like-a-girl-2014",
+    "campaign_name": "#LikeAGirl",
+    "brand": "Always",
+    "agency": "Leo Burnett",
+    "year": 2014,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "personal_care",
+      "purpose"
+    ],
+    "tags": [
+      "video",
+      "purpose",
+      "gender",
+      "social"
+    ],
+    "era": "digital_revolution",
+    "insight": "The phrase 'like a girl' becomes an insult at puberty — exactly when girls start using the product. Reclaiming the phrase reclaims confidence.",
+    "execution_summary": "Asked people to 'run like a girl' — adults mocked, young girls sprinted with everything. The difference was devastating.",
+    "why_it_worked": "Made the invisible visible. Everyone had used the phrase without thinking. The reveal moment created genuine self-reflection.",
+    "creative_principle": "Find the cultural assumption your audience lives with unconsciously. Reveal it, and you create a moment people can't forget.",
+    "contrarian_element": "A feminine care brand addressing gender bias through language, not product features.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "upstream→reframe",
+      "human→timeless",
+      "research→revelation"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "gender",
+      "cultural_insight",
+      "reframe"
+    ]
+  },
+  {
+    "id": "liquid-death-brand-2019",
+    "campaign_name": "Murder Your Thirst",
+    "brand": "Liquid Death",
+    "agency": "In-house",
+    "year": 2019,
+    "category": "challenger_campaign",
+    "verticals": [
+      "beverage",
+      "water",
+      "challenger"
+    ],
+    "tags": [
+      "brand",
+      "punk",
+      "anti-marketing",
+      "entertainment"
+    ],
+    "era": "culture_first",
+    "insight": "Water marketing is pathetically boring. If you brand water like a death metal band, health-conscious people get to feel rebellious while being responsible.",
+    "execution_summary": "Canned water with skull branding, horror-movie ads, and a name that makes parents nervous. Entertainment company that happens to sell water.",
+    "why_it_worked": "Made water interesting by rejecting every beverage marketing convention. Built a cult following through entertainment, not hydration claims.",
+    "creative_principle": "Category conventions are the real enemy. If everyone whispers, scream. The gap between expectation and execution creates memorability.",
+    "contrarian_element": "Named water 'Liquid Death' and marketed it like a punk band, not a health brand.",
+    "phantom_tags": [
+      "convention→kill",
+      "opposite→opportunity",
+      "bold→defended",
+      "template→death"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "brand_voice",
+      "entertainment",
+      "category_disruption"
+    ]
+  },
+  {
+    "id": "oatly-brand-voice-2014",
+    "campaign_name": "Oatly Brand Voice",
+    "brand": "Oatly",
+    "agency": "In-house (John Schoolcraft)",
+    "year": 2014,
+    "category": "brand_voice",
+    "verticals": [
+      "food",
+      "beverage",
+      "challenger"
+    ],
+    "tags": [
+      "packaging",
+      "brand_voice",
+      "honesty",
+      "punk"
+    ],
+    "era": "social_first",
+    "insight": "Corporate polish signals corporate dishonesty. A brand that talks like a real person — awkward, self-aware, occasionally dumb — earns trust.",
+    "execution_summary": "Self-deprecating packaging copy, honest ads that call themselves out, CEO-sung Super Bowl spot that was intentionally bad.",
+    "why_it_worked": "The imperfection was the perfection. By not trying to seem cool, they became genuinely cool.",
+    "creative_principle": "The most trustworthy voice is the one that doesn't sound like it's trying. Imperfection signals authenticity.",
+    "contrarian_element": "Intentionally bad advertising that outperformed polished competitors because it felt real.",
+    "phantom_tags": [
+      "convention→kill",
+      "truth→uncomfortable",
+      "weakness→weapon",
+      "template→death"
+    ],
+    "strategic_tags": [
+      "brand_voice",
+      "authenticity",
+      "anti-polish",
+      "challenger_strategy"
+    ]
+  },
+  {
+    "id": "duolingo-tiktok-2021",
+    "campaign_name": "Duolingo TikTok",
+    "brand": "Duolingo",
+    "agency": "In-house",
+    "year": 2021,
+    "category": "social_native",
+    "verticals": [
+      "tech",
+      "education"
+    ],
+    "tags": [
+      "tiktok",
+      "mascot",
+      "unhinged",
+      "social"
+    ],
+    "era": "culture_first",
+    "insight": "Brand mascots are stiff and forgettable. An unhinged owl with boundary issues is endlessly entertaining and shareable.",
+    "execution_summary": "Duo the owl doing chaotic, thirsty, threatening things on TikTok. Zero product marketing. Pure unhinged entertainment.",
+    "why_it_worked": "Matched the chaotic energy of the platform instead of importing corporate energy into it. The mascot became a character people genuinely loved.",
+    "creative_principle": "On social platforms, your mascot/character must live by the platform's rules, not your brand guidelines.",
+    "contrarian_element": "An education company's social strategy was zero education content — just an unhinged owl doing unhinged things.",
+    "phantom_tags": [
+      "platform→native",
+      "convention→kill",
+      "more→surprise",
+      "bold→defended"
+    ],
+    "strategic_tags": [
+      "social_media",
+      "mascot",
+      "platform_native",
+      "entertainment"
+    ]
+  },
+  {
+    "id": "surreal-cereal-2022",
+    "campaign_name": "Surreal Cereal Brand Voice",
+    "brand": "Surreal",
+    "agency": "In-house",
+    "year": 2022,
+    "category": "brand_voice",
+    "verticals": [
+      "food",
+      "dtc",
+      "challenger"
+    ],
+    "tags": [
+      "outdoor",
+      "packaging",
+      "humor",
+      "meta"
+    ],
+    "era": "culture_first",
+    "insight": "Startup budgets force creativity. When you can't afford celebrities, make the lack of budget the joke.",
+    "execution_summary": "Found real people named Dwayne Johnson, Serena Williams, etc. for 'celebrity' endorsements. Turned every constraint into comedy.",
+    "why_it_worked": "The constraint was the content. Every limitation became a creative opportunity that felt fresh and self-aware.",
+    "creative_principle": "When you can't afford the obvious solution, the workaround often becomes more memorable than the original idea.",
+    "contrarian_element": "Used real nobodies with famous names instead of actual celebrities — and got more coverage than if they'd hired the real ones.",
+    "phantom_tags": [
+      "constraint→freedom",
+      "weakness→weapon",
+      "more→surprise",
+      "less→punch"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "humor",
+      "constraints",
+      "startup"
+    ]
+  },
+  {
+    "id": "cerave-michael-cera-2024",
+    "campaign_name": "CeraVe x Michael Cera",
+    "brand": "CeraVe",
+    "agency": "Ogilvy",
+    "year": 2024,
+    "category": "humor_campaign",
+    "verticals": [
+      "beauty",
+      "skincare"
+    ],
+    "tags": [
+      "social",
+      "influencer",
+      "humor",
+      "Super Bowl"
+    ],
+    "era": "culture_first",
+    "insight": "The name CeraVe sounds like it could be Michael Cera's brand. A conspiracy theory about it is more interesting than any product claim.",
+    "execution_summary": "Seeded fake conspiracy that Michael Cera created CeraVe. TikTok influencers investigated. Super Bowl reveal.",
+    "why_it_worked": "Turned a phonetic coincidence into a participatory mystery. The audience did the marketing by investigating and sharing.",
+    "creative_principle": "Plant clues, not ads. Let the audience discover and spread the story themselves. Participation beats passive viewing.",
+    "contrarian_element": "A skincare brand ran a conspiracy theory ARG instead of a traditional influencer campaign.",
+    "phantom_tags": [
+      "more→surprise",
+      "platform→native",
+      "story→hook",
+      "format→break"
+    ],
+    "strategic_tags": [
+      "social_media",
+      "participatory",
+      "influencer",
+      "super_bowl"
+    ]
+  },
+  {
+    "id": "patagonia-dont-buy-2011",
+    "campaign_name": "Don't Buy This Jacket",
+    "brand": "Patagonia",
+    "agency": "In-house",
+    "year": 2011,
+    "category": "iconic_campaign",
+    "verticals": [
+      "retail",
+      "outdoor",
+      "purpose"
+    ],
+    "tags": [
+      "print",
+      "purpose",
+      "anti-consumerism",
+      "sustainability"
+    ],
+    "era": "digital_revolution",
+    "insight": "The most sustainable product is the one you don't buy. A brand confident enough to say 'don't buy' earns the right to sell.",
+    "execution_summary": "Full-page NYT ad on Black Friday telling people not to buy their jacket. Listed the environmental cost of manufacturing it.",
+    "why_it_worked": "Radical honesty created radical trust. Sales actually increased because the anti-sell made the brand irresistibly authentic.",
+    "creative_principle": "Telling people not to buy your product is the most powerful form of selling — if your values are genuine enough to back it up.",
+    "contrarian_element": "A clothing company running an ad explicitly telling people not to buy its product.",
+    "phantom_tags": [
+      "opposite→opportunity",
+      "truth→uncomfortable",
+      "bold→defended",
+      "convention→kill"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "anti-consumerism",
+      "sustainability",
+      "radical_honesty"
+    ]
+  },
+  {
+    "id": "rolls-royce-clock-1958",
+    "campaign_name": "At 60 Miles an Hour",
+    "brand": "Rolls-Royce",
+    "agency": "Ogilvy & Mather",
+    "year": 1958,
+    "category": "craft_excellence",
+    "verticals": [
+      "automotive",
+      "luxury"
+    ],
+    "tags": [
+      "print",
+      "copywriting",
+      "specificity",
+      "luxury"
+    ],
+    "era": "golden_age",
+    "insight": "Luxury isn't about superlatives — it's about the one specific detail that makes all other claims believable.",
+    "execution_summary": "Long-copy ad led by 'At 60 mph, the loudest noise comes from the electric clock.' 13 factual selling points that read like editorial.",
+    "why_it_worked": "One hyper-specific detail was more persuasive than a hundred adjectives. Specificity is the language of truth.",
+    "creative_principle": "Find the one detail so specific it couldn't be made up. That single fact will sell harder than any amount of generic praise.",
+    "contrarian_element": "Used long-form journalism copy when every other luxury car ad used glamour photography and superlatives.",
+    "phantom_tags": [
+      "specific→power",
+      "research→revelation",
+      "data→story",
+      "less→punch"
+    ],
+    "strategic_tags": [
+      "luxury",
+      "copywriting",
+      "specificity",
+      "editorial"
+    ]
+  },
+  {
+    "id": "stella-reassuringly-expensive-1982",
+    "campaign_name": "Reassuringly Expensive",
+    "brand": "Stella Artois",
+    "agency": "Lowe Howard-Spink",
+    "year": 1982,
+    "category": "iconic_campaign",
+    "verticals": [
+      "beverage",
+      "beer"
+    ],
+    "tags": [
+      "tv",
+      "print",
+      "positioning",
+      "luxury"
+    ],
+    "era": "creative_revolution",
+    "insight": "In beer, high price is a liability — unless you make price the proof of quality. Own the objection.",
+    "execution_summary": "Twenty-year campaign built on three words that turned the highest price in the category from weakness to selling point.",
+    "why_it_worked": "Reframed the main purchase barrier as the main purchase reason. Made paying more feel smart, not foolish.",
+    "creative_principle": "If your product's biggest criticism is also its biggest differentiator, celebrate it. Turn the objection into the headline.",
+    "contrarian_element": "Made high price the central selling proposition in a category competing on value.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "opposite→opportunity",
+      "spark→distill"
+    ],
+    "strategic_tags": [
+      "positioning",
+      "premium",
+      "reframe",
+      "confidence"
+    ]
+  },
+  {
+    "id": "fcuk-1997",
+    "campaign_name": "fcuk",
+    "brand": "French Connection UK",
+    "agency": "GGT",
+    "year": 1997,
+    "category": "challenger_campaign",
+    "verticals": [
+      "fashion",
+      "retail"
+    ],
+    "tags": [
+      "brand_name",
+      "controversy",
+      "guerrilla",
+      "wordplay"
+    ],
+    "era": "creative_revolution",
+    "insight": "In fashion retail, attention is currency. A name that makes people double-take generates more media than any ad budget could buy.",
+    "execution_summary": "Used company initials FCUK across all marketing. Generated controversy, press coverage, and sales. Banned in multiple countries.",
+    "why_it_worked": "The controversy was the campaign. Every ban, complaint, and headline was free advertising worth millions.",
+    "creative_principle": "Sometimes the most efficient marketing is something people feel compelled to talk about, even negatively. Controversy is a distribution channel.",
+    "contrarian_element": "Built an entire brand identity around provoking offense in a way that felt cheeky rather than malicious.",
+    "phantom_tags": [
+      "bold→defended",
+      "convention→kill",
+      "tension→gold"
+    ],
+    "strategic_tags": [
+      "controversy",
+      "earned_media",
+      "provocation",
+      "fashion"
+    ]
+  },
+  {
+    "id": "wonderbra-hello-boys-1994",
+    "campaign_name": "Hello Boys",
+    "brand": "Wonderbra",
+    "agency": "TBWA London",
+    "year": 1994,
+    "category": "iconic_campaign",
+    "verticals": [
+      "fashion",
+      "underwear"
+    ],
+    "tags": [
+      "outdoor",
+      "print",
+      "provocative",
+      "simple"
+    ],
+    "era": "creative_revolution",
+    "insight": "The product benefit is so visual it barely needs copy. Two words and one image can stop traffic — literally.",
+    "execution_summary": "Eva Herzigova in a Wonderbra on a billboard with two words. Reportedly caused car accidents. Most complained-about UK ad.",
+    "why_it_worked": "Reduced the message to its absolute essence. The billboard was so arresting it became news, generating unlimited earned media.",
+    "creative_principle": "When your product has an unmissable visual benefit, get out of the way. The fewer words, the louder the message.",
+    "contrarian_element": "In an era of long-copy sophistication, went to two words and let the visual do everything.",
+    "phantom_tags": [
+      "spark→distill",
+      "less→punch",
+      "gut→first",
+      "visual→verbal"
+    ],
+    "strategic_tags": [
+      "simplicity",
+      "visual",
+      "provocation",
+      "outdoor"
+    ]
+  },
+  {
+    "id": "guinness-surfer-1999",
+    "campaign_name": "Surfer",
+    "brand": "Guinness",
+    "agency": "AMV BBDO",
+    "year": 1999,
+    "category": "craft_excellence",
+    "verticals": [
+      "beverage",
+      "beer"
+    ],
+    "tags": [
+      "tv",
+      "craft",
+      "cinematic",
+      "patience"
+    ],
+    "era": "creative_revolution",
+    "insight": "The best things in life are worth waiting for. The 119.5 seconds a Guinness takes to pour is a feature, not a bug.",
+    "execution_summary": "Surfers waiting for the perfect wave intercut with wild white horses. Moby Dick voiceover. Voted best ad of all time multiple years.",
+    "why_it_worked": "Made patience feel epic rather than inconvenient. The slow build mirrored the product's own ritual of waiting.",
+    "creative_principle": "Your product's inconvenience might be its most powerful emotional asset. Reframe waiting as anticipation.",
+    "contrarian_element": "A 60-second ad about waiting in a culture obsessed with speed — for a product that takes two minutes to pour.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "emotion→logic",
+      "simplicity→depth",
+      "human→timeless"
+    ],
+    "strategic_tags": [
+      "craft",
+      "patience",
+      "ritual",
+      "cinematic"
+    ]
+  },
+  {
+    "id": "john-lewis-christmas-2011",
+    "campaign_name": "John Lewis Christmas Ads",
+    "brand": "John Lewis",
+    "agency": "Adam & Eve/DDB",
+    "year": 2011,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "retail",
+      "department_store"
+    ],
+    "tags": [
+      "tv",
+      "emotion",
+      "seasonal",
+      "storytelling"
+    ],
+    "era": "digital_revolution",
+    "insight": "Christmas advertising is a race to the most sentimental. The brand that makes you cry first wins the season.",
+    "execution_summary": "Annual 2-minute emotional films with indie cover songs. Became a cultural event — the UK waits for the John Lewis Christmas ad.",
+    "why_it_worked": "Turned advertising into appointment viewing. The consistency of emotional quality made each year's reveal a cultural moment.",
+    "creative_principle": "When you commit to a format and emotional territory long enough, the anticipation becomes part of the brand. Consistency compounds.",
+    "contrarian_element": "A department store making people cry instead of showing products, and doing it so consistently it became a national tradition.",
+    "phantom_tags": [
+      "emotion→logic",
+      "human→timeless",
+      "story→hook",
+      "time→trust"
+    ],
+    "strategic_tags": [
+      "emotional_storytelling",
+      "consistency",
+      "seasonal",
+      "cultural_event"
+    ]
+  },
+  {
+    "id": "spotify-wrapped-2016",
+    "campaign_name": "Spotify Wrapped",
+    "brand": "Spotify",
+    "agency": "In-house",
+    "year": 2016,
+    "category": "platform_innovation",
+    "verticals": [
+      "tech",
+      "entertainment",
+      "music"
+    ],
+    "tags": [
+      "data",
+      "personalization",
+      "social",
+      "annual"
+    ],
+    "era": "social_first",
+    "insight": "People's listening habits say more about them than they realize. Making private data shareable turns users into billboards.",
+    "execution_summary": "Annual personalized listening summary designed for social sharing. Users voluntarily blast their data across every platform.",
+    "why_it_worked": "Turned user data into social currency. People share Wrapped not because Spotify asks — because it's a form of self-expression.",
+    "creative_principle": "The best marketing is content people create for you. Give them a mirror that makes them look interesting, and they'll share it.",
+    "contrarian_element": "Turned data privacy into data exhibitionism — users eagerly share information they'd normally guard.",
+    "phantom_tags": [
+      "data→story",
+      "platform→native",
+      "opposite→opportunity",
+      "audience→empathy"
+    ],
+    "strategic_tags": [
+      "data",
+      "personalization",
+      "user_generated",
+      "social_sharing"
+    ]
+  },
+  {
+    "id": "kfc-fck-2018",
+    "campaign_name": "FCK",
+    "brand": "KFC",
+    "agency": "Mother London",
+    "year": 2018,
+    "category": "humor_campaign",
+    "verticals": [
+      "food",
+      "qsr"
+    ],
+    "tags": [
+      "print",
+      "crisis",
+      "humor",
+      "apology"
+    ],
+    "era": "social_first",
+    "insight": "When you run out of chicken and you're a chicken restaurant, the only response that works is honest, self-deprecating humor.",
+    "execution_summary": "Full-page newspaper ad showing an empty KFC bucket rearranged to spell 'FCK' with a humble apology. One ad. Crisis resolved.",
+    "why_it_worked": "Turned a PR disaster into brand love. The self-deprecating tone was so unexpected from a corporation that it felt genuinely human.",
+    "creative_principle": "In a crisis, the fastest route to forgiveness is making people laugh at yourself. Humor signals confidence and humility simultaneously.",
+    "contrarian_element": "Responded to a supply chain disaster with comedy instead of corporate crisis communications.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "less→punch",
+      "gut→first",
+      "spark→distill"
+    ],
+    "strategic_tags": [
+      "crisis_management",
+      "humor",
+      "apology",
+      "authenticity"
+    ]
+  },
+  {
+    "id": "ocean-spray-fleetwood-2020",
+    "campaign_name": "Dreams TikTok",
+    "brand": "Ocean Spray",
+    "agency": "Organic/In-house response",
+    "year": 2020,
+    "category": "cultural_moment",
+    "verticals": [
+      "beverage",
+      "food"
+    ],
+    "tags": [
+      "tiktok",
+      "organic",
+      "vibes",
+      "cultural"
+    ],
+    "era": "culture_first",
+    "insight": "In a year of chaos, a man on a skateboard drinking cranberry juice to Fleetwood Mac was the calm everyone needed.",
+    "execution_summary": "Nathan Apodaca's organic TikTok went viral. Ocean Spray gifted him a truck. The CEO recreated the video. Billions of views.",
+    "why_it_worked": "The brand's smartest move was not overthinking it. They amplified authenticity instead of co-opting it.",
+    "creative_principle": "When organic cultural moments happen with your brand, amplify don't appropriate. The lightest touch preserves the magic.",
+    "contrarian_element": "The most valuable brand moment of 2020 cost nothing to create — the brand just had to not ruin it.",
+    "phantom_tags": [
+      "hijack→culture",
+      "gut→first",
+      "simplicity→depth"
+    ],
+    "strategic_tags": [
+      "organic_moment",
+      "cultural",
+      "amplification",
+      "authenticity"
+    ]
+  },
+  {
+    "id": "scrub-daddy-tiktok-2022",
+    "campaign_name": "Scrub Daddy TikTok",
+    "brand": "Scrub Daddy",
+    "agency": "In-house",
+    "year": 2022,
+    "category": "social_native",
+    "verticals": [
+      "household",
+      "cleaning"
+    ],
+    "tags": [
+      "tiktok",
+      "humor",
+      "unhinged",
+      "mascot"
+    ],
+    "era": "culture_first",
+    "insight": "Cleaning products are boring by default. Making a sponge psychotic on social media makes the most mundane product entertaining.",
+    "execution_summary": "Chaotic, slightly threatening TikTok content featuring the smiley sponge. Gen Z humor meets household products.",
+    "why_it_worked": "Proved that literally any product can have a compelling social presence if the personality is strong enough.",
+    "creative_principle": "The more boring your product category, the more unhinged your personality can be. The contrast IS the entertainment.",
+    "contrarian_element": "A sponge brand creating chaotic, slightly menacing content that has nothing to do with cleaning.",
+    "phantom_tags": [
+      "convention→kill",
+      "platform→native",
+      "more→surprise",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "social_media",
+      "brand_voice",
+      "tiktok",
+      "entertainment"
+    ]
+  },
+  {
+    "id": "brewdog-punk-2007",
+    "campaign_name": "BrewDog Punk Brand",
+    "brand": "BrewDog",
+    "agency": "In-house",
+    "year": 2007,
+    "category": "challenger_campaign",
+    "verticals": [
+      "beverage",
+      "beer",
+      "challenger"
+    ],
+    "tags": [
+      "brand",
+      "punk",
+      "controversy",
+      "anti-establishment"
+    ],
+    "era": "digital_revolution",
+    "insight": "Craft beer drinkers see themselves as rebels against corporate beer. Give them a brand that fights as hard as they feel.",
+    "execution_summary": "Deliberately provocative marketing, public feuds with regulators, 'Equity for Punks' crowdfunding. Made buying beer feel like activism.",
+    "why_it_worked": "Every controversy strengthened the tribe. Getting banned by the ASA was better than any award.",
+    "creative_principle": "If your audience identifies as rebels, your brand needs real enemies, not manufactured ones. Pick genuine fights.",
+    "contrarian_element": "Deliberately sought regulatory bans as a marketing strategy, turning advertising standards complaints into press releases.",
+    "phantom_tags": [
+      "bold→defended",
+      "convention→kill",
+      "tension→gold",
+      "creative→stubborn"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "controversy",
+      "tribe_building",
+      "punk"
+    ]
+  },
+  {
+    "id": "tesla-zero-ad-spend-2003",
+    "campaign_name": "Zero Ad Spend",
+    "brand": "Tesla",
+    "agency": "None",
+    "year": 2003,
+    "category": "challenger_campaign",
+    "verticals": [
+      "automotive",
+      "tech"
+    ],
+    "tags": [
+      "earned_media",
+      "product",
+      "founder",
+      "anti-advertising"
+    ],
+    "era": "digital_revolution",
+    "insight": "When the product is genuinely revolutionary, traditional advertising actually undermines credibility. Let the product be the ad.",
+    "execution_summary": "Zero traditional advertising budget. Product launches are media events. Elon's social media is the media plan. Word of mouth does the rest.",
+    "why_it_worked": "The absence of advertising became a brand signal. If Tesla doesn't need to advertise, it must be that good.",
+    "creative_principle": "Sometimes the most powerful brand statement is refusing to advertise. The absence becomes the message.",
+    "contrarian_element": "Became the most talked-about car brand while spending $0 on traditional advertising.",
+    "phantom_tags": [
+      "convention→kill",
+      "opposite→opportunity",
+      "template→death"
+    ],
+    "strategic_tags": [
+      "anti-advertising",
+      "earned_media",
+      "product_first",
+      "disruption"
+    ]
+  },
+  {
+    "id": "mastercard-priceless-1997",
+    "campaign_name": "Priceless",
+    "brand": "Mastercard",
+    "agency": "McCann Erickson",
+    "year": 1997,
+    "category": "iconic_campaign",
+    "verticals": [
+      "finance",
+      "payments"
+    ],
+    "tags": [
+      "tv",
+      "emotional",
+      "format",
+      "universal"
+    ],
+    "era": "creative_revolution",
+    "insight": "Credit cards enable purchases, but the best things they buy can't be measured in dollars. Emotional value > monetary value.",
+    "execution_summary": "List of purchases with prices, ending with an emotional moment: 'Priceless.' Twenty-year platform across every market.",
+    "why_it_worked": "Created an infinitely extensible format that worked across cultures. The structure was the strategy.",
+    "creative_principle": "The most powerful campaign formats are structures anyone can fill in. Create a template that becomes a cultural meme.",
+    "contrarian_element": "A financial services company built its brand by saying some things are beyond money — the opposite of its business model.",
+    "phantom_tags": [
+      "emotion→logic",
+      "opposite→opportunity",
+      "human→timeless",
+      "constraint→freedom"
+    ],
+    "strategic_tags": [
+      "emotional_branding",
+      "format",
+      "universal",
+      "platform"
+    ]
+  },
+  {
+    "id": "snickers-youre-not-you-2010",
+    "campaign_name": "You're Not You When You're Hungry",
+    "brand": "Snickers",
+    "agency": "BBDO New York",
+    "year": 2010,
+    "category": "humor_campaign",
+    "verticals": [
+      "food",
+      "confectionery"
+    ],
+    "tags": [
+      "tv",
+      "humor",
+      "celebrity",
+      "global"
+    ],
+    "era": "digital_revolution",
+    "insight": "Hunger changes your personality. Everyone has experienced becoming someone they don't recognize when they're starving.",
+    "execution_summary": "Celebrities playing regular people acting out of character due to hunger. Betty White playing football. Global format with local celebrities.",
+    "why_it_worked": "Universal human truth + celebrity miscast + simple payoff = infinitely scalable global platform.",
+    "creative_principle": "The best global campaigns are built on universal human truths, not cultural specifics. If everyone's felt it, it works everywhere.",
+    "contrarian_element": "Cast celebrities to play ordinary people instead of aspirational figures — the role reversal was the joke.",
+    "phantom_tags": [
+      "human→timeless",
+      "audience→empathy",
+      "constraint→freedom",
+      "story→hook"
+    ],
+    "strategic_tags": [
+      "global_platform",
+      "humor",
+      "human_truth",
+      "celebrity"
+    ]
+  },
+  {
+    "id": "red-bull-stratos-2012",
+    "campaign_name": "Stratos",
+    "brand": "Red Bull",
+    "agency": "In-house",
+    "year": 2012,
+    "category": "cultural_moment",
+    "verticals": [
+      "beverage",
+      "extreme_sports"
+    ],
+    "tags": [
+      "event",
+      "content",
+      "extreme",
+      "live"
+    ],
+    "era": "digital_revolution",
+    "insight": "Red Bull doesn't sell energy drinks — it sells the human desire to push limits. Sending a man from space proves the brand is the limit, not the product.",
+    "execution_summary": "Felix Baumgartner jumped from the edge of space. 8 million watched live on YouTube. Broke the sound barrier and multiple viewing records.",
+    "why_it_worked": "The content was so extraordinary it transcended advertising. It was a genuine human achievement branded by Red Bull.",
+    "creative_principle": "If your brand stands for something, prove it at the most extreme scale possible. Content that pushes human limits IS the brand.",
+    "contrarian_element": "Spent the budget of a traditional campaign on a single live event that most advertisers would consider insanely risky.",
+    "phantom_tags": [
+      "bold→defended",
+      "format→break",
+      "culture→future",
+      "more→surprise"
+    ],
+    "strategic_tags": [
+      "content_marketing",
+      "extreme",
+      "live_event",
+      "brand_action"
+    ]
+  },
+  {
+    "id": "heineken-worlds-apart-2017",
+    "campaign_name": "Worlds Apart",
+    "brand": "Heineken",
+    "agency": "Publicis London",
+    "year": 2017,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "beverage",
+      "beer"
+    ],
+    "tags": [
+      "video",
+      "social_experiment",
+      "unity",
+      "purpose"
+    ],
+    "era": "social_first",
+    "insight": "In a polarized world, people who disagree on everything can still share a beer. The shared activity reveals shared humanity.",
+    "execution_summary": "Paired people with opposing views (feminist/anti-feminist, climate activist/denier) to build a bar together, then revealed their differences over a beer.",
+    "why_it_worked": "The reveal moment was genuine. Real surprise, real discomfort, real connection. You can't fake that reaction.",
+    "creative_principle": "Real social experiments create real emotions that scripted ads can't match. The risk of genuine human interaction is the reward.",
+    "contrarian_element": "Directly engaged with political polarization when every brand was told to stay away from controversial topics.",
+    "phantom_tags": [
+      "tension→gold",
+      "truth→uncomfortable",
+      "human→timeless",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "social_experiment",
+      "polarization",
+      "unity"
+    ]
+  },
+  {
+    "id": "hathaway-man-1951",
+    "campaign_name": "The Man in the Hathaway Shirt",
+    "brand": "Hathaway",
+    "agency": "Ogilvy & Mather",
+    "year": 1951,
+    "category": "iconic_campaign",
+    "verticals": [
+      "fashion",
+      "menswear"
+    ],
+    "tags": [
+      "print",
+      "character",
+      "mystery",
+      "storytelling"
+    ],
+    "era": "golden_age",
+    "insight": "A commodity shirt becomes interesting when the man wearing it is interesting. An eyepatch creates a story no copy can match.",
+    "execution_summary": "Russian aristocrat in an eyepatch wearing Hathaway shirts in exotic scenarios. Created a character, not an ad.",
+    "why_it_worked": "The eyepatch created mystery and aspiration. People bought the shirt to feel like the man, not for the fabric.",
+    "creative_principle": "When your product is a commodity, create a character around it. Story beats specification every time.",
+    "contrarian_element": "Added a random eyepatch to a shirt model — pure instinct that created advertising's first fictional brand character.",
+    "phantom_tags": [
+      "story→hook",
+      "gut→first",
+      "more→surprise",
+      "specific→power"
+    ],
+    "strategic_tags": [
+      "character",
+      "storytelling",
+      "commodity",
+      "mystery"
+    ]
+  },
+  {
+    "id": "levys-rye-bread-1963",
+    "campaign_name": "You Don't Have to Be Jewish",
+    "brand": "Levy's Rye Bread",
+    "agency": "DDB",
+    "year": 1963,
+    "category": "iconic_campaign",
+    "verticals": [
+      "food",
+      "bakery"
+    ],
+    "tags": [
+      "print",
+      "diversity",
+      "humor",
+      "expansion"
+    ],
+    "era": "golden_age",
+    "insight": "An ethnic product limits itself by staying ethnic. Show unexpected people enjoying it and you expand the market without losing the core.",
+    "execution_summary": "Photos of Native Americans, Asian children, and Irish cops eating Levy's rye bread. Simple headline destroyed category assumptions.",
+    "why_it_worked": "The visual contradiction was the message. No argument needed — the image said everything about universality.",
+    "creative_principle": "To expand beyond your niche, show the most unexpected person enjoying your product. Contradiction communicates faster than explanation.",
+    "contrarian_element": "Expanded a Jewish bakery brand by showing non-Jewish people eating it — obvious in retrospect, revolutionary at the time.",
+    "phantom_tags": [
+      "audience→empathy",
+      "opposite→opportunity",
+      "visual→verbal",
+      "simplicity→depth"
+    ],
+    "strategic_tags": [
+      "market_expansion",
+      "diversity",
+      "visual",
+      "universality"
+    ]
+  },
+  {
+    "id": "marlboro-man-1954",
+    "campaign_name": "Marlboro Man",
+    "brand": "Marlboro",
+    "agency": "Leo Burnett",
+    "year": 1954,
+    "category": "iconic_campaign",
+    "verticals": [
+      "tobacco"
+    ],
+    "tags": [
+      "print",
+      "tv",
+      "character",
+      "masculinity"
+    ],
+    "era": "golden_age",
+    "insight": "A filtered cigarette was seen as feminine. One cowboy silhouette repositioned the entire brand from women's cigarette to masculine icon.",
+    "execution_summary": "Rugged cowboys in Western landscapes. No copy needed. The imagery repositioned a 'ladies cigarette' into the world's best-selling brand.",
+    "why_it_worked": "Visual shorthand for masculinity was so powerful it overwrote the product's feminine associations completely.",
+    "creative_principle": "When you need to reposition, don't argue — replace. A single powerful archetype can overwrite an entire brand perception.",
+    "contrarian_element": "Repositioned a women's filtered cigarette as the most masculine brand in America through imagery alone.",
+    "phantom_tags": [
+      "upstream→reframe",
+      "visual→verbal",
+      "weakness→weapon",
+      "bold→defended"
+    ],
+    "strategic_tags": [
+      "repositioning",
+      "character",
+      "masculinity",
+      "visual_identity"
+    ]
+  },
+  {
+    "id": "vw-lemon-1960",
+    "campaign_name": "Lemon",
+    "brand": "Volkswagen",
+    "agency": "DDB",
+    "year": 1960,
+    "category": "iconic_campaign",
+    "verticals": [
+      "automotive"
+    ],
+    "tags": [
+      "print",
+      "quality",
+      "honesty",
+      "minimalism"
+    ],
+    "era": "golden_age",
+    "insight": "Showing your own quality control failures makes your quality claims more believable than perfection ever could.",
+    "execution_summary": "Photo of a perfect-looking VW Beetle with one word: 'Lemon.' The copy revealed it was rejected for a tiny chrome blemish.",
+    "why_it_worked": "Admitting you reject your own cars for invisible flaws proved quality obsession better than any claim of perfection.",
+    "creative_principle": "Showing your failures proves your standards. Transparency about imperfection is more persuasive than claims of perfection.",
+    "contrarian_element": "Called your own product a lemon — the most negative word in automotive — and made it a quality proof point.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "truth→uncomfortable",
+      "specific→power",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "quality",
+      "honesty",
+      "transparency",
+      "craft"
+    ]
+  },
+  {
+    "id": "de-beers-diamond-forever-1947",
+    "campaign_name": "A Diamond is Forever",
+    "brand": "De Beers",
+    "agency": "N.W. Ayer",
+    "year": 1947,
+    "category": "iconic_campaign",
+    "verticals": [
+      "jewelry",
+      "luxury"
+    ],
+    "tags": [
+      "print",
+      "cultural_creation",
+      "tagline",
+      "tradition"
+    ],
+    "era": "golden_age",
+    "insight": "Diamonds have no inherent value beyond what culture assigns them. Create the cultural norm and you create the market.",
+    "execution_summary": "Four words that invented the modern engagement ring tradition. Made diamond engagement rings a social expectation worldwide.",
+    "why_it_worked": "Didn't sell a product — created a cultural ritual. Made not buying a diamond socially unacceptable.",
+    "creative_principle": "The most powerful marketing creates cultural norms, not product desire. If you can make something socially required, you own the category.",
+    "contrarian_element": "Manufactured an entire cultural tradition through advertising — the engagement diamond was marketing, not tradition.",
+    "phantom_tags": [
+      "culture→future",
+      "human→timeless",
+      "spark→distill",
+      "upstream→reframe"
+    ],
+    "strategic_tags": [
+      "cultural_creation",
+      "luxury",
+      "ritual",
+      "category_creation"
+    ]
+  },
+  {
+    "id": "clairol-does-she-1957",
+    "campaign_name": "Does She or Doesn't She?",
+    "brand": "Clairol",
+    "agency": "Foote Cone & Belding",
+    "year": 1957,
+    "category": "iconic_campaign",
+    "verticals": [
+      "beauty",
+      "hair_care"
+    ],
+    "tags": [
+      "print",
+      "taboo",
+      "empowerment",
+      "innuendo"
+    ],
+    "era": "golden_age",
+    "insight": "Women color their hair but it's a shameful secret. Remove the stigma by making the question itself glamorous.",
+    "execution_summary": "Elegant women with the headline 'Does she or doesn't she? Only her hairdresser knows for sure.' Made hair coloring aspirational.",
+    "why_it_worked": "The innuendo made it memorable. The normalization made it acceptable. Hair color use went from 7% to 50% of American women.",
+    "creative_principle": "When your product carries social stigma, don't defend it — make the secrecy part of the allure.",
+    "contrarian_element": "Made a taboo product feel sophisticated through innuendo that LIFE magazine almost refused to print.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "upstream→reframe",
+      "tension→gold"
+    ],
+    "strategic_tags": [
+      "destigmatization",
+      "empowerment",
+      "innuendo",
+      "cultural_shift"
+    ]
+  },
+  {
+    "id": "alka-seltzer-whole-thing-1972",
+    "campaign_name": "I Can't Believe I Ate the Whole Thing",
+    "brand": "Alka-Seltzer",
+    "agency": "Wells Rich Greene",
+    "year": 1972,
+    "category": "humor_campaign",
+    "verticals": [
+      "health",
+      "otc"
+    ],
+    "tags": [
+      "tv",
+      "humor",
+      "catchphrase",
+      "relatable"
+    ],
+    "era": "golden_age",
+    "insight": "Overeating is universal and embarrassing. Make the embarrassment funny and the product becomes the punchline everyone remembers.",
+    "execution_summary": "Man lying in bed moaning about overeating. Wife deadpans. Became a national catchphrase overnight.",
+    "why_it_worked": "Captured a universal moment of regret so perfectly it entered the language. The product was the relief from a shared experience.",
+    "creative_principle": "When your product solves an embarrassing problem, make the embarrassment funny, not clinical. Humor removes shame.",
+    "contrarian_element": "Made overindulgence endearing rather than shameful in an era of medical-style OTC advertising.",
+    "phantom_tags": [
+      "human→timeless",
+      "audience→empathy",
+      "less→punch"
+    ],
+    "strategic_tags": [
+      "humor",
+      "relatability",
+      "catchphrase",
+      "cultural_language"
+    ]
+  },
+  {
+    "id": "fedex-absolutely-positively-1978",
+    "campaign_name": "Absolutely, Positively Overnight",
+    "brand": "Federal Express",
+    "agency": "Ally & Gargano",
+    "year": 1978,
+    "category": "iconic_campaign",
+    "verticals": [
+      "logistics",
+      "business"
+    ],
+    "tags": [
+      "tv",
+      "fast-talking",
+      "humor",
+      "promise"
+    ],
+    "era": "golden_age",
+    "insight": "Business anxiety about deadlines is universal. A fast-talking spokesman embodies the speed the service promises.",
+    "execution_summary": "John Moschitta Jr. speaking at machine-gun pace, embodying the urgency FedEx solves. The execution WAS the benefit demonstration.",
+    "why_it_worked": "The medium was the message — a fast-talking man selling a fast delivery service. The execution demonstrated the benefit.",
+    "creative_principle": "When possible, make the execution itself demonstrate the product benefit. Show, don't tell — and make showing entertaining.",
+    "contrarian_element": "Used the world's fastest talker for a delivery company — the casting choice WAS the strategy.",
+    "phantom_tags": [
+      "specific→power",
+      "format→break",
+      "gut→first"
+    ],
+    "strategic_tags": [
+      "demonstration",
+      "execution_as_strategy",
+      "humor",
+      "brand_promise"
+    ]
+  },
+  {
+    "id": "burma-shave-roadside-1925",
+    "campaign_name": "Burma-Shave Roadside Poems",
+    "brand": "Burma-Shave",
+    "agency": "In-house",
+    "year": 1925,
+    "category": "platform_innovation",
+    "verticals": [
+      "grooming",
+      "personal_care"
+    ],
+    "tags": [
+      "outdoor",
+      "sequential",
+      "humor",
+      "poetry"
+    ],
+    "era": "golden_age",
+    "insight": "Drivers are bored and their eyes follow sequential signs naturally. Turn the highway into a punchline delivery system.",
+    "execution_summary": "Sequential roadside signs that told jokes and poems, with Burma-Shave as the final punchline. 40 years of American road culture.",
+    "why_it_worked": "Created anticipation and reward. Each sign was a step in a joke you HAD to see the end of. Unmissable.",
+    "creative_principle": "Sequential storytelling creates anticipation that static messaging can't. Make people need to see the next piece.",
+    "contrarian_element": "Turned boring highway signage into entertainment 90 years before content marketing had a name.",
+    "phantom_tags": [
+      "format→break",
+      "more→surprise",
+      "story→hook",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "sequential_storytelling",
+      "outdoor",
+      "innovation",
+      "entertainment"
+    ]
+  },
+  {
+    "id": "volvo-drive-it-1960",
+    "campaign_name": "Drive it Like You Hate It",
+    "brand": "Volvo",
+    "agency": "Scali McCabe Sloves",
+    "year": 1960,
+    "category": "iconic_campaign",
+    "verticals": [
+      "automotive"
+    ],
+    "tags": [
+      "print",
+      "durability",
+      "honesty",
+      "provocation"
+    ],
+    "era": "golden_age",
+    "insight": "Car ads show gentle driving. But people buy Volvos because they last through abuse. Invite the abuse.",
+    "execution_summary": "Print ads showing Volvos being driven hard through rough terrain. Invited mistreatment as proof of durability.",
+    "why_it_worked": "The invitation to abuse the product was the confidence claim. Only a truly durable car would dare you to try breaking it.",
+    "creative_principle": "The most powerful product demonstration is inviting the worst-case scenario. Confidence in destruction proves quality.",
+    "contrarian_element": "Told people to abuse their car in an era when every manufacturer showed gentle driving on smooth roads.",
+    "phantom_tags": [
+      "bold→defended",
+      "opposite→opportunity",
+      "weakness→weapon"
+    ],
+    "strategic_tags": [
+      "durability",
+      "provocation",
+      "confidence",
+      "demonstration"
+    ]
+  },
+  {
+    "id": "budweiser-wassup-1999",
+    "campaign_name": "Wassup",
+    "brand": "Budweiser",
+    "agency": "DDB Chicago",
+    "year": 1999,
+    "category": "cultural_moment",
+    "verticals": [
+      "beverage",
+      "beer"
+    ],
+    "tags": [
+      "tv",
+      "catchphrase",
+      "viral",
+      "friendship"
+    ],
+    "era": "creative_revolution",
+    "insight": "The most authentic male bonding is the dumbest. 'Wassup' captured how men actually greet each other, not how brands wished they did.",
+    "execution_summary": "Friends calling each other and yelling 'Wassup!' while watching the game and drinking Bud. Became a global catchphrase.",
+    "why_it_worked": "Captured authentic male friendship without pretension. The stupidity was the authenticity. Everyone recognized their own friendships.",
+    "creative_principle": "Real human behavior is more powerful than aspirational behavior. Show people as they actually are, not as they wish to be.",
+    "contrarian_element": "Made the most juvenile greeting in America into a Super Bowl campaign — and won a Grand Prix at Cannes.",
+    "phantom_tags": [
+      "human→timeless",
+      "truth→uncomfortable",
+      "hijack→culture",
+      "simplicity→depth"
+    ],
+    "strategic_tags": [
+      "cultural_moment",
+      "authenticity",
+      "friendship",
+      "catchphrase"
+    ]
+  },
+  {
+    "id": "nike-bo-knows-1989",
+    "campaign_name": "Bo Knows",
+    "brand": "Nike",
+    "agency": "Wieden+Kennedy",
+    "year": 1989,
+    "category": "iconic_campaign",
+    "verticals": [
+      "sports",
+      "apparel"
+    ],
+    "tags": [
+      "tv",
+      "celebrity",
+      "cross-sport",
+      "catchphrase"
+    ],
+    "era": "creative_revolution",
+    "insight": "Bo Jackson's two-sport dominance was unprecedented. The campaign didn't have to exaggerate — reality was already unbelievable.",
+    "execution_summary": "Bo Jackson playing every sport imaginable. Other athletes reacting in disbelief. Two words became a national catchphrase.",
+    "why_it_worked": "Found an athlete whose reality exceeded advertising hyperbole. The truth was more entertaining than any fiction.",
+    "creative_principle": "When your spokesperson's reality is already extraordinary, just show the truth. The best stories don't need embellishment.",
+    "contrarian_element": "Let the athlete's absurd reality be the concept — no creative conceit needed when the truth is that good.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "specific→power",
+      "data→story"
+    ],
+    "strategic_tags": [
+      "celebrity",
+      "authenticity",
+      "cross_sport",
+      "catchphrase"
+    ]
+  },
+  {
+    "id": "economist-red-1988",
+    "campaign_name": "White Out of Red",
+    "brand": "The Economist",
+    "agency": "AMV BBDO",
+    "year": 1988,
+    "category": "craft_excellence",
+    "verticals": [
+      "media",
+      "publishing"
+    ],
+    "tags": [
+      "outdoor",
+      "wit",
+      "intelligence",
+      "minimalism"
+    ],
+    "era": "creative_revolution",
+    "insight": "Economist readers see themselves as the smartest people in the room. Ads that require intelligence to understand become insider badges.",
+    "execution_summary": "White text on red backgrounds. Witty, intellectual one-liners that flattered the reader's intelligence for 35+ years.",
+    "why_it_worked": "Every poster was an IQ test. If you got the joke, you were the target audience. Self-selecting brilliance.",
+    "creative_principle": "Ads that require intelligence to decode flatter the audience into buying. Make comprehension itself the reward.",
+    "contrarian_element": "Never explained the jokes. If you didn't get it, you weren't the customer — and that was the point.",
+    "phantom_tags": [
+      "specific→power",
+      "less→punch",
+      "audience→empathy",
+      "constraint→freedom"
+    ],
+    "strategic_tags": [
+      "intelligence",
+      "wit",
+      "outdoor",
+      "self_selection"
+    ]
+  },
+  {
+    "id": "sony-bravia-balls-2005",
+    "campaign_name": "Balls",
+    "brand": "Sony Bravia",
+    "agency": "Fallon London",
+    "year": 2005,
+    "category": "craft_excellence",
+    "verticals": [
+      "tech",
+      "electronics"
+    ],
+    "tags": [
+      "tv",
+      "visual",
+      "color",
+      "craft"
+    ],
+    "era": "digital_revolution",
+    "insight": "The best way to sell a TV's color is to create something so beautiful you desperately want to see it on that TV.",
+    "execution_summary": "250,000 bouncy balls released down San Francisco hills. José González soundtrack. Pure visual poetry demonstrating color.",
+    "why_it_worked": "The ad itself was the product demonstration. Its beauty made you want the screen that could display it most vividly.",
+    "creative_principle": "When your product is a display, make the ad so visually extraordinary that owning the product becomes the way to relive it.",
+    "contrarian_element": "No CGI — 250,000 real bouncy balls, making the production as remarkable as the product.",
+    "phantom_tags": [
+      "visual→verbal",
+      "simplicity→depth",
+      "gut→first",
+      "emotion→logic"
+    ],
+    "strategic_tags": [
+      "craft",
+      "visual",
+      "demonstration",
+      "production"
+    ]
+  },
+  {
+    "id": "levis-laundrette-1985",
+    "campaign_name": "Laundrette",
+    "brand": "Levi's",
+    "agency": "BBH",
+    "year": 1985,
+    "category": "iconic_campaign",
+    "verticals": [
+      "fashion",
+      "denim"
+    ],
+    "tags": [
+      "tv",
+      "music",
+      "desire",
+      "retro"
+    ],
+    "era": "creative_revolution",
+    "insight": "Jeans aren't about denim — they're about the person wearing them. Sex appeal sells denim better than heritage ever could.",
+    "execution_summary": "Nick Kamen strips to boxers in a 1950s laundrette to 'I Heard It Through the Grapevine.' Sales jumped 800%.",
+    "why_it_worked": "Repositioned Levi's from workwear to desire object. The music, the era, the confidence — everything said 'cool' without saying anything.",
+    "creative_principle": "When your brand has lost its cool, don't explain why it's cool — show someone cool wearing it. Desire is demonstrated, not argued.",
+    "contrarian_element": "A man undressing in public to sell jeans — the product removal was the product demonstration.",
+    "phantom_tags": [
+      "gut→first",
+      "convention→kill",
+      "visual→verbal",
+      "emotion→logic"
+    ],
+    "strategic_tags": [
+      "repositioning",
+      "desire",
+      "music",
+      "cultural_cool"
+    ]
+  },
+  {
+    "id": "bmw-films-2001",
+    "campaign_name": "The Hire",
+    "brand": "BMW",
+    "agency": "Fallon",
+    "year": 2001,
+    "category": "platform_innovation",
+    "verticals": [
+      "automotive",
+      "luxury"
+    ],
+    "tags": [
+      "digital",
+      "film",
+      "content",
+      "celebrity_directors"
+    ],
+    "era": "creative_revolution",
+    "insight": "Car enthusiasts don't want to be sold to — they want to be entertained. Short films by famous directors are content worth seeking out.",
+    "execution_summary": "Eight short films directed by Guy Ritchie, Ang Lee, John Woo et al. Clive Owen as 'The Driver.' First major branded content series.",
+    "why_it_worked": "Respected the audience's intelligence and time. People chose to watch because the content was genuinely good, not because it was an ad.",
+    "creative_principle": "If you make content good enough to compete with entertainment, people will seek it out. Earn attention, don't buy it.",
+    "contrarian_element": "Spent the TV budget on short films nobody asked for — invented branded content before the term existed.",
+    "phantom_tags": [
+      "format→break",
+      "convention→kill",
+      "reference→reinvent",
+      "bold→defended"
+    ],
+    "strategic_tags": [
+      "branded_content",
+      "entertainment",
+      "digital_innovation",
+      "premium"
+    ]
+  },
+  {
+    "id": "benetton-unhate-2011",
+    "campaign_name": "Unhate",
+    "brand": "Benetton",
+    "agency": "Fabrica (in-house)",
+    "year": 2011,
+    "category": "cultural_moment",
+    "verticals": [
+      "fashion"
+    ],
+    "tags": [
+      "print",
+      "controversy",
+      "political",
+      "provocation"
+    ],
+    "era": "digital_revolution",
+    "insight": "Clothing is universal — it crosses every political divide. Showing enemies kissing says more about unity than any slogan.",
+    "execution_summary": "Photoshopped images of world leaders kissing — Obama and Chavez, Pope and Imam. Banned globally. Earned billions in media.",
+    "why_it_worked": "The provocation was the distribution. Every ban, every outraged headline spread the message further than any media buy could.",
+    "creative_principle": "Images that provoke outrage generate more reach than images that please. Controversy is the most cost-effective media channel.",
+    "contrarian_element": "A fashion brand creating geopolitical provocation that had nothing to do with clothing.",
+    "phantom_tags": [
+      "bold→defended",
+      "tension→gold",
+      "culture→future",
+      "convention→kill"
+    ],
+    "strategic_tags": [
+      "provocation",
+      "controversy",
+      "earned_media",
+      "political"
+    ]
+  },
+  {
+    "id": "diesel-be-stupid-2010",
+    "campaign_name": "Be Stupid",
+    "brand": "Diesel",
+    "agency": "Anomaly",
+    "year": 2010,
+    "category": "brand_voice",
+    "verticals": [
+      "fashion",
+      "youth"
+    ],
+    "tags": [
+      "print",
+      "outdoor",
+      "manifesto",
+      "provocative"
+    ],
+    "era": "digital_revolution",
+    "insight": "Smart people play it safe. Stupid people change the world. Youth doesn't want to be told to be smart — they want permission to be reckless.",
+    "execution_summary": "Manifesto campaign celebrating stupidity as the source of innovation. 'Smart may have the brains, but stupid has the balls.'",
+    "why_it_worked": "Flipped the cultural hierarchy. Made recklessness aspirational. Gave young people a philosophy they could wear.",
+    "creative_principle": "The best youth brands don't sell responsibility — they sell permission. Give your audience a manifesto that feels like rebellion.",
+    "contrarian_element": "A brand campaign that explicitly told people to be stupid — the opposite of every advertising safety guideline.",
+    "phantom_tags": [
+      "opposite→opportunity",
+      "bold→defended",
+      "convention→kill",
+      "truth→uncomfortable"
+    ],
+    "strategic_tags": [
+      "manifesto",
+      "youth",
+      "rebellion",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "honda-cog-2003",
+    "campaign_name": "Cog",
+    "brand": "Honda",
+    "agency": "Wieden+Kennedy London",
+    "year": 2003,
+    "category": "craft_excellence",
+    "verticals": [
+      "automotive"
+    ],
+    "tags": [
+      "tv",
+      "craft",
+      "precision",
+      "engineering"
+    ],
+    "era": "digital_revolution",
+    "insight": "Honda's engineering obsession is invisible in normal advertising. A Rube Goldberg machine made entirely of car parts makes precision tangible.",
+    "execution_summary": "Two-minute Rube Goldberg chain reaction using only Accord parts. 606 takes. No CGI. The craft proved the brand's engineering obsession.",
+    "why_it_worked": "The production process mirrored the brand value. 606 takes to get it right = Honda's own obsessive engineering standards.",
+    "creative_principle": "When your brand value is precision, make the production itself an act of precision. The making-of IS the message.",
+    "contrarian_element": "Spent months and 606 takes on a two-minute ad when CGI could have faked it in days — because that would have undermined the message.",
+    "phantom_tags": [
+      "specific→power",
+      "creative→stubborn",
+      "polish→contribute",
+      "simplicity→depth"
+    ],
+    "strategic_tags": [
+      "craft",
+      "engineering",
+      "precision",
+      "production_values"
+    ]
+  },
+  {
+    "id": "ikea-chuck-out-chintz-1996",
+    "campaign_name": "Chuck Out Your Chintz",
+    "brand": "IKEA",
+    "agency": "St Luke's",
+    "year": 1996,
+    "category": "challenger_campaign",
+    "verticals": [
+      "retail",
+      "furniture",
+      "home"
+    ],
+    "tags": [
+      "tv",
+      "challenger",
+      "liberation",
+      "taste"
+    ],
+    "era": "creative_revolution",
+    "insight": "British homes were drowning in floral chintz because nobody gave them permission to throw it away. IKEA could be that permission.",
+    "execution_summary": "Women gleefully throwing chintz furniture out of windows. Liberating households from inherited bad taste. Made decluttering feel revolutionary.",
+    "why_it_worked": "Positioned IKEA as the antidote to British decorating conservatism. Made replacing furniture feel like an act of self-expression.",
+    "creative_principle": "Sometimes you have to attack the incumbent style, not just promote your own. Give people permission to reject what they've settled for.",
+    "contrarian_element": "Told British people their homes were ugly — and they loved it because secretly they agreed.",
+    "phantom_tags": [
+      "convention→kill",
+      "truth→uncomfortable",
+      "bold→defended",
+      "upstream→reframe"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "liberation",
+      "taste",
+      "cultural_shift"
+    ]
+  },
+  {
+    "id": "silk-cut-1983",
+    "campaign_name": "Silk Cut Purple",
+    "brand": "Silk Cut",
+    "agency": "Saatchi & Saatchi",
+    "year": 1983,
+    "category": "craft_excellence",
+    "verticals": [
+      "tobacco"
+    ],
+    "tags": [
+      "print",
+      "visual",
+      "abstract",
+      "luxury"
+    ],
+    "era": "creative_revolution",
+    "insight": "When tobacco advertising is restricted, abstraction becomes your only weapon. A cut in purple silk says everything without saying anything.",
+    "execution_summary": "Abstract images of slashed purple silk. No pack, no product, no copy. The constraint produced iconic imagery that transcended advertising.",
+    "why_it_worked": "The restriction forced pure visual communication. The images were so distinctive they became gallery-worthy art.",
+    "creative_principle": "The tightest constraints often produce the most iconic work. When you can't show the product, you're forced into pure creativity.",
+    "contrarian_element": "Turned advertising restrictions into a creative advantage — the less they could show, the more powerful the imagery became.",
+    "phantom_tags": [
+      "constraint→freedom",
+      "visual→verbal",
+      "spark→distill",
+      "simplicity→depth"
+    ],
+    "strategic_tags": [
+      "constraint",
+      "abstraction",
+      "visual_identity",
+      "luxury"
+    ]
+  },
+  {
+    "id": "tango-orange-man-1992",
+    "campaign_name": "You've Been Tango'd",
+    "brand": "Tango",
+    "agency": "HHCL",
+    "year": 1992,
+    "category": "humor_campaign",
+    "verticals": [
+      "beverage",
+      "soft_drinks"
+    ],
+    "tags": [
+      "tv",
+      "humor",
+      "physical",
+      "playground"
+    ],
+    "era": "creative_revolution",
+    "insight": "Tango's orange hit is so intense it's like being slapped. Physicalize that sensation and you own the taste experience.",
+    "execution_summary": "A fat orange man runs up and slaps someone drinking Tango. So popular it was banned because kids started slapping each other.",
+    "why_it_worked": "Made the taste literally physical. Being 'Tango'd' entered the language. The ban only made it more legendary.",
+    "creative_principle": "When your product has a distinctive sensory quality, physicalize it. Make the metaphor real and it becomes unforgettable.",
+    "contrarian_element": "An ad so visceral it got banned for inspiring playground violence — and became more famous because of it.",
+    "phantom_tags": [
+      "gut→first",
+      "more→surprise",
+      "format→break",
+      "bold→defended"
+    ],
+    "strategic_tags": [
+      "humor",
+      "physicality",
+      "taste",
+      "banned"
+    ]
+  },
+  {
+    "id": "guinness-good-things-1999",
+    "campaign_name": "Good Things Come to Those Who Wait",
+    "brand": "Guinness",
+    "agency": "AMV BBDO",
+    "year": 1999,
+    "category": "iconic_campaign",
+    "verticals": [
+      "beverage",
+      "beer"
+    ],
+    "tags": [
+      "tv",
+      "tagline",
+      "patience",
+      "ritual"
+    ],
+    "era": "creative_revolution",
+    "insight": "Guinness's 119.5-second pour is a hassle competitors mock. Making patience a virtue turns the wait into a ritual.",
+    "execution_summary": "Multiple award-winning ads celebrating anticipation and patience. The brand's biggest weakness became its most distinctive asset.",
+    "why_it_worked": "Reframed an operational inconvenience as a philosophy of life. Drinking Guinness became an act of patience, not impatience.",
+    "creative_principle": "When your product requires more time/effort than competitors, elevate that effort into a ritual. Time invested becomes value added.",
+    "contrarian_element": "Celebrated slowness in a culture of instant gratification — made waiting feel like a premium experience.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "time→trust",
+      "opposite→opportunity",
+      "human→timeless"
+    ],
+    "strategic_tags": [
+      "ritual",
+      "patience",
+      "premium",
+      "reframe"
+    ]
+  },
+  {
+    "id": "calvin-klein-obsession-1985",
+    "campaign_name": "Obsession",
+    "brand": "Calvin Klein",
+    "agency": "In-house",
+    "year": 1985,
+    "category": "iconic_campaign",
+    "verticals": [
+      "fashion",
+      "fragrance",
+      "luxury"
+    ],
+    "tags": [
+      "tv",
+      "print",
+      "provocative",
+      "desire"
+    ],
+    "era": "creative_revolution",
+    "insight": "Perfume is invisible — you sell the fantasy it enables. The more provocative the fantasy, the more desirable the invisible product.",
+    "execution_summary": "Black-and-white nudity, whispered voice-overs, intertwined bodies. Made fragrance advertising about raw desire, not flowers.",
+    "why_it_worked": "Sold desire itself, not the product. The controversy drove awareness while the imagery created genuine longing.",
+    "creative_principle": "For invisible products, sell the emotion, not the thing. The more raw and honest the emotion, the more powerful the association.",
+    "contrarian_element": "Brought explicit sexuality to mainstream fragrance advertising when the category was all soft focus and flowers.",
+    "phantom_tags": [
+      "convention→kill",
+      "emotion→logic",
+      "gut→first",
+      "bold→defended"
+    ],
+    "strategic_tags": [
+      "desire",
+      "provocation",
+      "luxury",
+      "emotional_branding"
+    ]
+  },
+  {
+    "id": "blendtec-will-it-blend-2006",
+    "campaign_name": "Will It Blend?",
+    "brand": "Blendtec",
+    "agency": "In-house",
+    "year": 2006,
+    "category": "digital_first",
+    "verticals": [
+      "household",
+      "appliances"
+    ],
+    "tags": [
+      "youtube",
+      "demonstration",
+      "humor",
+      "destruction"
+    ],
+    "era": "digital_revolution",
+    "insight": "Product demonstrations are boring unless you push them to absurd extremes. Blending an iPhone is the ultimate durability test.",
+    "execution_summary": "CEO blending iPhones, golf balls, glow sticks, and everything else in $400 consumer blenders. YouTube sensation.",
+    "why_it_worked": "Made product demonstrations entertaining. The destruction was the content. Proved the blender's power in the most extreme way possible.",
+    "creative_principle": "Take your product demonstration to its most absurd extreme. The entertainment value of the test IS the marketing.",
+    "contrarian_element": "Destroyed expensive products to sell a $400 blender — the destruction budget exceeded the product price.",
+    "phantom_tags": [
+      "format→break",
+      "more→surprise",
+      "bold→defended",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "product_demo",
+      "youtube",
+      "destruction",
+      "entertainment"
+    ]
+  },
+  {
+    "id": "metro-dumb-ways-to-die-2012",
+    "campaign_name": "Dumb Ways to Die",
+    "brand": "Metro Trains Melbourne",
+    "agency": "McCann Melbourne",
+    "year": 2012,
+    "category": "platform_innovation",
+    "verticals": [
+      "public_service",
+      "transport"
+    ],
+    "tags": [
+      "digital",
+      "music",
+      "animation",
+      "safety"
+    ],
+    "era": "digital_revolution",
+    "insight": "Safety messages are ignored because they're boring. A catchy song about cartoon characters dying stupidly is impossible to ignore.",
+    "execution_summary": "Adorable animated characters dying in absurd ways, set to the catchiest song ever written for a PSA. 250M+ YouTube views.",
+    "why_it_worked": "Made safety content so entertaining people sought it out and shared it. The song was genuinely good — it charted on iTunes.",
+    "creative_principle": "Public safety messages fail because they lecture. Make safety content so entertaining it competes with actual entertainment.",
+    "contrarian_element": "Made death cute and catchy — the opposite of every PSA that uses fear and graphic imagery.",
+    "phantom_tags": [
+      "opposite→opportunity",
+      "format→break",
+      "convention→kill",
+      "more→surprise"
+    ],
+    "strategic_tags": [
+      "psa",
+      "entertainment",
+      "music",
+      "behavior_change"
+    ]
+  },
+  {
+    "id": "chipotle-back-to-start-2012",
+    "campaign_name": "Back to the Start",
+    "brand": "Chipotle",
+    "agency": "Creative Artists Agency",
+    "year": 2012,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "food",
+      "qsr",
+      "purpose"
+    ],
+    "tags": [
+      "animation",
+      "music",
+      "sustainability",
+      "storytelling"
+    ],
+    "era": "digital_revolution",
+    "insight": "Fast food's industrial farming problem is everyone's dirty secret. A beautiful animation about a farmer's journey makes the alternative feel possible.",
+    "execution_summary": "Stop-motion animation of a farmer going industrial then returning to sustainable farming. Willie Nelson covering Coldplay.",
+    "why_it_worked": "Made a complex food system issue emotionally accessible through storytelling. The beauty made the message irresistible.",
+    "creative_principle": "Complex systemic issues need emotional storytelling, not data. Make people feel the problem before you offer the solution.",
+    "contrarian_element": "A fast-food chain created a film attacking the fast-food industry's practices — including some of its own.",
+    "phantom_tags": [
+      "story→hook",
+      "emotion→logic",
+      "truth→uncomfortable",
+      "human→timeless"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "sustainability",
+      "storytelling",
+      "animation"
+    ]
+  },
+  {
+    "id": "volvo-epic-split-2013",
+    "campaign_name": "Epic Split",
+    "brand": "Volvo Trucks",
+    "agency": "Forsman & Bodenfors",
+    "year": 2013,
+    "category": "craft_excellence",
+    "verticals": [
+      "automotive",
+      "commercial"
+    ],
+    "tags": [
+      "video",
+      "stunt",
+      "craft",
+      "viral"
+    ],
+    "era": "digital_revolution",
+    "insight": "Truck stability is an abstract engineering concept. Van Damme doing the splits between two trucks makes it viscerally real.",
+    "execution_summary": "Jean-Claude Van Damme performs the splits between two reversing Volvo trucks. One take. Enya soundtrack. 100M+ views.",
+    "why_it_worked": "Made B2B engineering sexy. The single stunt communicated precision steering more powerfully than any spec sheet.",
+    "creative_principle": "The most powerful product demonstrations are the ones that seem impossible. If the demo takes your breath away, the feature is proven.",
+    "contrarian_element": "Cast a 53-year-old action star for a truck commercial — and created the most-viewed automotive ad in history.",
+    "phantom_tags": [
+      "specific→power",
+      "more→surprise",
+      "bold→defended",
+      "visual→verbal"
+    ],
+    "strategic_tags": [
+      "b2b",
+      "demonstration",
+      "stunt",
+      "viral"
+    ]
+  },
+  {
+    "id": "oreo-dunk-dark-2013",
+    "campaign_name": "Dunk in the Dark",
+    "brand": "Oreo",
+    "agency": "360i",
+    "year": 2013,
+    "category": "social_native",
+    "verticals": [
+      "food",
+      "snacks"
+    ],
+    "tags": [
+      "twitter",
+      "real_time",
+      "cultural",
+      "reactive"
+    ],
+    "era": "digital_revolution",
+    "insight": "The Super Bowl blackout was a shared cultural moment. The brand that responds first owns the moment forever.",
+    "execution_summary": "When the Super Bowl stadium lost power, Oreo tweeted 'You can still dunk in the dark' within minutes. Most retweeted brand tweet ever.",
+    "why_it_worked": "Speed + wit + cultural moment = earned media worth more than the Super Bowl ad buy. The war room model was born.",
+    "creative_principle": "In real-time marketing, speed trumps polish. The first clever response to a cultural moment owns it permanently.",
+    "contrarian_element": "A cookie brand's tweet during a blackout got more attention than the $4M Super Bowl ads surrounding it.",
+    "phantom_tags": [
+      "hijack→culture",
+      "gut→first",
+      "less→punch",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "real_time",
+      "social_media",
+      "cultural_moment",
+      "speed"
+    ]
+  },
+  {
+    "id": "als-ice-bucket-2014",
+    "campaign_name": "Ice Bucket Challenge",
+    "brand": "ALS Association",
+    "agency": "Organic",
+    "year": 2014,
+    "category": "cultural_moment",
+    "verticals": [
+      "health",
+      "charity"
+    ],
+    "tags": [
+      "social",
+      "ugc",
+      "viral",
+      "challenge"
+    ],
+    "era": "digital_revolution",
+    "insight": "People want to help but need social permission and a dead-simple action. Pour ice water, nominate friends, donate. Brilliantly simple.",
+    "execution_summary": "People filming themselves pouring ice water over their heads, donating, and nominating others. Raised $220M in 8 weeks.",
+    "why_it_worked": "Combined social pressure, visible participation, and a low barrier to entry. Doing it was more fun than not doing it.",
+    "creative_principle": "The best participatory campaigns make the action itself entertaining and socially rewarding. Make participating cooler than abstaining.",
+    "contrarian_element": "Raised $220M for a little-known disease through an action that had nothing to do with the disease.",
+    "phantom_tags": [
+      "format→break",
+      "platform→native",
+      "hijack→culture",
+      "simplicity→depth"
+    ],
+    "strategic_tags": [
+      "participatory",
+      "viral",
+      "challenge",
+      "user_generated"
+    ]
+  },
+  {
+    "id": "dos-equis-interesting-man-2006",
+    "campaign_name": "The Most Interesting Man in the World",
+    "brand": "Dos Equis",
+    "agency": "Euro RSCG",
+    "year": 2006,
+    "category": "humor_campaign",
+    "verticals": [
+      "beverage",
+      "beer"
+    ],
+    "tags": [
+      "tv",
+      "character",
+      "humor",
+      "hyperbole"
+    ],
+    "era": "digital_revolution",
+    "insight": "In a sea of beer brands selling to young men, an older, worldly character is more aspirational because he's genuinely interesting.",
+    "execution_summary": "Silver-bearded man with absurd achievements. 'I don't always drink beer, but when I do, I prefer Dos Equis.' Meme format before memes.",
+    "why_it_worked": "Created a character so memorable he became a meme template. The hyperbole was the humor. The format was infinitely extensible.",
+    "creative_principle": "Create a character so distinctive they escape advertising and enter culture. When people meme your character, you've won.",
+    "contrarian_element": "Cast a 60-year-old to sell beer to 20-year-olds — and it worked because aspiration beats identification.",
+    "phantom_tags": [
+      "story→hook",
+      "opposite→opportunity",
+      "more→surprise",
+      "reference→reinvent"
+    ],
+    "strategic_tags": [
+      "character",
+      "humor",
+      "meme",
+      "aspiration"
+    ]
+  },
+  {
+    "id": "under-armour-i-will-2014",
+    "campaign_name": "I Will What I Want",
+    "brand": "Under Armour",
+    "agency": "Droga5",
+    "year": 2014,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "sports",
+      "apparel"
+    ],
+    "tags": [
+      "digital",
+      "empowerment",
+      "women",
+      "real_time"
+    ],
+    "era": "digital_revolution",
+    "insight": "Female athletes face hate comments constantly. Showing them performing through the hate is more powerful than ignoring it.",
+    "execution_summary": "Misty Copeland and Gisele Bündchen training while real-time negative tweets scrolled around them. The hate became the fuel.",
+    "why_it_worked": "Made the negativity visible, then showed it being overcome. The real tweets made the adversity tangible and the triumph real.",
+    "creative_principle": "Don't hide from criticism — incorporate it into the narrative. Showing the obstacle makes the achievement more powerful.",
+    "contrarian_element": "Put real hate comments in the ad instead of hiding them — made the opposition the dramatic tension.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "tension→gold",
+      "bold→defended",
+      "truth→uncomfortable"
+    ],
+    "strategic_tags": [
+      "empowerment",
+      "women",
+      "adversity",
+      "real_time"
+    ]
+  },
+  {
+    "id": "channel4-superhumans-2012",
+    "campaign_name": "Meet the Superhumans",
+    "brand": "Channel 4",
+    "agency": "4Creative",
+    "year": 2012,
+    "category": "craft_excellence",
+    "verticals": [
+      "media",
+      "sports",
+      "disability"
+    ],
+    "tags": [
+      "tv",
+      "sport",
+      "disability",
+      "reframe"
+    ],
+    "era": "digital_revolution",
+    "insight": "Paralympics coverage always focused on inspiration and sympathy. Treating disabled athletes as elite competitors changes the entire conversation.",
+    "execution_summary": "Trailer showing Paralympic athletes as ferocious competitors, not objects of pity. Public Enemy soundtrack. 'Meet the Superhumans.'",
+    "why_it_worked": "Rejected the sympathy lens entirely. Made disability badass. Changed how an entire nation viewed the Paralympics.",
+    "creative_principle": "The most powerful reframe is refusing the expected emotional register. When everyone expects pity, show power.",
+    "contrarian_element": "Used Public Enemy and aggressive editing for disability — the opposite of every tender, inspirational disability campaign.",
+    "phantom_tags": [
+      "upstream→reframe",
+      "convention→kill",
+      "bold→defended",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "reframe",
+      "disability",
+      "sport",
+      "cultural_shift"
+    ]
+  },
+  {
+    "id": "pg-thank-you-mom-2012",
+    "campaign_name": "Thank You Mom",
+    "brand": "P&G",
+    "agency": "Wieden+Kennedy",
+    "year": 2012,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "fmcg",
+      "household"
+    ],
+    "tags": [
+      "tv",
+      "olympics",
+      "emotion",
+      "universal"
+    ],
+    "era": "digital_revolution",
+    "insight": "Behind every Olympic athlete is a mom who drove them to practice at 5am. P&G products are part of that invisible maternal labor.",
+    "execution_summary": "Mothers' journeys raising future Olympians — the drives, the laundry, the sacrifices. No product hero shots. Pure maternal devotion.",
+    "why_it_worked": "Connected mundane household products to the most emotional human bond — a mother's sacrifice. Made doing laundry feel heroic.",
+    "creative_principle": "Connect your mundane product to the most meaningful context it operates in. Elevate the user, not the product.",
+    "contrarian_element": "An Olympics campaign that didn't feature a single athlete as the hero — the moms were the story.",
+    "phantom_tags": [
+      "human→timeless",
+      "upstream→reframe",
+      "emotion→logic",
+      "story→hook"
+    ],
+    "strategic_tags": [
+      "emotional_storytelling",
+      "olympics",
+      "universal",
+      "maternal"
+    ]
+  },
+  {
+    "id": "beats-game-before-game-2014",
+    "campaign_name": "The Game Before the Game",
+    "brand": "Beats by Dre",
+    "agency": "R/GA",
+    "year": 2014,
+    "category": "craft_excellence",
+    "verticals": [
+      "tech",
+      "audio",
+      "sports"
+    ],
+    "tags": [
+      "video",
+      "sports",
+      "preparation",
+      "music"
+    ],
+    "era": "digital_revolution",
+    "insight": "Every athlete has a private ritual before competing. The headphones are part of that sacred preparation moment.",
+    "execution_summary": "World Cup athletes in their pre-game rituals — listening to music, finding focus. Beats as the tool of mental preparation.",
+    "why_it_worked": "Found the natural product moment — athletes already wore Beats pre-game. Documented reality instead of manufacturing a scenario.",
+    "creative_principle": "Find where your product naturally exists in meaningful moments. Document that truth instead of creating a fiction.",
+    "contrarian_element": "A headphone brand campaign that wasn't about sound quality — it was about mental preparation.",
+    "phantom_tags": [
+      "research→revelation",
+      "specific→power",
+      "human→timeless",
+      "truth→uncomfortable"
+    ],
+    "strategic_tags": [
+      "sports",
+      "ritual",
+      "authenticity",
+      "cultural_moment"
+    ]
+  },
+  {
+    "id": "bk-moldy-whopper-2020",
+    "campaign_name": "The Moldy Whopper",
+    "brand": "Burger King",
+    "agency": "Ingo/David/Publicis",
+    "year": 2020,
+    "category": "challenger_campaign",
+    "verticals": [
+      "food",
+      "qsr",
+      "challenger"
+    ],
+    "tags": [
+      "print",
+      "honesty",
+      "ingredients",
+      "provocative"
+    ],
+    "era": "social_first",
+    "insight": "Beautiful food photography is a lie. Showing your burger decomposing proves it's made with real ingredients better than any claim.",
+    "execution_summary": "Time-lapse of a Whopper decomposing over 34 days. Beautiful photography of ugly decay. 'The beauty of no artificial preservatives.'",
+    "why_it_worked": "The disgust was the proof point. A burger that rots is a burger made with real food. Turned repulsion into reassurance.",
+    "creative_principle": "The most convincing proof is often the least appetizing. Show the ugly truth and let the audience draw the positive conclusion.",
+    "contrarian_element": "Showed the most unappetizing food image possible to sell food — moldy, decaying, covered in fungus.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "opposite→opportunity",
+      "bold→defended",
+      "convention→kill"
+    ],
+    "strategic_tags": [
+      "honesty",
+      "provocation",
+      "ingredients",
+      "proof"
+    ]
+  },
+  {
+    "id": "aviation-gin-reynolds-2018",
+    "campaign_name": "Aviation Gin / Maximum Effort",
+    "brand": "Aviation Gin",
+    "agency": "Maximum Effort (Ryan Reynolds)",
+    "year": 2018,
+    "category": "humor_campaign",
+    "verticals": [
+      "spirits",
+      "celebrity"
+    ],
+    "tags": [
+      "social",
+      "humor",
+      "celebrity",
+      "reactive"
+    ],
+    "era": "social_first",
+    "insight": "Celebrity liquor brands are vanity projects. Making fun of that fact is more authentic than pretending you're a serious distiller.",
+    "execution_summary": "Ryan Reynolds creating low-budget, self-deprecating, reactive content. Responded to Peloton controversy within 36 hours. Sold for $610M.",
+    "why_it_worked": "Speed, humor, and self-awareness. Reynolds' persona made the brand feel like a joke you're in on, not a product you're sold.",
+    "creative_principle": "When your brand has an obvious commercial motive, acknowledge it humorously. Self-awareness disarms cynicism.",
+    "contrarian_element": "A celebrity openly mocking celebrity liquor brands while running one — the transparency was the brand.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "gut→first",
+      "hijack→culture",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "celebrity",
+      "humor",
+      "speed",
+      "self_awareness"
+    ]
+  },
+  {
+    "id": "sandy-hook-back-to-school-2019",
+    "campaign_name": "Back-to-School Essentials",
+    "brand": "Sandy Hook Promise",
+    "agency": "BBDO New York",
+    "year": 2019,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "public_service",
+      "safety"
+    ],
+    "tags": [
+      "video",
+      "horror",
+      "misdirection",
+      "gun_violence"
+    ],
+    "era": "social_first",
+    "insight": "People tune out gun violence PSAs. Start as a cheerful back-to-school ad, then reveal the horror — the misdirection is devastating.",
+    "execution_summary": "Kids showing off school supplies — then using them to survive a shooting. Binder as shield, scissors as weapon, skateboard to barricade.",
+    "why_it_worked": "The genre switch from cheerful to horrifying was a gut punch that couldn't be scrolled past. The form was the message.",
+    "creative_principle": "When your audience has become numb to your message, change the delivery mechanism so drastically they can't look away.",
+    "contrarian_element": "Used the cheerful aesthetics of a children's back-to-school commercial to deliver the most horrifying message possible.",
+    "phantom_tags": [
+      "format→break",
+      "truth→uncomfortable",
+      "more→surprise",
+      "gut→first"
+    ],
+    "strategic_tags": [
+      "psa",
+      "misdirection",
+      "gun_violence",
+      "shock"
+    ]
+  },
+  {
+    "id": "ihop-ihob-2018",
+    "campaign_name": "IHOb",
+    "brand": "IHOP",
+    "agency": "Droga5",
+    "year": 2018,
+    "category": "social_native",
+    "verticals": [
+      "food",
+      "qsr"
+    ],
+    "tags": [
+      "social",
+      "stunt",
+      "name_change",
+      "earned_media"
+    ],
+    "era": "social_first",
+    "insight": "Nobody believes IHOP makes good burgers. A fake name change to IHOb forces the conversation and proves you're serious about burgers.",
+    "execution_summary": "Announced flipping the 'P' to 'b' for International House of Burgers. Internet exploded. Burger sales quadrupled.",
+    "why_it_worked": "The absurdity of the stunt generated massive earned media. Everyone had to talk about it — even to make fun of it.",
+    "creative_principle": "Sometimes the best way to announce a product improvement is a stunt so absurd people can't stop talking about it.",
+    "contrarian_element": "Threatened to abandon the brand's most iconic asset (the name) to sell burgers.",
+    "phantom_tags": [
+      "more→surprise",
+      "bold→defended",
+      "opposite→opportunity",
+      "hijack→culture"
+    ],
+    "strategic_tags": [
+      "stunt",
+      "earned_media",
+      "name_change",
+      "product_launch"
+    ]
+  },
+  {
+    "id": "bodyform-blood-normal-2017",
+    "campaign_name": "Blood Normal",
+    "brand": "Bodyform/Libresse",
+    "agency": "AMV BBDO",
+    "year": 2017,
+    "category": "challenger_campaign",
+    "verticals": [
+      "personal_care",
+      "feminine_hygiene"
+    ],
+    "tags": [
+      "tv",
+      "taboo",
+      "honesty",
+      "period"
+    ],
+    "era": "social_first",
+    "insight": "Pad ads use blue liquid because periods are 'too real.' Showing real blood normalizes what half the population experiences monthly.",
+    "execution_summary": "First pad ad to show red blood instead of blue liquid. Women bleeding in the shower, on sheets. 'Periods are normal. Showing them should be too.'",
+    "why_it_worked": "Broke the oldest taboo in advertising by doing the most obvious thing: showing reality. The simplicity of the truth was revolutionary.",
+    "creative_principle": "When your entire category is built on a shared lie, being the first to tell the truth generates massive cultural impact.",
+    "contrarian_element": "Showed actual blood in a period ad when the entire industry had used blue liquid for decades.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "convention→kill",
+      "bold→defended",
+      "upstream→reframe"
+    ],
+    "strategic_tags": [
+      "taboo_breaking",
+      "honesty",
+      "category_disruption",
+      "cultural_shift"
+    ]
+  },
+  {
+    "id": "gillette-best-men-2019",
+    "campaign_name": "The Best Men Can Be",
+    "brand": "Gillette",
+    "agency": "Grey New York",
+    "year": 2019,
+    "category": "cultural_moment",
+    "verticals": [
+      "personal_care",
+      "grooming"
+    ],
+    "tags": [
+      "tv",
+      "purpose",
+      "masculinity",
+      "controversy"
+    ],
+    "era": "social_first",
+    "insight": "Toxic masculinity hurts men too. A brand built on 'The Best a Man Can Get' has permission — and obligation — to update what 'best' means.",
+    "execution_summary": "Challenged bullying, harassment, and 'boys will be boys' culture. Showed men holding each other accountable. Massively polarizing.",
+    "why_it_worked": "Whether you loved or hated it, everyone talked about it. The brand traded some customers for cultural relevance with its future audience.",
+    "creative_principle": "Updating a beloved tagline to reflect cultural change is high-risk, high-reward. You'll lose some to gain relevance with many.",
+    "contrarian_element": "A men's grooming brand challenging traditional masculinity — attacking the identity of its core customer base.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "bold→defended",
+      "tension→gold",
+      "culture→future"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "masculinity",
+      "polarization",
+      "cultural_moment"
+    ]
+  },
+  {
+    "id": "popeyes-chicken-wars-2019",
+    "campaign_name": "Chicken Sandwich Wars",
+    "brand": "Popeyes",
+    "agency": "GSD&M",
+    "year": 2019,
+    "category": "social_native",
+    "verticals": [
+      "food",
+      "qsr"
+    ],
+    "tags": [
+      "social",
+      "twitter",
+      "competitor",
+      "scarcity"
+    ],
+    "era": "social_first",
+    "insight": "Chick-fil-A owned the chicken sandwich conversation. One perfectly timed tweet turned the whole industry into a competition Popeyes won.",
+    "execution_summary": "Responded to Chick-fil-A's tweet with '...y'all good?' Two words. The internet chose sides. Popeyes sold out nationwide.",
+    "why_it_worked": "Let the audience do the marketing. One understated response triggered a culture war that sold more sandwiches than any campaign could.",
+    "creative_principle": "Sometimes the best marketing is a single, perfectly timed, understated response. Let the audience escalate it for you.",
+    "contrarian_element": "Two words generated more cultural impact than their entire annual media budget.",
+    "phantom_tags": [
+      "less→punch",
+      "hijack→culture",
+      "gut→first",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "social_media",
+      "competitor",
+      "scarcity",
+      "real_time"
+    ]
+  },
+  {
+    "id": "fenty-beauty-launch-2017",
+    "campaign_name": "Fenty Beauty Launch",
+    "brand": "Fenty Beauty",
+    "agency": "In-house / Kendo",
+    "year": 2017,
+    "category": "cultural_moment",
+    "verticals": [
+      "beauty",
+      "cosmetics"
+    ],
+    "tags": [
+      "launch",
+      "inclusivity",
+      "shades",
+      "cultural"
+    ],
+    "era": "social_first",
+    "insight": "The beauty industry's shade ranges were racist by omission. Launching with 40 shades wasn't radical — it was obvious. Everyone else was wrong.",
+    "execution_summary": "40 foundation shades at launch. Every skin tone represented. $100M in first 40 days. Forced the entire industry to expand shade ranges.",
+    "why_it_worked": "The product WAS the message. No manifesto needed — 40 shades said 'everyone belongs' more powerfully than any campaign copy.",
+    "creative_principle": "When your category has been excluding people, inclusion IS the marketing. The product innovation is the brand statement.",
+    "contrarian_element": "Made inclusivity a business strategy, not a charity project — and proved the excluded market was worth billions.",
+    "phantom_tags": [
+      "convention→kill",
+      "truth→uncomfortable",
+      "audience→empathy",
+      "data→story"
+    ],
+    "strategic_tags": [
+      "inclusivity",
+      "product_innovation",
+      "category_disruption",
+      "launch"
+    ]
+  },
+  {
+    "id": "airbnb-we-accept-2017",
+    "campaign_name": "We Accept",
+    "brand": "Airbnb",
+    "agency": "In-house",
+    "year": 2017,
+    "category": "cultural_moment",
+    "verticals": [
+      "tech",
+      "travel",
+      "hospitality"
+    ],
+    "tags": [
+      "tv",
+      "purpose",
+      "immigration",
+      "super_bowl"
+    ],
+    "era": "social_first",
+    "insight": "When governments close borders, brands that open doors earn permanent loyalty from the right side of history.",
+    "execution_summary": "Super Bowl ad showing diverse faces with 'We Accept' message during Trump's travel ban. Pledged to house 100,000 refugees.",
+    "why_it_worked": "Took a political position when most brands stayed silent. The commitment (housing refugees) made the words real, not performative.",
+    "creative_principle": "Brand activism works when the brand can actually do something about the issue — not just talk. Action validates the message.",
+    "contrarian_element": "Used the most expensive ad slot of the year to make a political statement during the most divisive political moment.",
+    "phantom_tags": [
+      "bold→defended",
+      "culture→future",
+      "truth→uncomfortable",
+      "creative→stubborn"
+    ],
+    "strategic_tags": [
+      "purpose",
+      "political",
+      "immigration",
+      "brand_activism"
+    ]
+  },
+  {
+    "id": "tide-its-a-tide-ad-2018",
+    "campaign_name": "It's a Tide Ad",
+    "brand": "Tide",
+    "agency": "Saatchi & Saatchi New York",
+    "year": 2018,
+    "category": "humor_campaign",
+    "verticals": [
+      "household",
+      "laundry"
+    ],
+    "tags": [
+      "tv",
+      "super_bowl",
+      "meta",
+      "humor"
+    ],
+    "era": "social_first",
+    "insight": "Every Super Bowl ad has clean clothes. That means every ad is technically a Tide ad. Make the observation the campaign.",
+    "execution_summary": "David Harbour appearing in fake Super Bowl ads (car, beer, perfume) pointing out the clean clothes. 'It's a Tide Ad.' Hijacked every other spot.",
+    "why_it_worked": "Made every other Super Bowl advertiser's ad feel like a Tide ad. Retroactively claimed the entire commercial break.",
+    "creative_principle": "Find the invisible truth in your competitor's advertising and claim it. The most powerful media hack is recontextualizing what already exists.",
+    "contrarian_element": "Instead of making one great Super Bowl ad, hijacked every other advertiser's ad by pointing out the clean clothes.",
+    "phantom_tags": [
+      "hijack→culture",
+      "upstream→reframe",
+      "more→surprise",
+      "convention→kill"
+    ],
+    "strategic_tags": [
+      "meta",
+      "super_bowl",
+      "competitive",
+      "reframe"
+    ]
+  },
+  {
+    "id": "coinbase-qr-code-2022",
+    "campaign_name": "QR Code Super Bowl",
+    "brand": "Coinbase",
+    "agency": "Accenture Interactive",
+    "year": 2022,
+    "category": "platform_innovation",
+    "verticals": [
+      "tech",
+      "crypto",
+      "finance"
+    ],
+    "tags": [
+      "tv",
+      "super_bowl",
+      "minimalism",
+      "qr_code"
+    ],
+    "era": "culture_first",
+    "insight": "In a Super Bowl stuffed with celebrity cameos and explosions, the most attention-grabbing thing is a bouncing QR code on a blank screen.",
+    "execution_summary": "60 seconds of a bouncing QR code on a black screen. Nothing else. Crashed the app with 20M visits in 60 seconds.",
+    "why_it_worked": "The absence of everything was more compelling than the presence of everything. Curiosity is more powerful than spectacle.",
+    "creative_principle": "When everyone is shouting, whisper. Maximum contrast to the environment creates maximum attention.",
+    "contrarian_element": "Spent $14M on airtime for a bouncing dot on a black screen — zero production value in the most expensive ad slot.",
+    "phantom_tags": [
+      "convention→kill",
+      "less→punch",
+      "spark→distill",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "minimalism",
+      "super_bowl",
+      "curiosity",
+      "digital"
+    ]
+  },
+  {
+    "id": "apple-shot-on-iphone-2015",
+    "campaign_name": "Shot on iPhone",
+    "brand": "Apple",
+    "agency": "TBWA/Media Arts Lab",
+    "year": 2015,
+    "category": "platform_innovation",
+    "verticals": [
+      "tech",
+      "photography"
+    ],
+    "tags": [
+      "ugc",
+      "outdoor",
+      "photography",
+      "user_generated"
+    ],
+    "era": "social_first",
+    "insight": "The best proof of a camera's quality is the photos real people take with it. User-generated content is more credible than any studio shoot.",
+    "execution_summary": "Billboards and ads featuring photos taken by iPhone users. No models, no studio — just real people's best shots credited by name.",
+    "why_it_worked": "Turned customers into the creative team. Every billboard was both an ad and a product demonstration by a real person.",
+    "creative_principle": "When your users create better content than your agency can, get out of the way. Credit them and let the work speak.",
+    "contrarian_element": "A trillion-dollar company using amateur photography for its global ad campaign instead of professional shoots.",
+    "phantom_tags": [
+      "audience→empathy",
+      "truth→uncomfortable",
+      "simplicity→depth",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "ugc",
+      "product_demo",
+      "community",
+      "photography"
+    ]
+  },
+  {
+    "id": "aldi-cuthbert-2021",
+    "campaign_name": "Cuthbert the Caterpillar",
+    "brand": "Aldi",
+    "agency": "McCann",
+    "year": 2021,
+    "category": "social_native",
+    "verticals": [
+      "retail",
+      "food"
+    ],
+    "tags": [
+      "social",
+      "legal",
+      "humor",
+      "competitor"
+    ],
+    "era": "culture_first",
+    "insight": "When a premium brand sues a discount brand over a cake, the public always sides with the underdog. Turn the lawsuit into entertainment.",
+    "execution_summary": "M&S sued Aldi over caterpillar cake similarity. Aldi turned it into a social media comedy, tweeting #FreeCuthbert. Public overwhelmingly sided with Aldi.",
+    "why_it_worked": "Made a corporate legal dispute into populist entertainment. M&S looked like a bully, Aldi looked like the people's champion.",
+    "creative_principle": "When a powerful competitor attacks you, don't fight in their arena (courts). Fight in yours (social media). Make them the villain.",
+    "contrarian_element": "Turned a trademark lawsuit — normally a crisis — into the brand's most successful social campaign ever.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "hijack→culture",
+      "less→punch",
+      "tension→gold"
+    ],
+    "strategic_tags": [
+      "challenger_strategy",
+      "competitor",
+      "social_media",
+      "humor"
+    ]
+  },
+  {
+    "id": "nutter-butter-tiktok-2023",
+    "campaign_name": "Nutter Butter TikTok",
+    "brand": "Nutter Butter",
+    "agency": "In-house",
+    "year": 2023,
+    "category": "social_native",
+    "verticals": [
+      "food",
+      "snacks"
+    ],
+    "tags": [
+      "tiktok",
+      "surreal",
+      "unhinged",
+      "horror"
+    ],
+    "era": "culture_first",
+    "insight": "Normal brand TikToks are invisible. Surreal, slightly horrifying content stops the scroll because it defies every brand guideline.",
+    "execution_summary": "Nightmarish, surreal videos of peanut-shaped cookies in uncanny scenarios. Genuinely unsettling content that went massively viral.",
+    "why_it_worked": "So bizarre it couldn't be ignored. Every video was a conversation starter: 'Have you SEEN the Nutter Butter account?'",
+    "creative_principle": "On platforms where everyone is trying to be likeable, being unsettling stands out. The uncanny valley is an attention weapon.",
+    "contrarian_element": "A cookie brand creating genuinely disturbing content that would fail every brand safety check ever written.",
+    "phantom_tags": [
+      "convention→kill",
+      "more→surprise",
+      "format→break",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "tiktok",
+      "surreal",
+      "unhinged",
+      "attention"
+    ]
+  },
+  {
+    "id": "mcdonalds-as-featured-in-2023",
+    "campaign_name": "As Featured In",
+    "brand": "McDonald's",
+    "agency": "Wieden+Kennedy",
+    "year": 2023,
+    "category": "cultural_moment",
+    "verticals": [
+      "food",
+      "qsr"
+    ],
+    "tags": [
+      "tv",
+      "pop_culture",
+      "film",
+      "nostalgia"
+    ],
+    "era": "culture_first",
+    "insight": "McDonald's has appeared in thousands of movies and shows without paying for it. Those organic appearances are more credible than any ad.",
+    "execution_summary": "Compiled McDonald's appearances across film, TV, music, and art. Let pop culture make the brand case. 'We don't need to say we're iconic.'",
+    "why_it_worked": "Used existing cultural artifacts as proof of cultural relevance. The evidence was already everywhere — they just pointed at it.",
+    "creative_principle": "If your brand is already embedded in culture, the smartest campaign just points at the evidence. Let others make your case.",
+    "contrarian_element": "A brand campaign made entirely of other people's content — no original McDonald's creative needed.",
+    "phantom_tags": [
+      "reference→reinvent",
+      "data→story",
+      "hijack→culture",
+      "simplicity→depth"
+    ],
+    "strategic_tags": [
+      "pop_culture",
+      "cultural_proof",
+      "nostalgia",
+      "curation"
+    ]
+  },
+  {
+    "id": "barbie-movie-marketing-2023",
+    "campaign_name": "Barbie Movie Marketing",
+    "brand": "Barbie/Warner Bros",
+    "agency": "Multiple",
+    "year": 2023,
+    "category": "cultural_moment",
+    "verticals": [
+      "entertainment",
+      "toys"
+    ],
+    "tags": [
+      "film",
+      "partnerships",
+      "cultural",
+      "pink"
+    ],
+    "era": "culture_first",
+    "insight": "When your brand IS a cultural icon, marketing becomes world-building. Turn the entire culture pink and the movie markets itself.",
+    "execution_summary": "150+ brand partnerships, Barbie DreamHouse on Airbnb, pink everything everywhere. Made the real world look like Barbie World.",
+    "why_it_worked": "Total cultural saturation made the movie feel inevitable. By the time it opened, not seeing it felt like missing a cultural moment.",
+    "creative_principle": "For cultural events, saturation IS the strategy. Make your thing so omnipresent that NOT participating feels like exclusion.",
+    "contrarian_element": "Spent more energy on cultural world-building than on traditional film marketing — made real life the trailer.",
+    "phantom_tags": [
+      "culture→future",
+      "hijack→culture",
+      "more→surprise",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "cultural_saturation",
+      "partnerships",
+      "world_building",
+      "entertainment"
+    ]
+  },
+  {
+    "id": "stanley-cup-viral-2024",
+    "campaign_name": "Stanley Cup Car Fire",
+    "brand": "Stanley",
+    "agency": "Organic / In-house response",
+    "year": 2024,
+    "category": "cultural_moment",
+    "verticals": [
+      "lifestyle",
+      "drinkware"
+    ],
+    "tags": [
+      "tiktok",
+      "organic",
+      "durability",
+      "response"
+    ],
+    "era": "culture_first",
+    "insight": "A Stanley cup surviving a car fire is the ultimate product testimonial. The brand's response matters more than the viral moment itself.",
+    "execution_summary": "Woman's car burned down but her Stanley cup survived with ice still in it. TikTok went viral. Stanley's CEO offered to replace her car.",
+    "why_it_worked": "The organic moment proved durability. The CEO's personal response proved the brand cares. Both elements were authentic.",
+    "creative_principle": "When organic moments showcase your product, respond with generosity that matches the moment. The response amplifies the story.",
+    "contrarian_element": "Replaced a car (not their product) in response to a viral moment — the generosity was disproportionate to any marketing ROI calculation.",
+    "phantom_tags": [
+      "gut→first",
+      "human→timeless",
+      "hijack→culture",
+      "truth→uncomfortable"
+    ],
+    "strategic_tags": [
+      "organic_moment",
+      "response",
+      "generosity",
+      "durability"
+    ]
+  },
+  {
+    "id": "grimace-shake-2023",
+    "campaign_name": "Grimace Shake",
+    "brand": "McDonald's",
+    "agency": "Wieden+Kennedy / Organic",
+    "year": 2023,
+    "category": "social_native",
+    "verticals": [
+      "food",
+      "qsr"
+    ],
+    "tags": [
+      "tiktok",
+      "horror",
+      "ugc",
+      "meme"
+    ],
+    "era": "culture_first",
+    "insight": "Gen Z turns everything into horror content. A purple shake from a mascot's birthday is the perfect canvas for fake death scenes.",
+    "execution_summary": "McDonald's launched a purple shake for Grimace's birthday. TikTok users immediately created fake 'death' videos after drinking it. 3B+ views.",
+    "why_it_worked": "McDonald's didn't try to control the narrative. The horror memes made the shake a must-try. Brand silence was the strategy.",
+    "creative_principle": "When users hijack your product into unexpected content, let them. User creativity is more powerful than brand control.",
+    "contrarian_element": "Users turned a birthday promotion into horror content — and McDonald's wisely said nothing, letting the chaos sell milkshakes.",
+    "phantom_tags": [
+      "hijack→culture",
+      "platform→native",
+      "more→surprise",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "ugc",
+      "tiktok",
+      "meme",
+      "brand_silence"
+    ]
+  },
+  {
+    "id": "hbo-intern-email-2023",
+    "campaign_name": "HBO Max Intern Email",
+    "brand": "HBO Max",
+    "agency": "Organic moment",
+    "year": 2023,
+    "category": "social_native",
+    "verticals": [
+      "entertainment",
+      "streaming"
+    ],
+    "tags": [
+      "email",
+      "accident",
+      "social",
+      "humanization"
+    ],
+    "era": "culture_first",
+    "insight": "Corporate perfection is boring. An intern accidentally sending a test email to millions is the most relatable brand moment possible.",
+    "execution_summary": "An intern sent a blank test email to HBO Max's entire subscriber list. The brand embraced the mistake publicly. Brands and users rallied in support.",
+    "why_it_worked": "The vulnerability was real. Every person who's ever hit 'send' too early felt the intern's pain. Brands piled in sharing their own mistakes.",
+    "creative_principle": "Real human mistakes create more brand connection than any planned campaign. When accidents happen, lean in with humor and grace.",
+    "contrarian_element": "An accidental email generated more positive brand sentiment than any intentional HBO Max campaign that year.",
+    "phantom_tags": [
+      "weakness→weapon",
+      "human→timeless",
+      "truth→uncomfortable",
+      "gut→first"
+    ],
+    "strategic_tags": [
+      "accident",
+      "humanization",
+      "vulnerability",
+      "social_media"
+    ]
+  },
+  {
+    "id": "evian-roller-babies-2009",
+    "campaign_name": "Roller Babies",
+    "brand": "Evian",
+    "agency": "BETC Paris",
+    "year": 2009,
+    "category": "digital_first",
+    "verticals": [
+      "beverage",
+      "water"
+    ],
+    "tags": [
+      "video",
+      "viral",
+      "babies",
+      "cgi"
+    ],
+    "era": "digital_revolution",
+    "insight": "Evian's 'Live Young' positioning needed visual proof. CGI babies roller-skating is so delightfully absurd it demands sharing.",
+    "execution_summary": "CGI babies performing roller-skating tricks. Set to 'Rapper's Delight.' Over 100M YouTube views in pre-algorithm era.",
+    "why_it_worked": "Pure shareability. Babies + skill + music = irresistible forwarding. The 'Live Young' message was embodied, not stated.",
+    "creative_principle": "Viral content works when sharing it makes the sharer look good (they found something fun). Give people social currency.",
+    "contrarian_element": "A premium water brand using CGI babies doing street stunts — zero sophistication, maximum share appeal.",
+    "phantom_tags": [
+      "more→surprise",
+      "gut→first",
+      "format→break"
+    ],
+    "strategic_tags": [
+      "viral",
+      "shareability",
+      "brand_platform",
+      "entertainment"
+    ]
+  },
+  {
+    "id": "john-lewis-monty-penguin-2014",
+    "campaign_name": "Monty the Penguin",
+    "brand": "John Lewis",
+    "agency": "Adam & Eve/DDB",
+    "year": 2014,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "retail"
+    ],
+    "tags": [
+      "tv",
+      "christmas",
+      "animation",
+      "love"
+    ],
+    "era": "digital_revolution",
+    "insight": "A child's love for a toy penguin mirrors the unconditional love of gift-giving. The gift isn't the thing — it's the understanding.",
+    "execution_summary": "Boy's imaginary penguin friend turns out to be a toy. He gets Monty a companion penguin for Christmas. Devastating in its simplicity.",
+    "why_it_worked": "Tapped into childhood imagination and parental empathy simultaneously. The twist revealed the emotional truth of gift-giving.",
+    "creative_principle": "The most powerful gift stories aren't about the gift — they're about the giver understanding the receiver completely.",
+    "contrarian_element": "A two-minute film about a stuffed penguin outsold any product-focused Christmas retail campaign.",
+    "phantom_tags": [
+      "emotion→logic",
+      "story→hook",
+      "human→timeless",
+      "simplicity→depth"
+    ],
+    "strategic_tags": [
+      "emotional_storytelling",
+      "christmas",
+      "gift_giving",
+      "animation"
+    ]
+  },
+  {
+    "id": "thai-insurance-ads-2014",
+    "campaign_name": "Thai Life Insurance Ads",
+    "brand": "Thai Life Insurance",
+    "agency": "Ogilvy Bangkok",
+    "year": 2014,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "finance",
+      "insurance"
+    ],
+    "tags": [
+      "video",
+      "emotion",
+      "kindness",
+      "tears"
+    ],
+    "era": "digital_revolution",
+    "insight": "Insurance is about love, not risk. Showing everyday acts of kindness is more persuasive than actuarial tables.",
+    "execution_summary": "Three-minute films about anonymous acts of kindness — feeding a stray dog, helping a street vendor, giving to a child. 'Unsung Hero.' 35M+ views.",
+    "why_it_worked": "Made people cry, then associated that emotion with an insurance brand. The emotional transfer was seamless because the values aligned.",
+    "creative_principle": "For boring categories, tell human stories that embody your brand values. The story does the selling the product never could.",
+    "contrarian_element": "An insurance company making people cry with stories about kindness — zero product mention until the final seconds.",
+    "phantom_tags": [
+      "emotion→logic",
+      "human→timeless",
+      "story→hook",
+      "convention→kill"
+    ],
+    "strategic_tags": [
+      "emotional_storytelling",
+      "purpose",
+      "kindness",
+      "brand_values"
+    ]
+  },
+  {
+    "id": "always-run-like-girl-2014",
+    "campaign_name": "Run Like a Girl",
+    "brand": "Always",
+    "agency": "Leo Burnett",
+    "year": 2014,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "personal_care"
+    ],
+    "tags": [
+      "video",
+      "gender",
+      "confidence",
+      "social_experiment"
+    ],
+    "era": "digital_revolution",
+    "insight": "Girls lose confidence at puberty — exactly when they start using Always. Reclaiming 'like a girl' rebuilds confidence the product can't.",
+    "execution_summary": "Social experiment asking people to 'run like a girl.' Adults mock, young girls sprint. The contrast reveals internalized bias.",
+    "why_it_worked": "Made an invisible bias visible through a simple experiment. The audience confronted their own assumptions in real-time.",
+    "creative_principle": "Social experiments that reveal unconscious bias create self-awareness moments impossible to forget or argue with.",
+    "contrarian_element": "Used a phrase everyone considers harmless to reveal deep cultural conditioning around gender.",
+    "phantom_tags": [
+      "research→revelation",
+      "truth→uncomfortable",
+      "upstream→reframe",
+      "human→timeless"
+    ],
+    "strategic_tags": [
+      "gender",
+      "social_experiment",
+      "bias",
+      "empowerment"
+    ]
+  },
+  {
+    "id": "absolut-bottle-art-1981",
+    "campaign_name": "Absolut Art Series",
+    "brand": "Absolut",
+    "agency": "TBWA",
+    "year": 1981,
+    "category": "craft_excellence",
+    "verticals": [
+      "spirits",
+      "luxury",
+      "art"
+    ],
+    "tags": [
+      "print",
+      "art",
+      "collaboration",
+      "cultural"
+    ],
+    "era": "creative_revolution",
+    "insight": "Vodka is transparent and tasteless — the brand is everything. Commissioning artists to interpret the bottle makes the brand a cultural patron.",
+    "execution_summary": "Warhol, Haring, Britto and 850+ artists interpreted the Absolut bottle. Each ad was a collectible artwork. Art world meets advertising.",
+    "why_it_worked": "Elevated advertising to art and art to advertising. Collectors saved the ads. The brand became a cultural institution.",
+    "creative_principle": "When your product has no inherent differentiation, make the brand a cultural patron. Associate with creativity itself.",
+    "contrarian_element": "Treated advertisements as gallery-worthy art commissions — blurred the line between commerce and culture.",
+    "phantom_tags": [
+      "reference→reinvent",
+      "culture→future",
+      "convention→kill",
+      "specific→power"
+    ],
+    "strategic_tags": [
+      "art",
+      "cultural_patron",
+      "collaboration",
+      "brand_elevation"
+    ]
+  },
+  {
+    "id": "everlane-radical-transparency-2011",
+    "campaign_name": "Radical Transparency",
+    "brand": "Everlane",
+    "agency": "In-house",
+    "year": 2011,
+    "category": "brand_voice",
+    "verticals": [
+      "fashion",
+      "dtc",
+      "ethical"
+    ],
+    "tags": [
+      "digital",
+      "transparency",
+      "pricing",
+      "supply_chain"
+    ],
+    "era": "digital_revolution",
+    "insight": "Fashion margins are obscene and everyone knows it. Showing the actual cost breakdown makes your markup feel reasonable by contrast.",
+    "execution_summary": "Showed exact factory costs, materials, labor, and markup for every product. Transparently priced vs. traditional retail markup.",
+    "why_it_worked": "Made competitors look like they were hiding something. Transparency became a differentiator that justified the (still healthy) margins.",
+    "creative_principle": "In categories with trust deficits, radical transparency is the most powerful marketing tool. Show what everyone hides.",
+    "contrarian_element": "Published exact costs and margins when the entire fashion industry was built on opacity.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "data→story",
+      "convention→kill",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "transparency",
+      "dtc",
+      "ethical_fashion",
+      "pricing"
+    ]
+  },
+  {
+    "id": "warby-parker-home-try-on-2010",
+    "campaign_name": "Home Try-On",
+    "brand": "Warby Parker",
+    "agency": "In-house",
+    "year": 2010,
+    "category": "challenger_campaign",
+    "verticals": [
+      "eyewear",
+      "dtc",
+      "fashion"
+    ],
+    "tags": [
+      "dtc",
+      "experience",
+      "social",
+      "trial"
+    ],
+    "era": "digital_revolution",
+    "insight": "People won't buy glasses online because they can't try them on. Send five pairs free and the try-on becomes shareable content.",
+    "execution_summary": "Five pairs shipped free to try at home. Customers posted selfies asking friends to vote. The try-on became social content.",
+    "why_it_worked": "Solved the online glasses objection AND created a social marketing loop. Every try-on was an organic ad.",
+    "creative_principle": "Turn your product trial into a social activity. When trying your product is content-worthy, customers market for you.",
+    "contrarian_element": "Sent $500 worth of product for free on trust — the generosity was the conversion mechanism.",
+    "phantom_tags": [
+      "opposite→opportunity",
+      "audience→empathy",
+      "format→break",
+      "platform→native"
+    ],
+    "strategic_tags": [
+      "dtc",
+      "trial",
+      "social",
+      "challenger_strategy"
+    ]
+  },
+  {
+    "id": "glossier-community-2014",
+    "campaign_name": "Into The Gloss / Glossier Community",
+    "brand": "Glossier",
+    "agency": "In-house",
+    "year": 2014,
+    "category": "brand_voice",
+    "verticals": [
+      "beauty",
+      "dtc"
+    ],
+    "tags": [
+      "community",
+      "ugc",
+      "blog",
+      "social"
+    ],
+    "era": "social_first",
+    "insight": "Beauty brands talk AT women. Building a community that talks WITH women, then making products they ask for, reverses the power dynamic.",
+    "execution_summary": "Started as a blog (Into The Gloss) that listened to what women actually wanted. Made products the community requested. UGC was the marketing.",
+    "why_it_worked": "Customers felt ownership because they literally shaped the product line. Co-creation builds loyalty no advertising can match.",
+    "creative_principle": "Build the audience before the product. When customers help create what they buy, they sell it for you.",
+    "contrarian_element": "Started a beauty brand from a blog — the audience existed before a single product was manufactured.",
+    "phantom_tags": [
+      "audience→empathy",
+      "research→revelation",
+      "convention→kill",
+      "truth→uncomfortable"
+    ],
+    "strategic_tags": [
+      "community",
+      "co_creation",
+      "dtc",
+      "audience_first"
+    ]
+  },
+  {
+    "id": "wendys-fresh-never-frozen-1984",
+    "campaign_name": "Where's the Beef?",
+    "brand": "Wendy's",
+    "agency": "Dancer Fitzgerald Sample",
+    "year": 1984,
+    "category": "iconic_campaign",
+    "verticals": [
+      "food",
+      "qsr"
+    ],
+    "tags": [
+      "tv",
+      "catchphrase",
+      "competitor",
+      "humor"
+    ],
+    "era": "creative_revolution",
+    "insight": "Fast food burgers looked huge in ads but were tiny in person. An elderly woman calling it out was funnier than any spokesperson.",
+    "execution_summary": "Elderly Clara Peller examining a tiny competitor burger: 'Where's the beef?' Three words entered the language and the 1984 presidential race.",
+    "why_it_worked": "Weaponized a universal fast food frustration through a perfectly cast spokesperson. The catchphrase transcended advertising.",
+    "creative_principle": "Find the frustration everyone feels but nobody says out loud. The spokesperson who finally says it becomes a folk hero.",
+    "contrarian_element": "Cast an 81-year-old woman as the spokesperson for a fast-food chain targeting young families — and she became a national icon.",
+    "phantom_tags": [
+      "truth→uncomfortable",
+      "gut→first",
+      "less→punch",
+      "audience→empathy"
+    ],
+    "strategic_tags": [
+      "catchphrase",
+      "competitor",
+      "humor",
+      "casting"
+    ]
+  },
+  {
+    "id": "apple-get-a-mac-2006",
+    "campaign_name": "Get a Mac",
+    "brand": "Apple",
+    "agency": "TBWA/Media Arts Lab",
+    "year": 2006,
+    "category": "humor_campaign",
+    "verticals": [
+      "tech"
+    ],
+    "tags": [
+      "tv",
+      "competitor",
+      "humor",
+      "personification"
+    ],
+    "era": "digital_revolution",
+    "insight": "Tech specs bore people. Personifying Mac and PC as two guys instantly communicates the user experience difference everyone feels.",
+    "execution_summary": "Justin Long as Mac (cool, casual) vs. John Hodgman as PC (uptight, suit). 66 ads over 4 years. Simple, devastating comparison.",
+    "why_it_worked": "Made a tech comparison human. You didn't choose specs — you chose which person you wanted to be.",
+    "creative_principle": "Personify the choice, not the product. People choose identities, not features. Make your product the cooler person in the room.",
+    "contrarian_element": "Named the competitor directly in every ad — a bold move most brands avoid. Made PC the lovable but inferior sidekick.",
+    "phantom_tags": [
+      "upstream→reframe",
+      "audience→empathy",
+      "story→hook",
+      "less→punch"
+    ],
+    "strategic_tags": [
+      "competitive",
+      "personification",
+      "identity",
+      "humor"
+    ]
+  },
+  {
+    "id": "ikea-lamp-2002",
+    "campaign_name": "Lamp",
+    "brand": "IKEA",
+    "agency": "Crispin Porter + Bogusky",
+    "year": 2002,
+    "category": "humor_campaign",
+    "verticals": [
+      "retail",
+      "furniture"
+    ],
+    "tags": [
+      "tv",
+      "humor",
+      "manipulation",
+      "meta"
+    ],
+    "era": "digital_revolution",
+    "insight": "People feel guilty throwing away old things. Acknowledge that guilt, then tell them they're being ridiculous. Permission to replace.",
+    "execution_summary": "Sad music follows an old lamp left on the curb in the rain. You feel terrible. Then: 'Many of you feel bad for this lamp. That is because you're crazy.'",
+    "why_it_worked": "Exposed the audience's own emotional manipulation in real-time. The self-awareness of the twist made it unforgettable.",
+    "creative_principle": "Acknowledge the emotional objection your audience has, then reframe it as irrational. Give them permission to do what they want to do.",
+    "contrarian_element": "Called the audience crazy for feeling the emotion the ad deliberately created — the meta-commentary was the message.",
+    "phantom_tags": [
+      "upstream→reframe",
+      "more→surprise",
+      "emotion→logic",
+      "truth→uncomfortable"
+    ],
+    "strategic_tags": [
+      "humor",
+      "permission",
+      "meta",
+      "replacement"
+    ]
+  },
+  {
+    "id": "coca-cola-share-a-coke-2011",
+    "campaign_name": "Share a Coke",
+    "brand": "Coca-Cola",
+    "agency": "Ogilvy Sydney",
+    "year": 2011,
+    "category": "platform_innovation",
+    "verticals": [
+      "beverage",
+      "soft_drinks"
+    ],
+    "tags": [
+      "packaging",
+      "personalization",
+      "social",
+      "names"
+    ],
+    "era": "digital_revolution",
+    "insight": "Everyone's favorite word is their own name. Putting names on Coke bottles turns a commodity product into a personal gift.",
+    "execution_summary": "Replaced the Coca-Cola logo with 250 popular names. Finding your name became a treasure hunt. Buying someone else's name became a gift.",
+    "why_it_worked": "Turned mass production into personal connection. The scarcity of finding your name created hunt behavior and social sharing.",
+    "creative_principle": "Personalization at scale makes mass products feel individual. Give people a reason to hunt for and share your product.",
+    "contrarian_element": "Removed the world's most recognized logo from its own packaging — and sold more because of it.",
+    "phantom_tags": [
+      "audience→empathy",
+      "opposite→opportunity",
+      "format→break",
+      "human→timeless"
+    ],
+    "strategic_tags": [
+      "personalization",
+      "packaging",
+      "social",
+      "participation"
+    ]
+  },
+  {
+    "id": "volkswagen-the-force-2011",
+    "campaign_name": "The Force",
+    "brand": "Volkswagen",
+    "agency": "Deutsch LA",
+    "year": 2011,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "automotive"
+    ],
+    "tags": [
+      "tv",
+      "super_bowl",
+      "humor",
+      "family"
+    ],
+    "era": "digital_revolution",
+    "insight": "Every kid has tried to use the Force. A mini Darth Vader 'starting' the car with his powers captures universal childhood magic.",
+    "execution_summary": "Kid in Darth Vader costume tries to use the Force on everything. Dad remote-starts the Passat. Kid loses his mind. 70M+ pre-Super Bowl views.",
+    "why_it_worked": "Universal childhood fantasy + parental love + perfect product integration. The car feature was the punchline, not the sell.",
+    "creative_principle": "The best product demonstrations disguise themselves as human stories. Make the feature the emotional payoff, not the pitch.",
+    "contrarian_element": "Released the Super Bowl ad early online — heresy in 2011 — and the pre-game views exceeded the game day audience.",
+    "phantom_tags": [
+      "human→timeless",
+      "emotion→logic",
+      "story→hook",
+      "more→surprise"
+    ],
+    "strategic_tags": [
+      "super_bowl",
+      "family",
+      "product_integration",
+      "earned_media"
+    ]
+  },
+  {
+    "id": "go-pro-be-a-hero-2010",
+    "campaign_name": "Be a Hero",
+    "brand": "GoPro",
+    "agency": "In-house / UGC",
+    "year": 2010,
+    "category": "platform_innovation",
+    "verticals": [
+      "tech",
+      "cameras",
+      "sports"
+    ],
+    "tags": [
+      "ugc",
+      "extreme",
+      "pov",
+      "youtube"
+    ],
+    "era": "digital_revolution",
+    "insight": "The best camera footage comes from the people using it. User-generated extreme POV content IS the product demonstration.",
+    "execution_summary": "User-submitted extreme sports, animal encounters, and adventure footage. Every video is simultaneously entertainment and product demo.",
+    "why_it_worked": "Users created better marketing content than any agency could. The product quality was proven by the content quality.",
+    "creative_principle": "When your product enables content creation, the content IS the marketing. Build a platform, not a campaign.",
+    "contrarian_element": "A camera company that barely creates its own content — relies almost entirely on user-generated footage.",
+    "phantom_tags": [
+      "platform→native",
+      "audience→empathy",
+      "format→break",
+      "truth→uncomfortable"
+    ],
+    "strategic_tags": [
+      "ugc",
+      "product_demo",
+      "extreme",
+      "platform"
+    ]
+  },
+  {
+    "id": "old-spice-moms-2014",
+    "campaign_name": "Moms Song",
+    "brand": "Old Spice",
+    "agency": "Wieden+Kennedy",
+    "year": 2014,
+    "category": "humor_campaign",
+    "verticals": [
+      "personal_care",
+      "grooming"
+    ],
+    "tags": [
+      "tv",
+      "humor",
+      "parents",
+      "coming_of_age"
+    ],
+    "era": "digital_revolution",
+    "insight": "Moms feel their sons growing up and pulling away. Old Spice is the product that signals that transition — and it terrifies them.",
+    "execution_summary": "Moms dramatically stalking and singing about losing their sons to Old Spice and girls. Absurd, operatic grief. Hilarious.",
+    "why_it_worked": "Found the real emotional dynamic: Old Spice means your son is becoming a man. Made the parental anxiety absurdly funny.",
+    "creative_principle": "Find the emotional truth behind the purchase occasion, then amplify it to absurd proportions. Comedy from truth.",
+    "contrarian_element": "Made the buyer's mother the protagonist instead of the user — found humor in the generational tension.",
+    "phantom_tags": [
+      "research→revelation",
+      "more→surprise",
+      "audience→empathy",
+      "opposite→opportunity"
+    ],
+    "strategic_tags": [
+      "humor",
+      "insight",
+      "family_dynamics",
+      "absurd"
+    ]
+  },
+  {
+    "id": "nike-find-your-greatness-2012",
+    "campaign_name": "Find Your Greatness",
+    "brand": "Nike",
+    "agency": "Wieden+Kennedy",
+    "year": 2012,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "sports",
+      "apparel"
+    ],
+    "tags": [
+      "tv",
+      "olympics",
+      "everyman",
+      "inspiration"
+    ],
+    "era": "digital_revolution",
+    "insight": "Greatness isn't reserved for Olympians. An overweight kid jogging is as inspiring as Usain Bolt — maybe more.",
+    "execution_summary": "During the Olympics, showed everyday athletes — an overweight boy jogging, a one-legged wrestler, a kid doing a cannonball. 'Find your greatness.'",
+    "why_it_worked": "Reframed greatness from superhuman achievement to personal effort. Made Nike relevant to the 99% who'll never be Olympians.",
+    "creative_principle": "When your brand is associated with elite performance, democratize the aspiration. Make the ordinary attempt heroic.",
+    "contrarian_element": "An Olympics campaign starring people who'd never make the Olympics — the overweight jogger became the most talked-about Olympic ad.",
+    "phantom_tags": [
+      "upstream→reframe",
+      "human→timeless",
+      "truth→uncomfortable",
+      "audience→empathy"
+    ],
+    "strategic_tags": [
+      "everyman",
+      "olympics",
+      "democratization",
+      "aspiration"
+    ]
+  },
+  {
+    "id": "cards-against-humanity-stunts-2013",
+    "campaign_name": "Cards Against Humanity Stunts",
+    "brand": "Cards Against Humanity",
+    "agency": "In-house",
+    "year": 2013,
+    "category": "challenger_campaign",
+    "verticals": [
+      "games",
+      "entertainment"
+    ],
+    "tags": [
+      "stunts",
+      "humor",
+      "anti-marketing",
+      "absurd"
+    ],
+    "era": "digital_revolution",
+    "insight": "A game about being terrible should market itself terribly — on purpose. Each Black Friday stunt should be more absurd than the last.",
+    "execution_summary": "Raised prices on Black Friday. Dug a pointless hole. Sold actual bull crap. Bought an island. Each year more absurd, each year more press.",
+    "why_it_worked": "The anti-marketing was perfectly on-brand. Each stunt was a performance art piece that generated millions in earned media.",
+    "creative_principle": "When your brand IS irreverence, your marketing must be equally irreverent. Consistency of absurdity builds anticipation.",
+    "contrarian_element": "Raised prices when everyone else discounted, sold literal BS — and customers loved it because the trolling was the product.",
+    "phantom_tags": [
+      "convention→kill",
+      "more→surprise",
+      "opposite→opportunity",
+      "bold→defended"
+    ],
+    "strategic_tags": [
+      "anti-marketing",
+      "stunts",
+      "absurdity",
+      "earned_media"
+    ]
+  },
+  {
+    "id": "dove-sketches-2013",
+    "campaign_name": "Real Beauty Sketches",
+    "brand": "Dove",
+    "agency": "Ogilvy Brazil",
+    "year": 2013,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "beauty",
+      "personal_care"
+    ],
+    "tags": [
+      "video",
+      "social_experiment",
+      "self_image",
+      "beauty"
+    ],
+    "era": "digital_revolution",
+    "insight": "Women describe themselves as uglier than they are. An FBI sketch artist proving this visually is devastating and undeniable.",
+    "execution_summary": "Forensic artist drew women based on self-descriptions vs. stranger descriptions. The self-descriptions were always harsher. 'You're more beautiful than you think.'",
+    "why_it_worked": "Visual proof of self-criticism bias. The two portraits side by side said everything. Most-shared ad of all time at its peak.",
+    "creative_principle": "When you want to change a belief, don't argue — demonstrate. Visual proof of a bias is more powerful than any claim.",
+    "contrarian_element": "Used a forensic sketch artist — associated with crime — for a beauty campaign. The unexpected context amplified the message.",
+    "phantom_tags": [
+      "research→revelation",
+      "truth→uncomfortable",
+      "human→timeless",
+      "visual→verbal"
+    ],
+    "strategic_tags": [
+      "social_experiment",
+      "self_image",
+      "beauty",
+      "visual_proof"
+    ]
+  },
+  {
+    "id": "google-parisian-love-2010",
+    "campaign_name": "Parisian Love",
+    "brand": "Google",
+    "agency": "In-house",
+    "year": 2010,
+    "category": "emotional_storytelling",
+    "verticals": [
+      "tech",
+      "search"
+    ],
+    "tags": [
+      "tv",
+      "super_bowl",
+      "minimal",
+      "storytelling"
+    ],
+    "era": "digital_revolution",
+    "insight": "Life's biggest moments are captured in search queries. A love story told entirely through Google searches is more intimate than any film.",
+    "execution_summary": "An entire love story told through Google searches — study abroad in Paris, how to impress a French girl, long-distance relationships, churches, cribs.",
+    "why_it_worked": "Made the product the storytelling medium. The simplicity (just a search bar) forced the audience to fill in the emotional gaps.",
+    "creative_principle": "When your product is a tool, tell a story using only that tool. The constraint forces the audience to co-create the emotion.",
+    "contrarian_element": "A Super Bowl ad that was just text on a screen — no actors, no sets, no music until the end. A $3M spot made for almost nothing.",
+    "phantom_tags": [
+      "constraint→freedom",
+      "simplicity→depth",
+      "emotion→logic",
+      "spark→distill"
+    ],
+    "strategic_tags": [
+      "minimal",
+      "storytelling",
+      "product_as_medium",
+      "super_bowl"
+    ]
+  },
+  {
+    "id": "amex-small-business-saturday-2010",
+    "campaign_name": "Small Business Saturday",
+    "brand": "American Express",
+    "agency": "Crispin Porter + Bogusky / Digitas",
+    "year": 2010,
+    "category": "cultural_moment",
+    "verticals": [
+      "finance",
+      "retail"
+    ],
+    "tags": [
+      "cultural",
+      "movement",
+      "small_business",
+      "purpose"
+    ],
+    "era": "digital_revolution",
+    "insight": "Between Black Friday and Cyber Monday, small businesses get crushed. Owning a shopping day for small businesses makes AmEx the champion of Main Street.",
+    "execution_summary": "Created an entirely new shopping holiday — Small Business Saturday. Got US Senate support. Now generates $20B+ annually for small businesses.",
+    "why_it_worked": "Created a cultural ritual that positioned AmEx as the champion of the underdog. The movement outlived the campaign.",
+    "creative_principle": "The ultimate brand power move is creating a cultural event. When your brand invents a tradition, you own it permanently.",
+    "contrarian_element": "A huge corporation championing small business — and making it credible by putting real money and infrastructure behind it.",
+    "phantom_tags": [
+      "culture→future",
+      "upstream→reframe",
+      "bold→defended",
+      "format→break"
+    ],
+    "strategic_tags": [
+      "cultural_creation",
+      "purpose",
+      "movement",
+      "small_business"
+    ]
+  },
+  {
+    "id": "burberry-art-of-trench-2009",
+    "campaign_name": "Art of the Trench",
+    "brand": "Burberry",
+    "agency": "In-house",
+    "year": 2009,
+    "category": "platform_innovation",
+    "verticals": [
+      "fashion",
+      "luxury"
+    ],
+    "tags": [
+      "digital",
+      "ugc",
+      "social",
+      "street_style"
+    ],
+    "era": "digital_revolution",
+    "insight": "Luxury fashion's best advertising is how real people wear it. A curated street-style platform makes customers the models.",
+    "execution_summary": "User-submitted photos of people wearing Burberry trench coats. Curated social gallery that made customers feel like models. Digital revenue surged.",
+    "why_it_worked": "Democratized luxury aspiration. Real people wearing the trench was more persuasive than any supermodel campaign.",
+    "creative_principle": "For aspiration brands, showing real customers is more persuasive than showing ideal customers. Attainable aspiration beats unreachable fantasy.",
+    "contrarian_element": "A luxury brand using amateur photography when the category demanded editorial perfection.",
+    "phantom_tags": [
+      "audience→empathy",
+      "platform→native",
+      "convention→kill",
+      "reference→reinvent"
+    ],
+    "strategic_tags": [
+      "ugc",
+      "luxury",
+      "digital",
+      "democratization"
+    ]
+  },
+  {
+    "id": "burger-king-stevenage-challenge-2019",
+    "campaign_name": "Stevenage Challenge",
+    "brand": "Burger King",
+    "agency": "David São Paulo",
+    "year": 2019,
+    "category": "platform_innovation",
+    "verticals": [
+      "food",
+      "qsr",
+      "gaming"
+    ],
+    "tags": [
+      "gaming",
+      "fifa",
+      "sponsorship",
+      "hack"
+    ],
+    "era": "social_first",
+    "insight": "You can't afford Premier League sponsorship? Sponsor the worst team in FIFA for almost nothing, then hack the game's mechanics.",
+    "execution_summary": "Sponsored Stevenage FC (4th division). Challenged FIFA gamers to score goals with Stevenage. Players signed virtual stars to the team. Millions of branded highlights shared.",
+    "why_it_worked": "Exploited the mechanics of a platform (FIFA) to generate millions in branded content for a tiny sponsorship fee.",
+    "creative_principle": "The cheapest media is the one you hack. Find platforms where small spending creates outsized presence through systemic exploitation.",
+    "contrarian_element": "Sponsored the worst team in the game — because their logo would appear in millions of viral goal celebrations.",
+    "phantom_tags": [
+      "constraint→freedom",
+      "opposite→opportunity",
+      "platform→native",
+      "weakness→weapon"
+    ],
+    "strategic_tags": [
+      "gaming",
+      "sponsorship",
+      "hack",
+      "challenger_strategy"
+    ]
+  },
+  {
+    "id": "spotify-billboard-data-2016",
+    "campaign_name": "Thanks 2016, It's Been Weird",
+    "brand": "Spotify",
+    "agency": "In-house",
+    "year": 2016,
+    "category": "brand_voice",
+    "verticals": [
+      "tech",
+      "music"
+    ],
+    "tags": [
+      "outdoor",
+      "data",
+      "humor",
+      "personalized"
+    ],
+    "era": "social_first",
+    "insight": "Anonymous listening data reveals hilarious human truths. 'Dear person who played Sorry 42 times on Valentine's Day, what did you do?' is irresistible.",
+    "execution_summary": "Data-driven billboards surfacing funny user listening patterns. Each billboard told a human micro-story through streaming data.",
+    "why_it_worked": "Turned cold data into warm, funny observations about human nature. Each billboard was a tiny story people wanted to share.",
+    "creative_principle": "Data is only interesting when it reveals human truth. The best data visualization tells stories about people, not numbers.",
+    "contrarian_element": "Used backend streaming analytics as creative material — turned engineering data into comedy billboards.",
+    "phantom_tags": [
+      "data→story",
+      "specific→power",
+      "human→timeless",
+      "more→surprise"
+    ],
+    "strategic_tags": [
+      "data",
+      "outdoor",
+      "humor",
+      "human_insight"
+    ]
+  },
+  {
+    "id": "twitter-oscars-selfie-2014",
+    "campaign_name": "Ellen's Oscar Selfie",
+    "brand": "Samsung",
+    "agency": "Starcom MediaVest",
+    "year": 2014,
+    "category": "cultural_moment",
+    "verticals": [
+      "tech",
+      "mobile"
+    ],
+    "tags": [
+      "social",
+      "live_event",
+      "celebrity",
+      "organic"
+    ],
+    "era": "digital_revolution",
+    "insight": "The most powerful product placement feels organic. A celebrity selfie at the Oscars using your phone is more credible than any ad.",
+    "execution_summary": "Ellen DeGeneres took a star-packed selfie with a Samsung phone at the Oscars. Most retweeted tweet ever at the time. Broke Twitter.",
+    "why_it_worked": "Felt organic even though it was planned. The moment was so culturally significant that the brand placement felt natural, not forced.",
+    "creative_principle": "The best brand integration creates a genuine cultural moment that happens to feature your product. Plan spontaneity.",
+    "contrarian_element": "Product placement disguised as a spontaneous moment at the biggest entertainment event of the year.",
+    "phantom_tags": [
+      "hijack→culture",
+      "platform→native",
+      "gut→first",
+      "more→surprise"
+    ],
+    "strategic_tags": [
+      "product_placement",
+      "cultural_moment",
+      "celebrity",
+      "social"
+    ]
+  },
+  {
+    "id": "carls-jr-paris-hilton-2005",
+    "campaign_name": "Carl's Jr. Provocative Ads",
+    "brand": "Carl's Jr.",
+    "agency": "Mendelsohn Zien",
+    "year": 2005,
+    "category": "challenger_campaign",
+    "verticals": [
+      "food",
+      "qsr"
+    ],
+    "tags": [
+      "tv",
+      "provocative",
+      "sex",
+      "controversy"
+    ],
+    "era": "digital_revolution",
+    "insight": "Fast food targeting young men through sex appeal is obvious but nobody does it because it's 'wrong.' Being the one to go there gets all the attention.",
+    "execution_summary": "Paris Hilton washing a car in a bikini while eating a burger. Kate Upton in similar scenarios. Deliberately provocative. Massive controversy = massive awareness.",
+    "why_it_worked": "The outrage machine did the distribution work. Every complaint was free advertising to the exact demographic they wanted.",
+    "creative_principle": "In attention economics, being provocative to your target audience while outraging non-customers is efficient marketing math.",
+    "contrarian_element": "Deliberately courted complaints and bans because the controversy reached more young men than the ad buy ever could.",
+    "phantom_tags": [
+      "bold→defended",
+      "tension→gold",
+      "convention→kill",
+      "gut→first"
+    ],
+    "strategic_tags": [
+      "provocation",
+      "sex_appeal",
+      "controversy",
+      "targeting"
+    ]
+  }
+]
