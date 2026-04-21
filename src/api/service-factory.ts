@@ -5,6 +5,7 @@
  * to database, LLM, and search providers.
  */
 
+import { createClient } from '@supabase/supabase-js';
 import { config } from '../config/index.js';
 import type {
   PhantomPoolProvider,
@@ -22,9 +23,6 @@ import type { BrainServices } from '../brain/nuclear-brain.js';
 let supabaseClient: ReturnType<typeof createSupabaseClient> | null = null;
 
 function createSupabaseClient() {
-  // Dynamic import to avoid requiring supabase at module load
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const { createClient } = require('@supabase/supabase-js');
   return createClient(config.supabaseUrl, config.supabaseServiceKey);
 }
 
