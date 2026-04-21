@@ -149,7 +149,6 @@ CREATE INDEX idx_agency_phantoms_active ON agency_phantoms(tenant_id, is_active)
 CREATE INDEX idx_phantom_feedback_tenant ON phantom_feedback(tenant_id, created_at DESC);
 CREATE INDEX idx_phantom_alliances_tenant ON phantom_alliances(tenant_id);
 CREATE INDEX idx_usage_tenant ON usage_logs(tenant_id, created_at DESC);
-CREATE INDEX idx_usage_daily ON usage_logs(tenant_id, created_at::date);
 CREATE INDEX idx_concepts_tenant ON concepts(tenant_id);
 CREATE INDEX idx_conversations_tenant ON conversations(tenant_id);
 
