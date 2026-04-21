@@ -20,10 +20,6 @@ export const config = {
   // Redis
   redisUrl: process.env.REDIS_URL || '',
 
-  // Stripe
-  stripeSecretKey: process.env.STRIPE_SECRET_KEY || '',
-  stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET || '',
-
   // Auth
   jwtSecret: process.env.JWT_SECRET || '',
   apiKeySalt: process.env.API_KEY_SALT || '',

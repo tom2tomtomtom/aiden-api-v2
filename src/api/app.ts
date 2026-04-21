@@ -7,11 +7,13 @@
 
 import express, { type Request, type Response, type NextFunction } from 'express';
 
+
 // Middleware
 import { corsMiddleware } from './middleware/cors.js';
 import { securityHeadersMiddleware } from './middleware/security-headers.js';
 import { authMiddleware } from './middleware/auth.js';
 import { rateLimiterMiddleware } from './middleware/rate-limiter.js';
+import { tokenCapMiddleware } from './middleware/token-cap.js';
 import { usageTrackingMiddleware } from './middleware/usage-tracking.js';
 
 // Routes
@@ -21,7 +23,6 @@ import jobsRouter from './routes/jobs.js';
 import workflowRouter from './routes/workflow.js';
 import keysRouter from './routes/keys.js';
 import usageRouter from './routes/usage.js';
-import billingRouter from './routes/billing.js';
 import phantomsRouter from './routes/phantoms.js';
 import strategyRouter from './routes/generate/strategy.js';
 import territoriesRouter from './routes/generate/territories.js';
@@ -36,12 +37,7 @@ export function createApp(): express.Application {
 
   // ── Global middleware (before routes) ─────────────────────────────────────
 
-  // Parse JSON (with raw body preserved for Stripe webhooks)
-  app.use(express.json({
-    verify: (req: Request, _res, buf) => {
-      (req as unknown as Record<string, unknown>).rawBody = buf.toString();
-    },
-  }));
+  app.use(express.json());
 
   // Security headers on all responses
   app.use(securityHeadersMiddleware);
@@ -53,16 +49,14 @@ export function createApp(): express.Application {
 
   app.use('/api/v1', healthRouter);
 
-  // Stripe webhook (needs raw body, no auth)
-  app.use('/api/v1', billingRouter);
-
   // ── Protected routes (require API key) ────────────────────────────────────
 
   const protectedRouter = express.Router();
 
-  // Auth + rate limiting + usage tracking
+  // Auth + rate limiting + token cap + usage tracking
   protectedRouter.use(authMiddleware);
   protectedRouter.use(rateLimiterMiddleware as unknown as express.RequestHandler);
+  protectedRouter.use(tokenCapMiddleware as unknown as express.RequestHandler);
   protectedRouter.use(usageTrackingMiddleware);
 
   // Mount protected route handlers
