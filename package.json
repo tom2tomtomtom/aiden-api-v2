@@ -2,6 +2,7 @@
   "name": "aiden-brain-api-v2",
   "version": "0.1.0",
   "description": "AIDEN Brain API v2 - The definitive creative intelligence engine",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
