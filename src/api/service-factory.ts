@@ -28,7 +28,7 @@ function createSupabaseClient() {
   return createClient(config.supabaseUrl, config.supabaseServiceKey);
 }
 
-function getSupabase() {
+export function getSupabase() {
   if (!supabaseClient) {
     supabaseClient = createSupabaseClient();
   }
