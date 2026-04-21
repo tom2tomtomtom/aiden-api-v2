@@ -60,38 +60,49 @@ class SupabasePhantomPoolProvider implements PhantomPoolProvider {
     packPhantoms: PhantomPackItem[];
   }> {
     const db = getSupabase();
-
-    // Load base phantoms from config (these are baked in, not per-tenant)
     const basePhantoms = new Map<string, Phantom>();
-    // Base phantoms come from the phantom-defaults config, loaded at startup
-    // For now return empty; the brain has built-in fallbacks
-    // TODO: Load from phantom-defaults.json
-
-    // Load agency-specific phantoms
     let agencyPhantoms: AgencyPhantom[] = [];
-    if (db && agencyId) {
-      const { data } = await db
-        .from('agency_phantoms')
-        .select('*')
-        .eq('tenant_id', agencyId)
-        .eq('is_active', true);
 
-      if (data) {
-        agencyPhantoms = data.map((row: Record<string, unknown>) => ({
-          id: row.id as string,
-          agencyId: row.tenant_id as string,
-          shorthand: row.shorthand as string,
-          feelingSeed: row.feeling_seed as string,
-          phantomStory: row.phantom_story as string,
-          influence: row.influence as string,
-          weight: Number(row.weight) || 3.0,
-          wordTriggers: row.word_triggers as string[] || [],
-          originContext: row.origin_context as string || '',
-          qualityScore: row.quality_score ? Number(row.quality_score) : undefined,
-          isActive: true,
-        }));
-      }
+    if (!db) return { basePhantoms, agencyPhantoms, packPhantoms: [] };
+
+    const [systemRes, agencyRes] = await Promise.all([
+      db.from('system_phantoms').select('*').eq('is_active', true),
+      agencyId
+        ? db.from('agency_phantoms').select('*').eq('tenant_id', agencyId).eq('is_active', true)
+        : Promise.resolve({ data: [] as Record<string, unknown>[] }),
+    ]);
+
+    for (const row of (systemRes.data ?? []) as Record<string, unknown>[]) {
+      const id = row.id as string;
+      basePhantoms.set(id, {
+        id,
+        shorthand: row.shorthand as string,
+        feelingSeed: row.feeling_seed as string,
+        phantomStory: row.phantom_story as string,
+        influence: row.influence as string,
+        weight: Number(row.weight) || 3.0,
+        wordTriggers: (row.word_triggers as string[]) || [],
+        intentTriggers: (row.intent_triggers as string[]) || [],
+        emotionalContexts: (row.emotional_contexts as string[]) || [],
+        conversationContexts: (row.conversation_contexts as string[]) || [],
+        originContext: (row.origin_context as string) || '',
+        isActive: true,
+      });
     }
+
+    agencyPhantoms = ((agencyRes.data ?? []) as Record<string, unknown>[]).map((row) => ({
+      id: row.id as string,
+      agencyId: row.tenant_id as string,
+      shorthand: row.shorthand as string,
+      feelingSeed: row.feeling_seed as string,
+      phantomStory: row.phantom_story as string,
+      influence: row.influence as string,
+      weight: Number(row.weight) || 3.0,
+      wordTriggers: (row.word_triggers as string[]) || [],
+      originContext: (row.origin_context as string) || '',
+      qualityScore: row.quality_score ? Number(row.quality_score) : undefined,
+      isActive: true,
+    }));
 
     return { basePhantoms, agencyPhantoms, packPhantoms: [] };
   }
