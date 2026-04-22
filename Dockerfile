@@ -6,6 +6,7 @@ RUN npm ci --ignore-scripts
 COPY tsconfig.json ./
 COPY src ./src
 RUN npm run build
+RUN mkdir -p dist/config && cp src/config/*.json dist/config/
 
 FROM node:20-slim AS runner
 
