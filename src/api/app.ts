@@ -49,6 +49,10 @@ export function createApp(): express.Application {
 
   app.use('/api/v1', healthRouter);
 
+  // ── Admin routes (require X-Admin-Secret only) ────────────────────────────
+
+  app.use('/api/v1', keysRouter);
+
   // ── Protected routes (require API key) ────────────────────────────────────
 
   const protectedRouter = express.Router();
@@ -63,7 +67,6 @@ export function createApp(): express.Application {
   protectedRouter.use(chatRouter);
   protectedRouter.use(jobsRouter);
   protectedRouter.use(workflowRouter);
-  protectedRouter.use(keysRouter);
   protectedRouter.use(usageRouter);
   protectedRouter.use(phantomsRouter);
   protectedRouter.use(strategyRouter);
