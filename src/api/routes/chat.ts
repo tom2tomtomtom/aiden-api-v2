@@ -12,6 +12,7 @@ import { Router, type Request, type Response } from 'express';
 import { z } from 'zod';
 import { processMessage, processMessageStream } from '../../brain/nuclear-brain.js';
 import { createBrainServices } from '../service-factory.js';
+import { getConversationStore } from '../../brain/conversation-store.js';
 import type { PersonalityMode, ConversationExchange } from '../../types.js';
 
 const router = Router();
@@ -47,13 +48,20 @@ router.post('/chat', async (req: Request, res: Response) => {
   const tenantId = (req as unknown as Record<string, unknown>).tenant_id as string || 'default';
   const conversationId = body.conversation_id || `conv-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
+  // Load conversation history from DB
+  const store = getConversationStore();
+  const conversationRowId = await store.getOrCreate(conversationId, tenantId);
+  const conversationHistory: ConversationExchange[] = conversationRowId
+    ? await store.getRecentExchanges(conversationRowId, 10)
+    : [];
+
   // Build brain input
   const brainInput = {
     message: body.message,
     conversationId,
     agencyId: tenantId,
     personalityMode: (body.personality_mode || 'collaborator') as PersonalityMode,
-    conversationHistory: [] as ConversationExchange[], // TODO: load from DB
+    conversationHistory,
   };
 
   const services = createBrainServices();
@@ -70,6 +78,7 @@ router.post('/chat', async (req: Request, res: Response) => {
 
       const generator = processMessageStream(brainInput, services);
       let metadata = null;
+      let fullText = '';
 
       try {
         while (true) {
@@ -80,6 +89,7 @@ router.post('/chat', async (req: Request, res: Response) => {
             break;
           }
           // Send text chunk
+          fullText += value;
           res.write(`data: ${JSON.stringify({ type: 'text', data: value })}\n\n`);
         }
 
@@ -120,6 +130,17 @@ router.post('/chat', async (req: Request, res: Response) => {
               personality_mode: metadata.personalityMode,
             },
           })}\n\n`);
+
+          // Persist exchange
+          if (conversationRowId && fullText) {
+            await store.saveMessage(conversationRowId, 'user', body.message);
+            await store.saveMessage(
+              conversationRowId,
+              'assistant',
+              fullText,
+              metadata.activatedPhantoms?.map((p: { phantom: { shorthand: string }; score: number }) => ({ shorthand: p.phantom.shorthand, score: p.score })),
+            );
+          }
         }
       } catch (streamError) {
         res.write(`data: ${JSON.stringify({ type: 'error', data: { message: 'Stream interrupted' } })}\n\n`);
@@ -129,6 +150,17 @@ router.post('/chat', async (req: Request, res: Response) => {
     } else {
       // ── JSON Response ──────────────────────────────────────────────────
       const response = await processMessage(brainInput, services);
+
+      // Persist exchange
+      if (conversationRowId) {
+        await store.saveMessage(conversationRowId, 'user', body.message);
+        await store.saveMessage(
+          conversationRowId,
+          'assistant',
+          response.text,
+          response.metadata.activatedPhantoms?.map(p => ({ shorthand: p.phantom.shorthand, score: p.score })),
+        );
+      }
 
       res.json({
         success: true,
