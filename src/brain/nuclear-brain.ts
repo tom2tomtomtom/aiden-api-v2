@@ -190,6 +190,11 @@ function buildFullSystemPrompt(opts: {
   if (opts.sensitiveBraveryContext) sections.push(opts.sensitiveBraveryContext);
   if (opts.yesAndContext) sections.push(opts.yesAndContext);
 
+  // Per-call entropy seed: shifts model distribution so identical prompts
+  // across separate sessions produce different outputs.
+  const seed = Math.random().toString(36).slice(2, 8);
+  sections.push(`[session:${seed}]`);
+
   return sections.join('\n\n');
 }
 

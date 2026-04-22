@@ -360,6 +360,16 @@ export function evaluatePhantoms(
     });
   }
 
+  // Add controlled noise before ranking so the same prompt never produces identical
+  // phantom blends across separate sessions. ±0.6 shifts margins without overriding
+  // clear winners (a phantom at 10.0 stays dominant over one at 3.0).
+  for (const a of activations) {
+    if (a.score > 0) {
+      a.score += (Math.random() - 0.5) * 1.2;
+      if (a.score < 0) a.score = 0;
+    }
+  }
+
   // Sort by score descending
   activations.sort((a, b) => b.score - a.score);
 
@@ -572,6 +582,14 @@ export function mergeUserPhantoms(
         const penalty = (Number(anti.weight) || 3.0) * 0.15;
         activation.score = Math.max(0.0, activation.score - penalty);
       }
+    }
+  }
+
+  // Final jitter pass: agency/pack phantoms also get noise before selection
+  for (const a of merged) {
+    if (a.score > 0) {
+      a.score += (Math.random() - 0.5) * 1.2;
+      if (a.score < 0) a.score = 0;
     }
   }
 
