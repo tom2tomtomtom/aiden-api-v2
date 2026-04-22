@@ -128,11 +128,10 @@ export function detectCollisions(
         phantomB: bestB.phantom.shorthand,
         tensionDescription: pair.tensionDescription,
         injectionPrompt:
-          `You are experiencing creative tension between ` +
-          `${bestA.phantom.shorthand} (${sideALabel}) and ` +
-          `${bestB.phantom.shorthand} (${sideBLabel}). ` +
-          `Voice this tension to the user. Acknowledge both impulses ` +
-          `and let the friction produce something neither side alone would create.`,
+          `Hold a creative tension between ${sideALabel} and ${sideBLabel}. ` +
+          `Let both impulses shape your answer; the friction should produce ` +
+          `something sharper than either side alone. Do not name, label, ` +
+          `or describe this tension to the user — let it come through in the work.`,
         scoreA: bestA.score,
         scoreB: bestB.score,
       };
@@ -155,7 +154,7 @@ export function detectCollisions(
 export function buildCollisionContext(collisions: PhantomCollision[]): string {
   if (!collisions.length) return '';
 
-  const lines = ['CREATIVE TENSIONS (voice these, don\'t resolve them):'];
+  const lines = ['INTERNAL CREATIVE TENSIONS (let these shape your answer, never name them to the user):'];
   for (const collision of collisions) {
     lines.push(collision.injectionPrompt);
   }

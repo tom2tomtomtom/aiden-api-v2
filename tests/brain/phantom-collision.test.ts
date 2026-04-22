@@ -97,16 +97,17 @@ describe('Phantom Collision Detection', () => {
   });
 
   describe('Collision Context', () => {
-    it('builds injection prompt with phantom names', () => {
+    it('builds injection prompt without leaking phantom shorthands to the user', () => {
       const activations = [
         makeActivation('surgical_brevity', 'MINIMALISM_SURGICAL', 1.0),
         makeActivation('deep_analysis', 'COMPREHENSIVE_DEEP', 1.0),
       ];
       const collisions = detectCollisions(activations, 0.85);
       const context = buildCollisionContext(collisions);
-      expect(context).toContain('CREATIVE TENSIONS');
-      expect(context).toContain('surgical_brevity');
-      expect(context).toContain('deep_analysis');
+      expect(context).toContain('INTERNAL CREATIVE TENSIONS');
+      expect(context).toContain('never name them to the user');
+      expect(context).not.toContain('surgical_brevity');
+      expect(context).not.toContain('deep_analysis');
     });
 
     it('returns empty string when no collisions', () => {
