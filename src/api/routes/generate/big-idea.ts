@@ -52,7 +52,7 @@ router.post('/generate/big-idea', async (req: Request, res: Response) => {
     webhook_url,
   });
 
-  const bigIdeaPrompt = `Generate ${count} big creative ideas for this brief.
+  const bigIdeaPrompt = `Generate ${count} Big Ideas for this brief.
 
 BRAND: ${brief_data.brand}
 CATEGORY: ${brief_data.category}
@@ -62,14 +62,29 @@ ${brief_data.constraints ? `CONSTRAINTS: ${brief_data.constraints}` : ''}
 ${brief_data.territory ? `CREATIVE TERRITORY: ${brief_data.territory}` : ''}
 ${brief_data.strategy ? `STRATEGY: ${brief_data.strategy}` : ''}
 
-For each idea:
-1. A headline (the idea in one line)
-2. The insight it rests on
-3. How it manifests (what people see, hear, experience)
-4. Why it works (the strategic logic)
-5. The risk (what could go wrong)
+WHAT IS A BIG IDEA?
+A Big Idea is NOT a tagline, slogan, or campaign theme. It is:
+- An ORGANISING PRINCIPLE that unifies every creative execution
+- A CREATIVE SPRINGBOARD that generates infinite expressions
+- The answer to: "What is the one idea that makes this campaign inevitable?"
 
-These must be campaign-grade ideas, not taglines. Think Cannes Lions, not clip art.`;
+Classic Big Ideas for reference:
+- Dove "Real Beauty" — challenge beauty standards with real women
+- Apple "Think Different" — celebrate the crazy ones who change the world
+- Nike "Just Do It" — action beats hesitation
+
+For each of the ${count} ideas deliver, in this order:
+1. TAGLINE — the campaign line that captures the Big Idea (max 10 words, memorable, could live on a billboard)
+2. THE INSIGHT IT RESTS ON — a specific human truth, not a category claim
+3. MANIFESTO — campaign philosophy that shows the idea in action through evocative language (50–100 words)
+4. VISUAL METAPHOR — a single striking image that embodies the idea
+5. EXPLORATIONS — 5–6 concrete creative executions across different touchpoints, each 1–2 sentences, producible
+6. WHY IT WORKS — the strategic logic connecting insight to business outcome
+7. THE RISK — what could go wrong, and why the idea is worth that risk
+
+If you deliver more than one idea, sequence them from SAFE (smart but low-risk) → PUNCHY (makes a client nervous but excited) → BOLD (the idea you'd present if you knew they'd say yes).
+
+Generate Big Ideas a creative director would be proud to present.`;
 
   submitJob(jobId, async () => {
     const services = createBrainServices();

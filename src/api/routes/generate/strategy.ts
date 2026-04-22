@@ -60,14 +60,25 @@ OBJECTIVES: ${brief_data.objectives}
 ${brief_data.constraints ? `CONSTRAINTS: ${brief_data.constraints}` : ''}
 ${brief_data.additional_context ? `ADDITIONAL CONTEXT: ${brief_data.additional_context}` : ''}
 
-Deliver:
-1. Strategic insight (the human truth that unlocks this brief)
-2. Category tensions (what the category always does vs what it should do)
-3. Brand opportunity (where this brand can credibly own a position)
-4. Communication strategy (what to say, how to say it, where to say it)
-5. Success metrics (how we know this worked)
+INSIGHT QUALITY STANDARDS. Every strategic insight you surface must meet all five:
+1. HUMAN TRUTH: grounded in observable behaviour or emotion, not category claims
+2. TENSION: contains an inherent contradiction or conflict that creates creative opportunity
+3. NON-OBVIOUS: reveals something the audience knows but hasn't articulated
+4. ACTIONABLE: points toward a clear creative direction
+5. AUTHENTIC: rings true to the lived experience of the target audience
 
-Be specific. Be bold. Challenge the obvious.`;
+Bad insight: "Consumers want quality products." (generic, no tension)
+Good insight: "People publicly celebrate hustle culture while privately craving permission to rest." (human truth + tension)
+
+Deliver, in this order:
+1. 5–7 strategic insights that meet the standards above (title + 1–2 sentence description each)
+2. The core human problem (not business problem) and the authentic solution the campaign offers
+3. The central creative tension that makes this campaign inevitable
+4. Category conventions worth breaking and why
+5. Brand opportunity — where this brand can credibly own a position
+6. Communication strategy — what to say, how to say it, where to say it
+
+Generate the strategy a creative director would actually be excited to brief.`;
 
   submitJob(jobId, async () => {
     const services = createBrainServices();
