@@ -30,7 +30,18 @@ export interface MessageAnalysis {
   suppressionReason: string;
   activationKeywords: string[];
   escalationDetected: boolean;
+  queryMode: QueryMode;
 }
+
+/**
+ * How the user is framing their ask — shapes whether AIDEN holds taste
+ * or demonstrates range.
+ * - preference: "what's your favorite X", "what do you recommend", "best X" → hold taste
+ * - range: "name an X", "give me an X", "pick any X" → show variety from the category
+ * - generative: "write me a tagline", "give me a strategy" → full creative output
+ * - other: conversational, explanatory, analytical, etc. → default behaviour
+ */
+export type QueryMode = 'preference' | 'range' | 'generative' | 'other';
 
 // ── Phantom Types ──────────────────────────────────────────────────────────
 

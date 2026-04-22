@@ -49,6 +49,7 @@ import { PhantomContextBuilder } from './phantom-context.js';
 import { detectCollisions, buildCollisionContext } from './phantom-collision.js';
 import { detectEscalation, detectKill, detectSensitiveTopic, buildCreativeResetContext, buildEscalationContext, buildSensitiveBraveryContext } from './creative-reset.js';
 import { buildPhantomDeliveryInstructions, buildPrimeDirective, buildYesAndContext } from './prompt-strategies.js';
+import { getRangeMemoryStore, extractCategoryKeywords } from './range-memory.js';
 import { analyzeMessageComplexity } from './brevity-control.js';
 import { LLMAdapter, createPrimaryAdapter } from './llm-adapter.js';
 
@@ -119,6 +120,8 @@ export interface BrainInput {
   entropy?: number;
   /** Entropy seed to replay a specific phantom cluster. Auto-generated if omitted. */
   entropySeed?: number;
+  /** Recent range-mode answers for this tenant — injected as exclusion list for range queries. */
+  recentRangeAnswers?: string[];
 }
 
 // ── External Services (Dependency Injection) ────────────────────────────────
@@ -149,6 +152,37 @@ export interface PostResponseContext {
 
 // ── System prompt builder ───────────────────────────────────────────────────
 
+function buildQueryModeContext(
+  mode: 'preference' | 'range' | 'generative' | 'other',
+  recentRangeAnswers: string[] = [],
+): string {
+  if (mode === 'preference') {
+    return `QUERY MODE: PREFERENCE
+The user is asking for your favorite, your recommendation, or what you think is best. Answer with conviction. Defend your preference. You have taste — use it. Consistency across sessions is correct here; a creative director with a favorite pizza topping gives the same answer every time because they've earned that preference.`;
+  }
+  if (mode === 'range') {
+    const base = `QUERY MODE: RANGE
+The user is asking you to name, list, or give any example from a category — NOT for your preference. Demonstrate breadth of knowledge, not taste. A senior creative asked to "name a pizza topping" rattles off different answers across conversations to show they know the category.`;
+    if (recentRangeAnswers.length > 0) {
+      const list = recentRangeAnswers.map((a) => `"${a}"`).join(', ');
+      return `${base}
+
+RECENTLY USED for similar range queries — DO NOT REPEAT these:
+${list}
+
+Pick something genuinely different from the category. Range-display, not preference.`;
+    }
+    return `${base}
+
+Pull from the full range of the category, not the same go-to answer. Range-display, not preference.`;
+  }
+  if (mode === 'generative') {
+    return `QUERY MODE: GENERATIVE
+The user wants creative output — a tagline, concept, piece of writing, or strategic angle. Bring the full depth of your phantom personality. This is where your conviction and range combine into actual creative work. Push past obvious answers.`;
+  }
+  return '';
+}
+
 function buildFullSystemPrompt(opts: {
   analysis: MessageAnalysis;
   phantomContext: string;
@@ -162,10 +196,15 @@ function buildFullSystemPrompt(opts: {
   yesAndContext: string;
   ragContext: string;
   crossConversationContext: string;
+  recentRangeAnswers?: string[];
 }): string {
   const sections: string[] = [
     BASE_SYSTEM_PROMPT.replace('AIDEN', opts.colleagueName || 'AIDEN'),
   ];
+
+  // Query mode shapes whether AIDEN holds taste or demonstrates range
+  const queryModeBlock = buildQueryModeContext(opts.analysis.queryMode, opts.recentRangeAnswers ?? []);
+  if (queryModeBlock) sections.push(queryModeBlock);
 
   // Prime directive (conversation maturity driven)
   if (opts.primeDirective) sections.push(opts.primeDirective);
@@ -268,6 +307,7 @@ export async function processMessage(
           suppressionReason: '',
           activationKeywords: [],
           escalationDetected: false,
+          queryMode: 'other' as const,
         };
 
   const phantomPool =
@@ -278,6 +318,21 @@ export async function processMessage(
           agencyPhantoms: [] as AgencyPhantom[],
           packPhantoms: [] as PhantomPackItem[],
         };
+
+  // Range memory: for range queries, look up recent answers for this tenant
+  // matching the category keywords, so the brain can avoid repeating them
+  // across sessions (demonstrate breadth, not pick the same "interesting" default).
+  let recentRangeAnswers: string[] = input.recentRangeAnswers ?? [];
+  let rangeCategoryKeywords: string[] = [];
+  if (!input.recentRangeAnswers && analysis.queryMode === 'range') {
+    rangeCategoryKeywords = extractCategoryKeywords(message);
+    try {
+      recentRangeAnswers = await getRangeMemoryStore().getRecentAnswers(agencyId, rangeCategoryKeywords, 10);
+    } catch (e) {
+      console.error('[NuclearBrain] range memory lookup failed:', e);
+      recentRangeAnswers = [];
+    }
+  }
 
   // Creative reset detection
   const isEscalation = analysis.escalationDetected || detectEscalation(message);
@@ -378,6 +433,7 @@ export async function processMessage(
     yesAndContext,
     ragContext: '', // RAG wired in Phase 2 of the build plan
     crossConversationContext: '', // Cross-conversation wired in Phase 2
+    recentRangeAnswers,
   });
 
   // ── Phase 5: Classify thinking mode ─────────────────────────────────────
@@ -427,6 +483,16 @@ export async function processMessage(
   });
 
   // ── Phase 7: Post-response processing ──────────────────────────────────
+
+  // Persist range answer for cross-session memory (only when queryMode === 'range')
+  if (analysis.queryMode === 'range' && rangeCategoryKeywords.length > 0 && result.text) {
+    const cleanAnswer = result.text.trim().slice(0, 500);
+    if (cleanAnswer.length > 0 && cleanAnswer.length < 300) {
+      getRangeMemoryStore().save(agencyId, message, cleanAnswer, rangeCategoryKeywords).catch((e) => {
+        console.error('[NuclearBrain] range memory save failed:', e);
+      });
+    }
+  }
 
   if (services.onResponse) {
     services.onResponse({

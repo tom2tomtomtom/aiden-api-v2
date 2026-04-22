@@ -17,6 +17,7 @@ import type {
   MomentumDirection,
   ChallengeOpportunity,
   ConversationExchange,
+  QueryMode,
 } from '../types.js';
 import { config } from '../config/index.js';
 
@@ -35,7 +36,8 @@ const HAIKU_SYSTEM_PROMPT = `You are a message analyzer for a polymath AI intell
   "activation_keywords": ["10-15 keywords/phrases for phantom personality activation"],
   "temperature_adjustment": float between -0.3 and 0.2,
   "search_suppressed": true/false,
-  "suppression_reason": "casual_greeting|user_provided_data|brainstorming|hypothetical|creative_mode|"
+  "suppression_reason": "casual_greeting|user_provided_data|brainstorming|hypothetical|creative_mode|",
+  "query_mode": "preference|range|generative|other"
 }
 
 Energy levels:
@@ -62,6 +64,13 @@ Search suppression: true for casual greetings, user-provided data ("our data sho
 
 Temperature adjustment: -0.3 for urgent/focused/precise, -0.1 for low energy, 0.0 for medium, +0.1 for reflective/open, +0.2 for high energy/playful/creative.
 
+Query mode — how the user is framing their ask:
+- "preference": asking for a favorite, recommendation, or what you think is best ("what's your favorite X", "what do you recommend", "best X", "which would you pick"). Show consistent taste.
+- "range": asking to name, list, or give any example from a category ("name a X", "give me a X", "pick any X", "one word — a X"). Demonstrate breadth of knowledge, not preference.
+- "generative": asking for creative output like a tagline, strategy, concept, or writing ("write me", "give me a tagline", "draft a", "come up with").
+- "other": conversational, analytical, explanatory, or anything else.
+The distinction matters for "give me a pizza topping" (range — show variety) vs "what's your favorite pizza topping" (preference — consistent taste).
+
 Return ONLY the JSON object, no markdown fences or other text.`;
 
 // ── Default fallback ────────────────���────────────────────────────────────────
@@ -79,6 +88,7 @@ function defaultAnalysis(): MessageAnalysis {
     suppressionReason: '',
     activationKeywords: [],
     escalationDetected: false,
+    queryMode: 'other',
   };
 }
 
@@ -154,7 +164,14 @@ function parseHaikuResponse(raw: string): MessageAnalysis {
     suppressionReason: String(data.suppression_reason ?? ''),
     activationKeywords: keywords,
     escalationDetected: false,
+    queryMode: parseQueryMode(data.query_mode),
   };
+}
+
+function parseQueryMode(raw: unknown): QueryMode {
+  const v = String(raw ?? 'other').toLowerCase().trim();
+  if (v === 'preference' || v === 'range' || v === 'generative') return v;
+  return 'other';
 }
 
 // ── Analyzer class ───────────────────────────────────────────────────────────

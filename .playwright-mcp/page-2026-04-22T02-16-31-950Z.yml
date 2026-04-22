@@ -1,0 +1,270 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic:
+      - heading "Redbaez" [level=1]
+      - paragraph: AI Partnership for Creative Agencies
+      - generic:
+        - generic: Consulting
+        - generic: Platform
+        - generic: Intelligence API
+      - img "Mother London, Uncommon Creative Studio, Monigle, Alt-Shift, Emotive"
+    - generic [ref=e4]:
+      - generic [ref=e5]: Founder
+      - heading "Tom Hyde" [level=2] [ref=e6]
+      - list [ref=e7]:
+        - listitem [ref=e8]: DDB > Meta (9 years, creative agency partnerships APAC) > Redbaez (founded 2024)
+        - listitem [ref=e9]: 30+ years across advertising, brand strategy, and technology. Cannes Gold Cyber Lion. Campaigns for Microsoft, Diageo, Western Union across London, Seoul, Melbourne.
+        - listitem [ref=e10]: Based in Melbourne. Clients in London, New York, Denver, Sydney.
+      - generic [ref=e11]:
+        - text: "\"Tom has helped embed AI into our processes and culture, helping Monigle be on the leading edge in a fast-moving space.\""
+        - generic [ref=e12]: Gunnar Jacobs, Principal, Monigle
+      - paragraph [ref=e13]: One of the rare people who understands business strategy AND can build the technology.
+    - generic:
+      - generic: What We Offer
+      - heading "Three Product Streams" [level=2]
+      - generic:
+        - generic:
+          - 'heading "Stream 1: Consulting" [level=3]'
+          - paragraph: Embed AI into how your agency actually works. Four-month partnerships. 110+ custom tools built and deployed across five agencies.
+        - generic:
+          - 'heading "Stream 2: AIDEN Platform" [level=3]'
+          - paragraph: 10 AI tools for creative agencies. One token balance. Try any of them free at aiden.services.
+        - generic:
+          - 'heading "Stream 3: Brain API" [level=3]'
+          - paragraph: License creative intelligence for your platform. 400+ phantom memories. The prefrontal cortex for LLMs.
+    - generic:
+      - generic: "Stream 1: Consulting"
+      - heading "What We Do" [level=2]
+      - list:
+        - listitem: "4-month embedded partnership: Audit > Blueprint > Build > Compound"
+        - listitem: 110+ custom Claude skills built and deployed
+        - listitem: 40% production time reduction measured across five agencies
+      - paragraph: Not training. Not workshops with slides. Production tools your team uses every day.
+    - generic:
+      - generic: Case Study
+      - heading "Mother London" [level=2]
+      - paragraph: One of the world's most awarded agencies. 300+ people.
+      - list:
+        - listitem: 28 workstreams scoped across 6 departments
+        - listitem: "Brand compliance: 3 days to 3 hours"
+        - listitem: Production scoping automated across entire studio
+        - listitem: Custom Claude workflows for strategy, creative, production, account management
+        - listitem: SOW generator matching agency voice
+    - generic:
+      - generic: Case Study
+      - heading "Uncommon Creative Studio" [level=2]
+      - paragraph: London's most talked-about agency. BA "A British Original" creators. 223 people. 5 offices (London, New York, Stockholm).
+      - list:
+        - listitem:
+          - strong: "Commercial Finance Dashboard:"
+          - text: Python pipeline parsing 40+ Google Sheets fee files across 5 offices. Multi-currency (GBP/USD). Role, department, client, and monthly rollup views. Data quality intelligence layer with automated anomaly detection. Real-time sold vs allocated with variance tracking.
+        - listitem:
+          - strong: "Float API Integration:"
+          - text: Resource planning data reconciled against fee sheet data. Role normalisation across 50+ job titles. Office-level entity splitting.
+        - listitem:
+          - strong: "Claude Skills Rollout:"
+          - text: Custom skills for strategy, account management, and production teams. Competitor audit tools pulling live data from Meta, TikTok, Google, and LinkedIn ad libraries.
+        - listitem:
+          - strong: "Client Document Intelligence (RAG):"
+          - text: Multimodal document search across Uncommon's shared drives. Semantic retrieval with re-ranking and token budgeting.
+      - generic:
+        - text: "\"I'm in awe of the speed. The issues are getting smaller every day.\""
+        - generic: Sian Welsh, Group Director of Financial Operations, Uncommon
+    - generic:
+      - generic: Case Study
+      - heading "Alt-Shift" [level=2]
+      - paragraph: 43-person integrated PR and creative agency. Three Australian offices.
+      - list:
+        - listitem: "Opportunity intelligence: 8 signal types, daily 6am Slack alerts"
+        - listitem: "Culture Wire: real-time cultural trend detection"
+        - listitem: Coverage tracking automation (Streem to client tracker)
+        - listitem: Resource planning dashboard across 3 offices
+      - generic:
+        - generic:
+          - generic: 24-36
+          - generic: hours freed per week
+        - generic:
+          - generic: 1 FTE
+          - generic: equivalent through AI automation alone
+    - generic:
+      - generic: "Stream 2: AIDEN Platform"
+      - heading "AIDEN Platform" [level=2]
+      - paragraph: 10 AI tools for creative agencies. One token balance. Try any of them free.
+      - paragraph: aiden.services
+    - generic:
+      - generic: AIDEN Platform
+      - heading "The 10 Tools" [level=2]
+      - generic:
+        - generic:
+          - generic: AIDEN Colleague
+          - generic: Dedicated AI partner trained on your agency's culture
+          - generic: Enterprise, custom pricing
+        - generic:
+          - generic: AIDEN Chat
+          - generic: Strategic brainstorming with 400+ phantom perspectives
+          - generic: Included
+        - generic:
+          - generic: Synthetic Research
+          - generic: Pressure-test concepts with 8 AI personas
+          - generic: From $49/mo
+        - generic:
+          - generic: Brand Audit
+          - generic: Competitive intelligence across positioning, ads, digital in 15 minutes
+          - generic: Token-based
+        - generic:
+          - generic: Listen
+          - generic: Cultural intelligence across 10 platforms
+          - generic: From $99/mo
+        - generic:
+          - generic: Creative Pipeline
+          - generic: Generate social ad campaigns from a brief
+          - generic: Token-based
+        - generic:
+          - generic: refrAIm
+          - generic: Reformat one video for every platform in 30 seconds
+          - generic: Token-based
+        - generic:
+          - generic: Brief Sharpener
+          - generic: Paste a brief, scored on 7 dimensions, gaps surfaced
+          - generic: Token-based
+        - generic:
+          - generic: Pitch
+          - generic: 7-step campaign workflow from brief to deck
+          - generic: Token-based
+        - generic:
+          - generic: Teach
+          - generic: AI tutoring that adapts to your learning style
+          - generic: Token-based
+    - generic:
+      - generic: AIDEN Platform
+      - heading "How AIDEN Thinks" [level=2]
+      - generic: "\"AIDEN cultivates hundreds of phantom memories from an agency's own culture, their documents, team interviews, ways of working and their second brain. Each time you talk to it, dozens of phantoms fire from over 400 distinct memories the system believes it has experienced in its long advertising career. When two phantoms collide on the same brief, the system uses the tension instead of resolving it. The interesting work comes from the friction, not the variety.\""
+      - paragraph: LLMs are limbic. We added the prefrontal cortex.
+      - paragraph: Temperature adds randomness. This adds character.
+    - generic:
+      - generic: Case Study
+      - heading "Monigle" [level=2]
+      - paragraph: Leading US brand consultancy. Denver and New York.
+      - list:
+        - listitem: AI strategy embedded in processes and culture
+        - listitem: Claude workflows for the growth team
+        - listitem: "Custom PPTX skill for branded presentations: 70+ slide types, exact design system compliance"
+      - generic:
+        - text: "\"Tom has helped embed AI into our processes and culture, helping Monigle be on the leading edge in a fast-moving space.\""
+        - generic: Gunnar Jacobs, Principal, Monigle
+    - generic:
+      - generic: Data Intelligence
+      - heading "We build systems that make sense of messy data." [level=2]
+      - paragraph: Fee sheets, Float, CRMs, Drive, SharePoint. Agencies have data everywhere. None of it talks to each other. We fix that.
+      - list:
+        - listitem:
+          - strong: "Uncommon Finance Dashboard:"
+          - text: Python pipeline parsing 40+ fee sheets across 5 offices. Real-time sold vs allocated. Role, department, client, and monthly rollups. Data quality intelligence layer that catches errors before finance sees them.
+        - listitem:
+          - strong: "RAG Document Intelligence:"
+          - text: Client Document Intelligence system (Qdrant + Postgres). Multimodal. Ingests briefs, decks, research docs. Semantic search across your entire knowledge base. Built for Uncommon, reusable for any agency.
+        - listitem:
+          - strong: "Python Data Screening:"
+          - text: Automated data cleaning, validation, and reconciliation pipelines. Handles messy spreadsheets, API feeds, and legacy systems. Flags anomalies. Fixes what it can. Reports what it can't.
+        - listitem:
+          - strong: "Microsoft + Google:"
+          - text: We work with both stacks. Azure, SharePoint, Teams, M365 alongside Google Workspace, Drive, Sheets. Most agencies run a mix. So do we.
+    - generic:
+      - generic: "Stream 3: Brain API"
+      - heading "The Brain API" [level=2]
+      - paragraph: Your platform handles the interface. AIDEN handles the thinking.
+      - list:
+        - listitem: For creative tool companies whose products are wrappers on ChatGPT or Claude
+        - listitem: Plug AIDEN on top. Your output stops reading like generic AI.
+      - paragraph: The prefrontal cortex for LLMs.
+    - generic:
+      - generic: Brain API
+      - heading "What It Does" [level=2]
+      - list:
+        - listitem: 400+ phantom memories that fire on every request
+        - listitem: 6-layer activation scoring, collision detection, conviction tiers
+        - listitem: "Evolves through use: feedback loop, quality scoring, phantom alliances"
+        - listitem: "Sycophancy guardrail: structurally incapable of becoming a yes-machine"
+      - heading "Endpoints" [level=3]
+      - generic:
+        - generic: /chat
+        - generic: /generate/strategy
+        - generic: /generate/territories
+        - generic: /generate/big-idea
+        - generic: /generate/copy-suite
+        - generic: /enhance-copy
+    - generic:
+      - generic: Case Study
+      - heading "Springboards.ai" [level=2]
+      - paragraph: AI creativity platform. 120+ agency customers. $5M raised.
+      - list:
+        - listitem: CTO and CEO testing AIDEN Brain API integration
+        - listitem: Flint (their divergence model) + AIDEN Brain (creative judgement) = unique combination
+        - listitem: "Licensing model: flat annual fee + token cap"
+      - generic:
+        - text: "\"If it improves quality, then everyone wins.\""
+        - generic: Pip Bingemann, CEO, Springboards.ai
+    - generic:
+      - generic: Brain API
+      - heading "Integration" [level=2]
+      - generic:
+        - generic:
+          - heading "A) API Calls" [level=3]
+          - paragraph: Your platform calls AIDEN, gets enhanced output. Simplest path.
+        - generic:
+          - heading "B) Phantom Cultivation" [level=3]
+          - paragraph: We train phantoms on your customers' data. Deep integration.
+        - generic:
+          - heading "C) White-label" [level=3]
+          - paragraph: AIDEN Brain runs under your brand. Full licensing.
+      - paragraph: Python + TypeScript SDKs. Streaming + async. 15-minute integration.
+    - generic:
+      - generic: Results
+      - heading "The Numbers" [level=2]
+      - generic:
+        - generic:
+          - generic: "5"
+          - generic: enterprise clients across UK, US, Australia
+        - generic:
+          - generic: 110+
+          - generic: custom tools in production
+        - generic:
+          - generic: 400+
+          - generic: phantom memories
+        - generic:
+          - generic: 40%
+          - generic: average production time reduction
+        - generic:
+          - generic: "10"
+          - generic: SaaS products shipped and live
+        - generic:
+          - generic: "214"
+          - generic: tests, 94 files. Brain API ready for licensing.
+      - generic:
+        - text: "\"AIDEN brings something rare to creative partnerships. Genuine creative judgement and the confidence to defend it.\""
+        - generic: Agency CEO
+    - generic:
+      - heading "Three Ways to Work With Us" [level=2]
+      - generic:
+        - generic:
+          - generic: Option 1
+          - heading "Consulting" [level=3]
+          - paragraph: Embed AI in your agency. From GBP 68K year one. Four-month partnership, production tools from day one.
+        - generic:
+          - generic: Option 2
+          - heading "Platform" [level=3]
+          - paragraph: Try AIDEN tools free. 10 tokens on us. Start at aiden.services.
+        - generic:
+          - generic: Option 3
+          - heading "Brain API" [level=3]
+          - paragraph: License creative intelligence for your platform. Contact us for pricing.
+      - generic:
+        - link "Try AIDEN free":
+          - /url: https://aiden.services
+      - generic:
+        - paragraph: Tom Hyde | tomh@redbaez.com | +61 403 920 369
+        - paragraph: Chris Maples | chrism@redbaez.com | UK/EU
+  - generic [ref=e14]:
+    - button "Previous slide" [ref=e15] [cursor=pointer]: ←
+    - button "Next slide" [ref=e16] [cursor=pointer]: →
+  - generic [ref=e17]: 2 / 18
