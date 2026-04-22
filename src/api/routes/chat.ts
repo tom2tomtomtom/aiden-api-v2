@@ -26,6 +26,8 @@ const ChatRequestSchema = z.object({
   personality_mode: z.enum(['collaborator', 'challenger', 'collaborative']).optional(),
   campaign_id: z.string().optional(),
   stream: z.boolean().optional().default(false),
+  entropy: z.number().min(0).max(1).optional(),
+  entropy_seed: z.number().int().optional(),
 });
 
 type ChatRequest = z.infer<typeof ChatRequestSchema>;
@@ -62,6 +64,8 @@ router.post('/chat', async (req: Request, res: Response) => {
     agencyId: tenantId,
     personalityMode: (body.personality_mode || 'collaborator') as PersonalityMode,
     conversationHistory,
+    entropy: body.entropy,
+    entropySeed: body.entropy_seed,
   };
 
   const services = createBrainServices();
@@ -179,6 +183,8 @@ router.post('/chat', async (req: Request, res: Response) => {
           })),
           thinking_mode: response.metadata.thinkingMode,
           maturity_stage: response.metadata.maturity,
+          entropy_seed: response.metadata.entropySeed,
+          entropy: response.metadata.entropy,
         },
       });
     }

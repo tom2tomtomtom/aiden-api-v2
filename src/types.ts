@@ -185,6 +185,8 @@ export interface BrainMetadata {
   isEscalation: boolean;
   isSensitive: boolean;
   personalityMode: string;
+  entropy: number;
+  entropySeed: number;
 }
 
 // ── Personality Mode ───────────────────────────────────────────────────────

@@ -43,6 +43,7 @@ import {
   evaluateAgencyPhantoms,
   selectTopPhantoms,
   applyWorkspacePreferences,
+  perturbPhantomWeights,
 } from './phantom-activator.js';
 import { PhantomContextBuilder } from './phantom-context.js';
 import { detectCollisions, buildCollisionContext } from './phantom-collision.js';
@@ -113,6 +114,14 @@ export interface BrainInput {
     objectives?: string;
     toneNotes?: string;
   };
+  /**
+   * Entropy level for phantom weight perturbation.
+   * 0.0 = deterministic (compliance/repeatable), 0.5 = default creative variance,
+   * 1.0 = maximum exploration. Defaults to 0.5.
+   */
+  entropy?: number;
+  /** Entropy seed to replay a specific phantom cluster. Auto-generated if omitted. */
+  entropySeed?: number;
 }
 
 // ── External Services (Dependency Injection) ────────────────────────────────
@@ -280,8 +289,19 @@ export async function processMessage(
 
   // ── Phase 2: Phantom activation ─────────────────────────────────────────
 
+  // Session entropy: perturb base weights before scoring so different sessions
+  // activate different creative clusters from the same brief.
+  const entropy = Math.max(0, Math.min(1, input.entropy ?? 0.5));
+  const entropySeed = input.entropySeed ?? (Math.random() * 0xFFFFFFFF | 0);
+
+  // basePhantoms is a Map — perturb values and rebuild
+  const perturbedBaseArr = perturbPhantomWeights([...phantomPool.basePhantoms.values()], entropySeed, entropy);
+  const perturbedBase = new Map(perturbedBaseArr.map((p) => [p.shorthand, p])) as Map<string, typeof perturbedBaseArr[0]>;
+  const perturbedAgency = perturbPhantomWeights(phantomPool.agencyPhantoms ?? [], entropySeed, entropy);
+  const perturbedPack = perturbPhantomWeights(phantomPool.packPhantoms ?? [], entropySeed, entropy);
+
   const { activations: baseActivations, dynamics } = evaluatePhantoms(
-    phantomPool.basePhantoms,
+    perturbedBase,
     {
       message,
       conversationHistory,
@@ -292,8 +312,8 @@ export async function processMessage(
   );
 
   const agencyActivations = evaluateAgencyPhantoms(
-    phantomPool.agencyPhantoms,
-    phantomPool.packPhantoms,
+    perturbedAgency,
+    perturbedPack,
     analysis.activationKeywords,
     dynamics,
     message,
@@ -384,6 +404,22 @@ export async function processMessage(
   const baseTemp = 0.8;
   const adjustedTemp = Math.max(0.1, Math.min(1.1, baseTemp + analysis.temperatureAdjustment));
 
+  // Diagnostic logging (remove after diagnosis)
+  if (process.env.BRAIN_DEBUG === '1') {
+    console.log('\n══════════════════════════════════════');
+    console.log(`[BRAIN_DEBUG] Message: "${message}"`);
+    console.log(`[BRAIN_DEBUG] EntropySeed: ${entropySeed} | Entropy: ${entropy}`);
+    console.log(`[BRAIN_DEBUG] Temperature: ${adjustedTemp}`);
+    console.log(`[BRAIN_DEBUG] Thinking mode: ${thinkingMode.mode}`);
+    console.log(`[BRAIN_DEBUG] Top phantoms fired:`);
+    selectedPhantoms.slice(0, 10).forEach(({ phantom, score }) => {
+      console.log(`  • ${phantom.shorthand} (score: ${score.toFixed(2)}) — ${phantom.influence}`);
+    });
+    console.log(`[BRAIN_DEBUG] Conversation history: ${conversationHistory.length} exchanges`);
+    console.log(`[BRAIN_DEBUG] System prompt length: ${systemPrompt.length} chars`);
+    console.log('══════════════════════════════════════\n');
+  }
+
   // Call LLM
   const adapter = services.llmAdapter ?? createPrimaryAdapter();
   const result = await adapter.generateText({
@@ -425,6 +461,8 @@ export async function processMessage(
       isEscalation,
       isSensitive,
       personalityMode,
+      entropySeed,
+      entropy,
     },
   };
 }

@@ -360,16 +360,6 @@ export function evaluatePhantoms(
     });
   }
 
-  // Add controlled noise before ranking so the same prompt never produces identical
-  // phantom blends across separate sessions. ±0.6 shifts margins without overriding
-  // clear winners (a phantom at 10.0 stays dominant over one at 3.0).
-  for (const a of activations) {
-    if (a.score > 0) {
-      a.score += (Math.random() - 0.5) * 1.2;
-      if (a.score < 0) a.score = 0;
-    }
-  }
-
   // Sort by score descending
   activations.sort((a, b) => b.score - a.score);
 
@@ -585,14 +575,6 @@ export function mergeUserPhantoms(
     }
   }
 
-  // Final jitter pass: agency/pack phantoms also get noise before selection
-  for (const a of merged) {
-    if (a.score > 0) {
-      a.score += (Math.random() - 0.5) * 1.2;
-      if (a.score < 0) a.score = 0;
-    }
-  }
-
   // Sort by score descending
   merged.sort((a, b) => b.score - a.score);
   return merged;
@@ -742,4 +724,38 @@ export function scorePhantomSixLayer(input: SixLayerInput): number {
   score *= phantom.weight / 3.0;
 
   return score;
+}
+
+// ── Session Entropy ───────────────────────────────────────────────────────────
+
+/**
+ * Perturb phantom base weights before scoring so different sessions activate
+ * different creative clusters from the same brief.
+ *
+ * entropy 0.0 = fully deterministic (compliance/repeatable work)
+ * entropy 0.5 = default creative variance (different angles each run)
+ * entropy 1.0 = maximum exploration (full possibility space)
+ *
+ * Uses a session seed so the perturbation is reproducible: store the returned
+ * seed in response metadata and clients can replay a specific creative cluster.
+ */
+export function perturbPhantomWeights<T extends PhantomLike>(
+  phantoms: T[],
+  seed: number,
+  entropy: number,
+): T[] {
+  if (entropy === 0 || phantoms.length === 0) return phantoms;
+
+  return phantoms.map((p) => {
+    // Deterministic per-phantom hash from seed + shorthand
+    let h = seed;
+    const key = p.shorthand ?? '';
+    for (let i = 0; i < key.length; i++) {
+      h = (Math.imul(h, 31) + key.charCodeAt(i)) | 0;
+    }
+    // Normalise to -1..+1, scale by entropy factor
+    const normalized = (Math.abs(h) % 1000) / 500.0 - 1;
+    const perturbed = Math.max(0.1, p.weight + normalized * entropy * p.weight);
+    return { ...p, weight: perturbed };
+  });
 }
