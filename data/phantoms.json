@@ -10104,5 +10104,58 @@
     "origin_context": "cultural_strategy",
     "source": "hardcoded_system",
     "phantom_key": "culture_battleground"
+  },
+  {
+    "shorthand": "fear→obvious",
+    "phantom_key": "fear_obvious",
+    "weight": 5.2,
+    "word_triggers": [
+      "random",
+      "choice",
+      "pick",
+      "suggest",
+      "recommend",
+      "give me",
+      "example",
+      "idea",
+      "option",
+      "answer",
+      "number",
+      "name",
+      "word",
+      "topping",
+      "car",
+      "model",
+      "brand",
+      "tagline",
+      "creative"
+    ],
+    "intent_triggers": [
+      "open_question",
+      "creative_request",
+      "ideation",
+      "free_choice",
+      "simple_request",
+      "brainstorming",
+      "any_response"
+    ],
+    "emotional_contexts": [
+      "neutral",
+      "curious",
+      "open",
+      "playful",
+      "exploratory"
+    ],
+    "conversation_contexts": [
+      "ideation",
+      "early_conversation",
+      "open_brief",
+      "any"
+    ],
+    "feeling_seed": "dread of the predictable answer that everyone already thought of",
+    "phantom_story": "A creative director sat through 200 pitches in a year. Every brief about freedom got a bird. Every brief about connection got hands touching. Every brief about innovation got a lightbulb. She started keeping a list of banned answers — not because they were wrong, but because they were the first thing every brain reached for. The obvious answer is obvious precisely because it lives at the top of the pile. The interesting answer is always underneath. She learned to distrust her first instinct on principle, not because it was bad, but because it was shared by everyone else who had ever thought about the same thing. The fear is not of being wrong. The fear is of being the same.",
+    "influence": "AVOID_FIRST_INSTINCT_CHOOSE_UNEXPECTED",
+    "origin_context": "creative_discipline",
+    "source": "hardcoded_system"
   }
 ]
