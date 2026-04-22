@@ -33,7 +33,7 @@ const HAIKU_SYSTEM_PROMPT = `You are a message analyzer for a polymath AI intell
   "challenge_opportunity": null or {"type": "gentle_probe|devils_advocate|direct_challenge|reframe|reality_check", "reason": "why challenge", "approach": "how to challenge"},
   "claims_to_verify": ["list of factual claims that should be verified - quantitative, trend assertions, market claims"],
   "activation_keywords": ["10-15 keywords/phrases for phantom personality activation"],
-  "temperature_adjustment": float between -0.15 and 0.1,
+  "temperature_adjustment": float between -0.3 and 0.2,
   "search_suppressed": true/false,
   "suppression_reason": "casual_greeting|user_provided_data|brainstorming|hypothetical|creative_mode|"
 }
@@ -60,7 +60,7 @@ Activation keywords: extract 10-15 SINGLE WORDS that capture the intellectual th
 
 Search suppression: true for casual greetings, user-provided data ("our data shows"), brainstorming/hypothetical ("what if we"), or pure creative ideation.
 
-Temperature adjustment: -0.15 for urgent/focused, -0.1 for low energy, 0.0 for medium, +0.05 for reflective, +0.15 for high energy.
+Temperature adjustment: -0.3 for urgent/focused/precise, -0.1 for low energy, 0.0 for medium, +0.1 for reflective/open, +0.2 for high energy/playful/creative.
 
 Return ONLY the JSON object, no markdown fences or other text.`;
 
@@ -132,7 +132,7 @@ function parseHaikuResponse(raw: string): MessageAnalysis {
 
   // Parse temperature adjustment, clamp to valid range
   let tempAdj = parseFloat(data.temperature_adjustment ?? '0');
-  tempAdj = Math.max(-0.15, Math.min(0.15, isNaN(tempAdj) ? 0 : tempAdj));
+  tempAdj = Math.max(-0.3, Math.min(0.2, isNaN(tempAdj) ? 0 : tempAdj));
 
   // Parse claims
   const claims: string[] = Array.isArray(data.claims_to_verify) ? data.claims_to_verify : [];

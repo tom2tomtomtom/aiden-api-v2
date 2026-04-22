@@ -378,8 +378,8 @@ export async function processMessage(
   llmMessages.push({ role: 'user', content: message });
 
   // Temperature adjustment
-  const baseTemp = 0.7;
-  const adjustedTemp = Math.max(0.1, Math.min(1.0, baseTemp + analysis.temperatureAdjustment));
+  const baseTemp = 0.8;
+  const adjustedTemp = Math.max(0.1, Math.min(1.1, baseTemp + analysis.temperatureAdjustment));
 
   // Call LLM
   const adapter = services.llmAdapter ?? createPrimaryAdapter();

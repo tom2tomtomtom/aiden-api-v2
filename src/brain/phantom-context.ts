@@ -99,7 +99,21 @@ export class PhantomContextBuilder {
         }
       }
     } else {
-      // Compressed: normal mode (list stances + influences, skip stories)
+      // Compressed: normal mode — stances + influences summarised, but high-weight
+      // phantoms (≥5.0) always get their full story included so their instruction
+      // actually reaches the model rather than just appearing as a label.
+      const HIGH_WEIGHT_THRESHOLD = 5.0;
+
+      const highWeight = [...creativePhantoms, ...emotionalPhantoms]
+        .filter(({ score, phantom }) => score >= HIGH_WEIGHT_THRESHOLD || ((phantom as unknown as { weight?: number }).weight ?? 0) >= HIGH_WEIGHT_THRESHOLD);
+
+      if (highWeight.length) {
+        contextLines.push('ALWAYS-ACTIVE PRINCIPLES:');
+        for (const { phantom } of highWeight) {
+          contextLines.push(`- ${phantom.feelingSeed.toUpperCase()}: ${phantom.phantomStory}`);
+        }
+      }
+
       const stances = creativePhantoms.map(({ phantom }) => phantom.feelingSeed).join(', ');
       const emotionalLens = emotionalPhantoms.map(({ phantom }) => phantom.feelingSeed).join(', ');
       const influences = [...creativePhantoms, ...emotionalPhantoms]
