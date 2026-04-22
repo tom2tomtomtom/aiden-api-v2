@@ -29,7 +29,6 @@ export const config = {
   rateLimitPerDay: parseInt(process.env.RATE_LIMIT_REQUESTS_PER_DAY || '10000', 10),
 
   // Brain defaults
-  maxPhantoms: 12,
   phantomCacheTtlMs: 5 * 60 * 1000,
   haikuTimeoutMs: 5000,
   ragTokenBudget: 2000,

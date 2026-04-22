@@ -54,7 +54,7 @@ import { LLMAdapter, createPrimaryAdapter } from './llm-adapter.js';
 // ── Default config ──────────────────────────────────────────────────────────
 
 const DEFAULT_CONFIG: NuclearBrainConfig = {
-  maxPhantoms: 12,
+  maxPhantoms: Infinity,
   enableCollisionDetection: true,
   enableAutonomousBirth: true,
   enableConceptTracking: true,

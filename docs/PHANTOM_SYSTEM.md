@@ -24,13 +24,11 @@ A phantom is a personality fragment. A small, persistent unit of creative identi
 - **Influence**: the behavioral instruction ("DEFEND_QUALITY_CHOICES")
 - **Weight**: how strongly this phantom expresses (0.0 to 10.0, default 3.0)
 
-### Three Phantom Pools
+### Two Phantom Pools
 
-1. **Base Phantoms** (400+): Hardcoded creative instincts. Every AIDEN instance shares these. They encode advertising wisdom, creative courage, strategic thinking.
+1. **System Phantoms** (396): The canonical AIDEN library. Shared by every licensee, stored in the `system_phantoms` table, managed centrally. Every licensee gets the full library — it's AIDEN or nothing.
 
-2. **Agency Phantoms**: Cultivated from an agency's own culture. Documents, interviews, creative manifestos. These are what make one agency's AIDEN different from another's.
-
-3. **Pack Phantoms**: Shared collections (e.g., "The Challenger Brand Pack"). Scored at 0.8x weight discount because they are not earned from the agency's own work.
+2. **Agency Phantoms**: Optional per-tenant phantoms cultivated from a licensee's own culture. Stored in `agency_phantoms`. The cultivation surface (document ingestion, interviews) is not currently exposed on the public API; licensees operate on the shared library.
 
 ### The 6-Layer Activation Scoring
 
@@ -45,7 +43,7 @@ When a user sends a message, phantoms compete for activation:
 | 5 | Semantic Intent | (Future: embedding-based) |
 | 6 | Semantic Boost | (Future: embedding-based) |
 
-The top 12 scoring phantoms activate and shape the response.
+Every phantom with a positive score activates and shapes the response — no hard cap.
 
 ### Conversation Dynamics Curve
 

@@ -265,47 +265,6 @@ GET /api/v1/phantoms/stats
 
 Returns activation stats, quality scores, and alliance data.
 
-### Cultivate from Documents
-
-```bash
-POST /api/v1/phantoms/cultivate
-```
-
-```bash
-curl -X POST https://brain.aiden.services/api/v1/phantoms/cultivate \
-  -H "X-API-Key: aiden_sk_..." \
-  -H "Content-Type: application/json" \
-  -d '{
-    "documents": [
-      {"title": "Agency manifesto", "content": "We believe in the power of ideas that make people uncomfortable..."}
-    ]
-  }'
-```
-
-### Interview Responses
-
-```bash
-POST /api/v1/phantoms/interview
-```
-
-### Taste Test (Cold Start)
-
-```bash
-POST /api/v1/taste-test
-```
-
-```bash
-curl -X POST https://brain.aiden.services/api/v1/taste-test \
-  -H "X-API-Key: aiden_sk_..." \
-  -H "Content-Type: application/json" \
-  -d '{
-    "answers": [
-      {"question_id": 1, "choice": "a", "strength": 4},
-      {"question_id": 2, "choice": "b", "strength": 3}
-    ]
-  }'
-```
-
 ---
 
 ## Usage

@@ -278,12 +278,3 @@ for alliance in stats.alliances:
     print(f"  {alliance['phantom_a']} + {alliance['phantom_b']}: strength {alliance['strength']}")
 ```
 
-### Cultivate from Documents
-
-```python
-brain._request("POST", "/phantoms/cultivate", {
-    "documents": [
-        {"title": "Agency manifesto", "content": "We believe in ideas that make people uncomfortable..."}
-    ]
-})
-```
