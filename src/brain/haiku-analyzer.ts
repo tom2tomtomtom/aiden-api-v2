@@ -232,7 +232,14 @@ export class HaikuAnalyzer {
       const contextBlock =
         contextLines.length > 0 ? contextLines.join('\n') : '(no prior conversation)';
 
-      const userPrompt = `Conversation context:\n${contextBlock}\n\nCurrent user message:\n${message}`;
+      // Truncate large messages (e.g. system-injected strategy dumps) to keep Haiku under timeout.
+      const MAX_MESSAGE_CHARS = 2000;
+      const truncatedMessage =
+        message.length > MAX_MESSAGE_CHARS
+          ? `${message.slice(0, MAX_MESSAGE_CHARS)}\n[...truncated ${message.length - MAX_MESSAGE_CHARS} chars]`
+          : message;
+
+      const userPrompt = `Conversation context:\n${contextBlock}\n\nCurrent user message:\n${truncatedMessage}`;
 
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), this.timeoutMs);
@@ -265,7 +272,12 @@ export class HaikuAnalyzer {
         clearTimeout(timeout);
       }
     } catch (error) {
-      if (error instanceof Error && error.name === 'AbortError') {
+      const isAbort =
+        error instanceof Error &&
+        (error.name === 'AbortError' ||
+          error.name === 'APIUserAbortError' ||
+          error.message.includes('aborted'));
+      if (isAbort) {
         console.warn(`[HaikuAnalyzer] Timed out (>${this.timeoutMs}ms), using defaults`);
       } else {
         console.warn(`[HaikuAnalyzer] Error: ${error}, using defaults`);
