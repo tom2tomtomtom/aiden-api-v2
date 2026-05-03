@@ -12,11 +12,17 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
+import { createOpenAI, type OpenAIProvider } from '@ai-sdk/openai';
+import {
+  generateText as generateAIText,
+  streamText as streamAIText,
+  type CoreMessage,
+} from 'ai';
 import { config } from '../config/index.js';
 
 // ── Provider configuration ───────────────────────────────────────────────────
 
-export type LLMProvider = 'anthropic' | 'openrouter';
+export type LLMProvider = 'anthropic' | 'openrouter' | 'openai';
 
 export interface LLMModelConfig {
   provider: LLMProvider;
@@ -36,15 +42,15 @@ export const MODEL_CONFIGS = {
   },
   /** Primary conversation model (Claude Sonnet via Anthropic) */
   primary: {
-    provider: 'anthropic' as const,
-    modelId: config.mainModel,
+    provider: config.llmProvider,
+    modelId: config.llmProvider === 'openai' ? config.openaiModel : config.mainModel,
     maxOutputTokens: 4096,
     temperature: 0.7,
   },
   /** Deep thinking model for complex tasks */
   deep: {
-    provider: 'anthropic' as const,
-    modelId: config.mainModel,
+    provider: config.llmProvider,
+    modelId: config.llmProvider === 'openai' ? config.openaiModel : config.mainModel,
     maxOutputTokens: 8192,
     temperature: 0.5,
   },
@@ -63,6 +69,7 @@ export class LLMAdapter {
   private fallbackConfig?: LLMModelConfig;
   private anthropicClient: Anthropic | null = null;
   private openRouterClient: Anthropic | null = null;
+  private openAIProvider: OpenAIProvider | null = null;
 
   constructor(primaryConfig: LLMModelConfig, fallbackConfig?: LLMModelConfig) {
     this.primaryConfig = primaryConfig;
@@ -88,7 +95,20 @@ export class LLMAdapter {
     return this.openRouterClient;
   }
 
-  private getClientForProvider(provider: LLMProvider): Anthropic {
+  private getOpenAIProvider(): OpenAIProvider {
+    if (!config.openaiApiKey) {
+      throw new Error('OPENAI_API_KEY is required when using the OpenAI provider');
+    }
+
+    if (!this.openAIProvider) {
+      this.openAIProvider = createOpenAI({
+        apiKey: config.openaiApiKey,
+      });
+    }
+    return this.openAIProvider;
+  }
+
+  private getAnthropicCompatibleClient(provider: Exclude<LLMProvider, 'openai'>): Anthropic {
     switch (provider) {
       case 'anthropic':
         return this.getAnthropicClient();
@@ -138,7 +158,24 @@ export class LLMAdapter {
     temperature?: number;
   }): AsyncGenerator<string, void, unknown> {
     const callConfig = this.primaryConfig;
-    const client = this.getClientForProvider(callConfig.provider);
+
+    if (callConfig.provider === 'openai') {
+      const openai = this.getOpenAIProvider();
+      const stream = streamAIText({
+        model: openai(callConfig.modelId),
+        maxTokens: options.maxOutputTokens ?? callConfig.maxOutputTokens ?? 4096,
+        temperature: options.temperature ?? callConfig.temperature ?? 0.7,
+        system: options.system,
+        messages: options.messages as CoreMessage[],
+      });
+
+      for await (const text of stream.textStream) {
+        yield text;
+      }
+      return;
+    }
+
+    const client = this.getAnthropicCompatibleClient(callConfig.provider);
 
     const stream = client.messages.stream({
       model: callConfig.modelId,
@@ -165,11 +202,15 @@ export class LLMAdapter {
       temperature?: number;
     },
   ): Promise<{ text: string; usage?: { promptTokens: number; completionTokens: number } }> {
-    const client = this.getClientForProvider(providerConfig.provider);
-
     // Build messages array
     const messages: Array<{ role: 'user' | 'assistant'; content: string }> =
       options.messages ? [...options.messages] : [{ role: 'user', content: options.prompt }];
+
+    if (providerConfig.provider === 'openai') {
+      return await this.callOpenAIProvider(providerConfig, options, messages);
+    }
+
+    const client = this.getAnthropicCompatibleClient(providerConfig.provider);
 
     // If we have history messages but also a prompt, ensure the prompt is the last user message
     if (options.messages && options.messages.length > 0) {
@@ -196,6 +237,37 @@ export class LLMAdapter {
       usage: {
         promptTokens: response.usage.input_tokens,
         completionTokens: response.usage.output_tokens,
+      },
+    };
+  }
+
+  private async callOpenAIProvider(
+    providerConfig: LLMModelConfig,
+    options: {
+      system?: string;
+      prompt: string;
+      messages?: Array<{ role: 'user' | 'assistant'; content: string }>;
+      maxOutputTokens?: number;
+      temperature?: number;
+    },
+    messages: Array<{ role: 'user' | 'assistant'; content: string }>,
+  ): Promise<{ text: string; usage?: { promptTokens: number; completionTokens: number } }> {
+    const openai = this.getOpenAIProvider();
+    const prompt = options.messages ? { messages: messages as CoreMessage[] } : { prompt: options.prompt };
+
+    const response = await generateAIText({
+      model: openai(providerConfig.modelId),
+      maxTokens: options.maxOutputTokens ?? providerConfig.maxOutputTokens ?? 4096,
+      temperature: options.temperature ?? providerConfig.temperature ?? 0.7,
+      system: options.system,
+      ...prompt,
+    });
+
+    return {
+      text: response.text,
+      usage: {
+        promptTokens: response.usage.promptTokens,
+        completionTokens: response.usage.completionTokens,
       },
     };
   }

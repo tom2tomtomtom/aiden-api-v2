@@ -2,15 +2,27 @@
  * Configuration - Environment + Constants
  */
 
+export type PrimaryLLMProvider = 'anthropic' | 'openai';
+
+function parsePrimaryLLMProvider(raw: string | undefined): PrimaryLLMProvider {
+  if (raw === 'openai' || raw === 'anthropic') {
+    return raw;
+  }
+  return 'anthropic';
+}
+
 export const config = {
   // Server
   port: parseInt(process.env.PORT || '3000', 10),
   nodeEnv: process.env.NODE_ENV || 'development',
 
   // LLM
+  llmProvider: parsePrimaryLLMProvider(process.env.AIDEN_LLM_PROVIDER),
   anthropicApiKey: process.env.ANTHROPIC_API_KEY || '',
+  openaiApiKey: process.env.OPENAI_API_KEY || '',
   openRouterApiKey: process.env.OPENROUTER_API_KEY || '',
   mainModel: process.env.AIDEN_MAIN_MODEL || 'claude-sonnet-4-20250514',
+  openaiModel: process.env.OPENAI_MODEL || 'gpt-5.4',
   fastModel: process.env.AIDEN_FAST_MODEL || 'claude-haiku-4-5-20251001',
 
   // Database
