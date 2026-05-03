@@ -209,8 +209,25 @@ Runs a guided pipeline: brief > strategy > territories > big idea > copy suite.
 curl -X POST https://brain.aiden.services/api/v1/workflow \
   -H "X-API-Key: aiden_sk_..." \
   -H "Content-Type: application/json" \
-  -d '{"brief": "Launch a new energy drink targeting extreme sports athletes"}'
+  -d '{"message": "Launch a new energy drink targeting extreme sports athletes"}'
 ```
+
+Continue the same session with:
+
+```bash
+POST /api/v1/workflow/{session_id}
+```
+
+Fetch the current state and locked outputs with:
+
+```bash
+GET /api/v1/workflow/{session_id}
+```
+
+The state response includes `brief_data`, `strategy`, `territories`,
+`selected_territory`, `big_ideas`, `selected_big_idea`, `copy_suite`, and
+`selected_formats` so downstream systems can render from Brain-approved work
+without re-strategising.
 
 ---
 

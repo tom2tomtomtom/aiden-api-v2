@@ -9,10 +9,33 @@
 
 import { Router, type Request, type Response } from 'express';
 import { z } from 'zod';
-import { sessionStore } from '../workflow/session.js';
+import { sessionStore, type WorkflowSession } from '../workflow/session.js';
 import { handleWorkflowMessage } from '../workflow/orchestrator.js';
 
 const router = Router();
+
+export function serializeWorkflowSession(session: WorkflowSession) {
+  return {
+    session_id: session.id,
+    step: session.step,
+    campaign_id: session.campaign_id,
+    brief_data: session.brief_data,
+    strategy: session.strategy,
+    territories: session.territories,
+    selected_territory: session.selected_territory,
+    big_ideas: session.big_ideas,
+    selected_big_idea: session.selected_big_idea,
+    copy_suite: session.copy_suite,
+    selected_formats: session.selected_formats,
+    has_strategy: !!session.strategy,
+    has_territories: !!session.territories,
+    has_big_ideas: !!session.big_ideas,
+    has_copy_suite: !!session.copy_suite,
+    active_job_id: session.active_job_id,
+    created_at: session.created_at,
+    updated_at: session.updated_at,
+  };
+}
 
 const WorkflowMessageSchema = z.object({
   message: z.string().min(1, 'Message is required'),
@@ -99,21 +122,7 @@ router.get('/workflow/:session_id', async (req: Request, res: Response) => {
     return;
   }
 
-  res.json({
-    success: true,
-    data: {
-      session_id: session.id,
-      step: session.step,
-      campaign_id: session.campaign_id,
-      has_strategy: !!session.strategy,
-      has_territories: !!session.territories,
-      has_big_ideas: !!session.big_ideas,
-      has_copy_suite: !!session.copy_suite,
-      active_job_id: session.active_job_id,
-      created_at: session.created_at,
-      updated_at: session.updated_at,
-    },
-  });
+  res.json({ success: true, data: serializeWorkflowSession(session) });
 });
 
 // ── Delete session ───────────────────────────────────────────────────────────
