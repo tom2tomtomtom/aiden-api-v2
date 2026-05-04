@@ -12,9 +12,11 @@ function makeSession(overrides: Partial<WorkflowSession> = {}): WorkflowSession 
     brief_data: { raw_brief: 'Launch the bag.' },
     strategy: 'Position around practical confidence.',
     territories: '1. Quiet authority\n2. Useful rebellion',
-    selected_territory: 'Territory 1',
+    selected_territory: 'Quiet authority',
+    selected_territory_index: 1,
     big_ideas: '1. Built for the day that actually happens.',
-    selected_big_idea: 'Big Idea 1',
+    selected_big_idea: 'Built for the day that actually happens.',
+    selected_big_idea_index: 1,
     copy_suite: 'Headline: Carries the whole day.\nCTA: Shop now.',
     selected_formats: ['social'],
     active_job_id: null,
@@ -31,8 +33,10 @@ describe('Workflow route serialization', () => {
 
     expect(data.has_copy_suite).toBe(true);
     expect(data.strategy).toBe('Position around practical confidence.');
-    expect(data.selected_territory).toBe('Territory 1');
-    expect(data.selected_big_idea).toBe('Big Idea 1');
+    expect(data.selected_territory).toBe('Quiet authority');
+    expect(data.selected_territory_index).toBe(1);
+    expect(data.selected_big_idea).toBe('Built for the day that actually happens.');
+    expect(data.selected_big_idea_index).toBe(1);
     expect(data.copy_suite).toContain('Headline: Carries the whole day.');
     expect(data.brief_data).toEqual({ raw_brief: 'Launch the bag.' });
   });

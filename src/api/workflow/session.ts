@@ -48,8 +48,10 @@ export interface WorkflowSession {
   strategy: string | null;
   territories: string | null;
   selected_territory: string | null;
+  selected_territory_index?: number | null;
   big_ideas: string | null;
   selected_big_idea: string | null;
+  selected_big_idea_index?: number | null;
   copy_suite: string | null;
   selected_formats: string[];
   active_job_id: string | null;
@@ -77,8 +79,10 @@ export const sessionStore = {
       strategy: null,
       territories: null,
       selected_territory: null,
+      selected_territory_index: null,
       big_ideas: null,
       selected_big_idea: null,
+      selected_big_idea_index: null,
       copy_suite: null,
       selected_formats: ['social', 'youtube_ads'],
       active_job_id: null,

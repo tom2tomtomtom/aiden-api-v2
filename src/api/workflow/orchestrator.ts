@@ -102,8 +102,10 @@ function handleReset(session: WorkflowSession): WorkflowResponse {
   session.strategy = null;
   session.territories = null;
   session.selected_territory = null;
+  session.selected_territory_index = null;
   session.big_ideas = null;
   session.selected_big_idea = null;
+  session.selected_big_idea_index = null;
   session.copy_suite = null;
   session.active_job_id = null;
   session.messages = [];
@@ -183,7 +185,8 @@ function handleSelect(session: WorkflowSession, message: string): WorkflowRespon
   }
 
   if (session.step === WorkflowStep.TERRITORIES_READY) {
-    session.selected_territory = `Territory ${selection}`;
+    session.selected_territory = extractNumberedChoice(session.territories, selection) ?? `Territory ${selection}`;
+    session.selected_territory_index = selection;
     session.step = WorkflowStep.TERRITORY_SELECTED;
     return {
       session_id: session.id,
@@ -193,7 +196,8 @@ function handleSelect(session: WorkflowSession, message: string): WorkflowRespon
   }
 
   if (session.step === WorkflowStep.BIG_IDEA_READY) {
-    session.selected_big_idea = `Big Idea ${selection}`;
+    session.selected_big_idea = extractNumberedChoice(session.big_ideas, selection) ?? `Big Idea ${selection}`;
+    session.selected_big_idea_index = selection;
     session.step = WorkflowStep.BIG_IDEA_SELECTED;
     return {
       session_id: session.id,
@@ -267,7 +271,7 @@ async function handleAdvance(session: WorkflowSession): Promise<WorkflowResponse
       submitJob(jobId, async () => {
         const response = await processMessage(
           {
-            message: `Generate 3 big ideas for territory: ${session.selected_territory}\nStrategy: ${session.strategy}`,
+            message: buildBigIdeaPrompt(session),
             conversationId: session.campaign_id,
             agencyId: tenantId,
             personalityMode: 'collaborator',
@@ -295,7 +299,7 @@ async function handleAdvance(session: WorkflowSession): Promise<WorkflowResponse
       submitJob(jobId, async () => {
         const response = await processMessage(
           {
-            message: `Generate a copy suite for: ${session.selected_big_idea}\nFormats: ${session.selected_formats.join(', ')}`,
+            message: buildCopySuitePrompt(session),
             conversationId: session.campaign_id,
             agencyId: tenantId,
             personalityMode: 'collaborator',
@@ -334,6 +338,76 @@ async function handleAdvance(session: WorkflowSession): Promise<WorkflowResponse
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
+
+function briefText(session: WorkflowSession): string {
+  if (!session.brief_data) return '';
+  const raw = session.brief_data.raw_brief;
+  if (typeof raw === 'string') return raw;
+  return JSON.stringify(session.brief_data);
+}
+
+function buildBigIdeaPrompt(session: WorkflowSession): string {
+  return [
+    'Generate 3 big ideas for the selected territory.',
+    `Brief: ${briefText(session)}`,
+    `Strategy: ${session.strategy || ''}`,
+    `Selected territory: ${session.selected_territory || ''}`,
+    session.territories ? `All territories considered: ${session.territories}` : '',
+    'Keep the ideas specific to the brand, audience, product, and campaign objective in the brief.',
+  ].filter(Boolean).join('\n');
+}
+
+function buildCopySuitePrompt(session: WorkflowSession): string {
+  return [
+    'Generate a copy suite for the selected big idea.',
+    `Brief: ${briefText(session)}`,
+    `Strategy: ${session.strategy || ''}`,
+    `Selected territory: ${session.selected_territory || ''}`,
+    `Selected big idea: ${session.selected_big_idea || ''}`,
+    session.big_ideas ? `All big ideas considered: ${session.big_ideas}` : '',
+    `Formats: ${session.selected_formats.join(', ')}`,
+    'Write copy that belongs to the selected idea and can be used directly in client-facing ad executions.',
+  ].filter(Boolean).join('\n');
+}
+
+function numberedChoiceMatch(line: string): RegExpMatchArray | null {
+  return line.match(/^\s*(?:#{1,6}\s*)?(?:[-*]\s*)?(?:\*\*)?(?:(?:option|route|territory|big idea|idea)\s*)?(\d+)\s*[\).:\-]\s*(.*)$/i);
+}
+
+function cleanChoiceText(text: string): string {
+  return text
+    .replace(/\*\*/g, '')
+    .replace(/^\s*[-*]\s*/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractNumberedChoice(source: string | null, selection: number): string | null {
+  if (!source) return null;
+  const lines = source.split(/\r?\n/);
+  let start = -1;
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const match = numberedChoiceMatch(lines[i] || '');
+    if (match && Number(match[1]) === selection) {
+      start = i;
+      break;
+    }
+  }
+
+  if (start === -1) return null;
+
+  const selected: string[] = [];
+  for (let i = start; i < lines.length; i += 1) {
+    const line = lines[i] || '';
+    const match = numberedChoiceMatch(line);
+    if (i !== start && match) break;
+    selected.push(i === start && match ? match[2] || '' : line);
+  }
+
+  const text = cleanChoiceText(selected.join('\n'));
+  return text || null;
+}
 
 async function checkAndAdvance(session: WorkflowSession): Promise<void> {
   if (!session.active_job_id) return;
