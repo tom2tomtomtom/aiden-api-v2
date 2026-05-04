@@ -354,19 +354,35 @@ function buildBigIdeaPrompt(session: WorkflowSession): string {
     `Selected territory: ${session.selected_territory || ''}`,
     session.territories ? `All territories considered: ${session.territories}` : '',
     'Keep the ideas specific to the brand, audience, product, and campaign objective in the brief.',
+    'No preamble. No next-step offer. No "if you want". No recap of hidden working.',
+    'Use exactly 3 numbered ideas. Keep each idea under 120 words.',
+    'For each idea include: name, one-line idea, why it fits, likely visual behaviour.',
   ].filter(Boolean).join('\n');
 }
 
 function buildCopySuitePrompt(session: WorkflowSession): string {
   return [
-    'Generate a copy suite for the selected big idea.',
+    'Generate the copy handoff for the selected big idea.',
     `Brief: ${briefText(session)}`,
     `Strategy: ${session.strategy || ''}`,
     `Selected territory: ${session.selected_territory || ''}`,
     `Selected big idea: ${session.selected_big_idea || ''}`,
-    session.big_ideas ? `All big ideas considered: ${session.big_ideas}` : '',
     `Formats: ${session.selected_formats.join(', ')}`,
     'Write copy that belongs to the selected idea and can be used directly in client-facing ad executions.',
+    'Do not return a full copy deck, channel matrix, carousel library, YouTube suite, packaging suite, or optional next steps.',
+    'Return one recommended execution only. If formats include multiple channels, choose the strongest execution that can adapt later.',
+    'No preamble. No "Hell yes". No "let\'s make it real". No "if you want". No explanation of your process.',
+    'Keep the whole response under 450 words.',
+    'Use exactly these headings:',
+    'Recommended execution',
+    'What happens',
+    'On-ad copy',
+    'Headline:',
+    'Body:',
+    'CTA:',
+    'Textless image direction',
+    'Overlay notes',
+    'Why this is the route',
   ].filter(Boolean).join('\n');
 }
 

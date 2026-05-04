@@ -90,6 +90,8 @@ describe('Workflow orchestrator', () => {
     expect(capturedMessages[0]).toContain('Amelia weekender');
     expect(capturedMessages[0]).toContain('quiet, practical confidence');
     expect(capturedMessages[0]).toContain('Quiet authority');
+    expect(capturedMessages[0]).toContain('No preamble');
+    expect(capturedMessages[0]).toContain('Keep each idea under 120 words');
   });
 
   it('includes brief, strategy, selected route, and selected idea in the copy prompt', async () => {
@@ -109,5 +111,8 @@ describe('Workflow orchestrator', () => {
     expect(capturedMessages[0]).toContain('quiet, practical confidence');
     expect(capturedMessages[0]).toContain('Quiet authority');
     expect(capturedMessages[0]).toContain('Carried well');
+    expect(capturedMessages[0]).toContain('Do not return a full copy deck');
+    expect(capturedMessages[0]).toContain('Return one recommended execution only');
+    expect(capturedMessages[0]).toContain('Keep the whole response under 450 words');
   });
 });
