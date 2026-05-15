@@ -4,18 +4,8 @@
  * Tests request validation and mock brain response.
  */
 
-import { describe, it, expect, vi } from 'vitest';
-import { z } from 'zod';
-
-// Test the request validation schema directly (no need to spin up Express)
-const ChatRequestSchema = z.object({
-  message: z.string().min(1, 'Message is required'),
-  conversation_id: z.string().optional(),
-  model: z.string().optional(),
-  personality_mode: z.enum(['collaborator', 'challenger', 'collaborative']).optional(),
-  campaign_id: z.string().optional(),
-  stream: z.boolean().optional().default(false),
-});
+import { describe, it, expect } from 'vitest';
+import { ChatRequestSchema } from '../../src/api/routes/chat.js';
 
 describe('Chat Endpoint', () => {
   describe('Request Validation', () => {
@@ -84,6 +74,53 @@ describe('Chat Endpoint', () => {
       if (result.success) {
         expect(result.data.stream).toBe(false);
       }
+    });
+
+    it('accepts base64 image attachments for vision review', () => {
+      const result = ChatRequestSchema.safeParse({
+        message: 'Judge this execution directly.',
+        images: [
+          {
+            media_type: 'image/png',
+            data: 'data:image/png;base64,aGVsbG8=',
+            label: 'first frame',
+          },
+        ],
+      });
+
+      expect(result.success).toBe(true);
+      if (result.success) {
+        expect(result.data.images?.[0].data).toBe('aGVsbG8=');
+        expect(result.data.images?.[0].label).toBe('first frame');
+      }
+    });
+
+    it('rejects unsupported vision media types', () => {
+      const result = ChatRequestSchema.safeParse({
+        message: 'Judge this execution directly.',
+        images: [
+          {
+            media_type: 'image/svg+xml',
+            data: 'aGVsbG8=',
+          },
+        ],
+      });
+
+      expect(result.success).toBe(false);
+    });
+
+    it('rejects invalid base64 image payloads', () => {
+      const result = ChatRequestSchema.safeParse({
+        message: 'Judge this execution directly.',
+        images: [
+          {
+            media_type: 'image/jpeg',
+            data: 'not base64',
+          },
+        ],
+      });
+
+      expect(result.success).toBe(false);
     });
   });
 

@@ -51,7 +51,7 @@ import { detectEscalation, detectKill, detectSensitiveTopic, buildCreativeResetC
 import { buildPhantomDeliveryInstructions, buildPrimeDirective, buildYesAndContext } from './prompt-strategies.js';
 import { getRangeMemoryStore, extractCategoryKeywords } from './range-memory.js';
 import { analyzeMessageComplexity } from './brevity-control.js';
-import { LLMAdapter, createPrimaryAdapter } from './llm-adapter.js';
+import { LLMAdapter, createPrimaryAdapter, type LLMMessage, type LLMMessageContent } from './llm-adapter.js';
 
 // ── Default config ──────────────────────────────────────────────────────────
 
@@ -122,6 +122,40 @@ export interface BrainInput {
   entropySeed?: number;
   /** Recent range-mode answers for this tenant — injected as exclusion list for range queries. */
   recentRangeAnswers?: string[];
+  /** Base64 image attachments for direct visual judgement. */
+  visionAttachments?: VisionAttachment[];
+}
+
+export interface VisionAttachment {
+  mediaType: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/gif';
+  data: string;
+  label?: string;
+}
+
+export function buildVisionUserContent(
+  message: string,
+  visionAttachments: VisionAttachment[] = [],
+): LLMMessageContent {
+  if (visionAttachments.length === 0) return message;
+
+  const labels = visionAttachments
+    .map((attachment, index) => `${index + 1}. ${attachment.label || `Image ${index + 1}`}`)
+    .join('\n');
+
+  return [
+    {
+      type: 'text',
+      text: `${message}\n\nAttached visual evidence:\n${labels}`,
+    },
+    ...visionAttachments.map((attachment) => ({
+      type: 'image' as const,
+      source: {
+        type: 'base64' as const,
+        media_type: attachment.mediaType,
+        data: attachment.data,
+      },
+    })),
+  ];
 }
 
 // ── External Services (Dependency Injection) ────────────────────────────────
@@ -420,7 +454,7 @@ export async function processMessage(
   const sensitiveBraveryContext = isSensitive ? buildSensitiveBraveryContext() : '';
   const yesAndContext = personalityMode === 'collaborative' ? buildYesAndContext(message) : '';
 
-  const systemPrompt = buildFullSystemPrompt({
+  const systemPromptBase = buildFullSystemPrompt({
     analysis,
     phantomContext,
     collisionContext,
@@ -435,6 +469,9 @@ export async function processMessage(
     crossConversationContext: '', // Cross-conversation wired in Phase 2
     recentRangeAnswers,
   });
+  const systemPrompt = input.visionAttachments?.length
+    ? `${systemPromptBase}\n\nVISUAL EVIDENCE:\nThe user has attached image evidence. Judge what is visible directly. Do not rely on text descriptions when the image contradicts them.`
+    : systemPromptBase;
 
   // ── Phase 5: Classify thinking mode ─────────────────────────────────────
 
@@ -442,7 +479,7 @@ export async function processMessage(
 
   // ── Phase 6: Build messages and call LLM ────────────────────────────────
 
-  const llmMessages: Array<{ role: 'user' | 'assistant'; content: string }> = [];
+  const llmMessages: LLMMessage[] = [];
 
   // Include conversation history
   for (const exchange of conversationHistory.slice(-10)) {
@@ -451,7 +488,7 @@ export async function processMessage(
   }
 
   // Current user message
-  llmMessages.push({ role: 'user', content: message });
+  llmMessages.push({ role: 'user', content: buildVisionUserContent(message, input.visionAttachments) });
 
   // Temperature adjustment
   const baseTemp = 0.8;

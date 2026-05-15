@@ -17,7 +17,9 @@ import {
   generateText as generateAIText,
   streamText as streamAIText,
   type CoreMessage,
+  type UserContent,
 } from 'ai';
+import type { MessageParam } from '@anthropic-ai/sdk/resources/messages';
 import { config } from '../config/index.js';
 
 // ── Provider configuration ───────────────────────────────────────────────────
@@ -30,6 +32,10 @@ export interface LLMModelConfig {
   maxOutputTokens?: number;
   temperature?: number;
 }
+
+export type LLMMessage = MessageParam;
+export type LLMMessageContent = MessageParam['content'];
+type OpenAIUserContentPart = Exclude<UserContent, string>[number];
 
 /** Default model configurations */
 export const MODEL_CONFIGS = {
@@ -126,7 +132,7 @@ export class LLMAdapter {
   async generateText(options: {
     system?: string;
     prompt: string;
-    messages?: Array<{ role: 'user' | 'assistant'; content: string }>;
+    messages?: LLMMessage[];
     maxOutputTokens?: number;
     temperature?: number;
   }): Promise<{ text: string; usage?: { promptTokens: number; completionTokens: number } }> {
@@ -153,7 +159,7 @@ export class LLMAdapter {
    */
   async *streamText(options: {
     system?: string;
-    messages: Array<{ role: 'user' | 'assistant'; content: string }>;
+    messages: LLMMessage[];
     maxOutputTokens?: number;
     temperature?: number;
   }): AsyncGenerator<string, void, unknown> {
@@ -197,13 +203,13 @@ export class LLMAdapter {
     options: {
       system?: string;
       prompt: string;
-      messages?: Array<{ role: 'user' | 'assistant'; content: string }>;
+      messages?: LLMMessage[];
       maxOutputTokens?: number;
       temperature?: number;
     },
   ): Promise<{ text: string; usage?: { promptTokens: number; completionTokens: number } }> {
     // Build messages array
-    const messages: Array<{ role: 'user' | 'assistant'; content: string }> =
+    const messages: LLMMessage[] =
       options.messages ? [...options.messages] : [{ role: 'user', content: options.prompt }];
 
     if (providerConfig.provider === 'openai') {
@@ -246,14 +252,14 @@ export class LLMAdapter {
     options: {
       system?: string;
       prompt: string;
-      messages?: Array<{ role: 'user' | 'assistant'; content: string }>;
+      messages?: LLMMessage[];
       maxOutputTokens?: number;
       temperature?: number;
     },
-    messages: Array<{ role: 'user' | 'assistant'; content: string }>,
+    messages: LLMMessage[],
   ): Promise<{ text: string; usage?: { promptTokens: number; completionTokens: number } }> {
     const openai = this.getOpenAIProvider();
-    const prompt = options.messages ? { messages: messages as CoreMessage[] } : { prompt: options.prompt };
+    const prompt = options.messages ? { messages: this.toOpenAIMessages(messages) } : { prompt: options.prompt };
 
     const response = await generateAIText({
       model: openai(providerConfig.modelId),
@@ -270,6 +276,51 @@ export class LLMAdapter {
         completionTokens: response.usage.completionTokens,
       },
     };
+  }
+
+  private toOpenAIMessages(messages: LLMMessage[]): CoreMessage[] {
+    return messages.map((message) => {
+      if (typeof message.content === 'string') {
+        return { role: message.role, content: message.content } as CoreMessage;
+      }
+
+      if (message.role === 'assistant') {
+        return {
+          role: 'assistant',
+          content: message.content
+            .filter((block) => block.type === 'text')
+            .map((block) => block.text)
+            .join(''),
+        };
+      }
+
+      const content: OpenAIUserContentPart[] = message.content.flatMap((block): OpenAIUserContentPart[] => {
+        if (block.type === 'text') {
+          return [{ type: 'text' as const, text: block.text }];
+        }
+
+        if (block.type === 'image') {
+          if (block.source.type === 'base64') {
+            return [{
+              type: 'image' as const,
+              image: block.source.data,
+              mimeType: block.source.media_type,
+            }];
+          }
+
+          if (block.source.type === 'url') {
+            return [{
+              type: 'image' as const,
+              image: new URL(block.source.url),
+            }];
+          }
+        }
+
+        return [];
+      });
+
+      return { role: 'user', content } as CoreMessage;
+    });
   }
 }
 

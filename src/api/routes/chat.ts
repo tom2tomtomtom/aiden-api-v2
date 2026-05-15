@@ -19,7 +19,32 @@ const router = Router();
 
 // ── Request validation ────────────────────────────────────────────────────────
 
-const ChatRequestSchema = z.object({
+const IMAGE_MEDIA_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'] as const;
+const MAX_VISION_IMAGES = 8;
+const MAX_IMAGE_BASE64_CHARS = 12_000_000;
+const BASE64_RE = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
+
+function stripDataUrlPrefix(value: string): string {
+  return value.trim().replace(/^data:image\/[a-zA-Z0-9.+-]+;base64,/, '');
+}
+
+const VisionImageSchema = z.object({
+  media_type: z.enum(IMAGE_MEDIA_TYPES),
+  data: z
+    .string()
+    .min(1, 'Image data is required')
+    .transform(stripDataUrlPrefix)
+    .pipe(
+      z
+        .string()
+        .min(1, 'Image data is required')
+        .max(MAX_IMAGE_BASE64_CHARS, 'Image data is too large')
+        .refine((value) => BASE64_RE.test(value), 'Image data must be base64'),
+    ),
+  label: z.string().min(1).max(120).optional(),
+});
+
+export const ChatRequestSchema = z.object({
   message: z.string().min(1, 'Message is required'),
   conversation_id: z.string().optional(),
   model: z.string().optional(),
@@ -28,6 +53,7 @@ const ChatRequestSchema = z.object({
   stream: z.boolean().optional().default(false),
   entropy: z.number().min(0).max(1).optional(),
   entropy_seed: z.number().int().optional(),
+  images: z.array(VisionImageSchema).max(MAX_VISION_IMAGES).optional(),
 });
 
 type ChatRequest = z.infer<typeof ChatRequestSchema>;
@@ -66,6 +92,11 @@ router.post('/chat', async (req: Request, res: Response) => {
     conversationHistory,
     entropy: body.entropy,
     entropySeed: body.entropy_seed,
+    visionAttachments: body.images?.map((image) => ({
+      mediaType: image.media_type,
+      data: image.data,
+      label: image.label,
+    })),
   };
 
   const services = createBrainServices();
