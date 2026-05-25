@@ -11,6 +11,7 @@ from .models import (
     PhantomFired,
     Collision,
     ThinkingMode,
+    VanillaResponse,
     GenerationResult,
     WorkflowState,
     UsageReport,
@@ -136,6 +137,7 @@ class AIDENBrain:
         conversation_id: str | None = None,
         personality_mode: str = "collaborator",
         model: str | None = None,
+        dual_mode: bool = False,
     ) -> ChatResponse:
         """Send a message to the brain and get a response.
 
@@ -144,6 +146,10 @@ class AIDENBrain:
             conversation_id: Optional conversation ID for continuity
             personality_mode: 'collaborator', 'challenger', or 'collaborative'
             model: Optional model override
+            dual_mode: If True, also runs a parallel vanilla (no-system-prompt)
+                generation against the same conversation history. The vanilla
+                output is returned on response.vanilla. Used by the Subjectivity
+                portal for side-by-side comparison.
 
         Returns:
             ChatResponse with content, phantoms fired, collisions, etc.
@@ -157,6 +163,8 @@ class AIDENBrain:
             body["conversation_id"] = conversation_id
         if model:
             body["model"] = model
+        if dual_mode:
+            body["dual_mode"] = True
 
         data = self._request("POST", "/chat", body)
 
@@ -185,6 +193,14 @@ class AIDENBrain:
                 description=data["thinking_mode"]["description"],
             ),
             maturity_stage=data.get("maturity_stage", "initial"),
+            vanilla=(
+                VanillaResponse(
+                    content=data["vanilla"]["content"],
+                    model=data["vanilla"]["model"],
+                )
+                if data.get("vanilla")
+                else None
+            ),
         )
 
     def chat_stream(

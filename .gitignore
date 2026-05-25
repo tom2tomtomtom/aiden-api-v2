@@ -5,3 +5,9 @@ dist/
 *.log
 .DS_Store
 supabase/.temp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

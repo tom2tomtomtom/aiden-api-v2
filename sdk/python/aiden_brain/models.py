@@ -29,6 +29,18 @@ class ThinkingMode:
 
 
 @dataclass
+class VanillaResponse:
+    """The parallel vanilla generation when dual_mode is enabled.
+
+    Same Claude model as the main response, run against the same conversation
+    history but with NO system prompt. Used by the Subjectivity portal for
+    side-by-side phantom-augmented vs vanilla comparison.
+    """
+    content: str
+    model: str
+
+
+@dataclass
 class ChatResponse:
     """Response from the chat endpoint."""
     content: str
@@ -37,6 +49,7 @@ class ChatResponse:
     collisions: list[Collision]
     thinking_mode: ThinkingMode
     maturity_stage: str
+    vanilla: VanillaResponse | None = None
 
 
 @dataclass

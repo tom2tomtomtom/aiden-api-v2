@@ -54,6 +54,13 @@ export const ChatRequestSchema = z.object({
   entropy: z.number().min(0).max(1).optional(),
   entropy_seed: z.number().int().optional(),
   images: z.array(VisionImageSchema).max(MAX_VISION_IMAGES).optional(),
+  /**
+   * Subjectivity side-by-side mode. When true, the brain runs a parallel
+   * vanilla (no-system-prompt) generation against the same conversation
+   * history and returns both responses. Streaming is not supported with
+   * dual_mode (the client gets a single non-streaming JSON response).
+   */
+  dual_mode: z.boolean().optional().default(false),
 });
 
 type ChatRequest = z.infer<typeof ChatRequestSchema>;
@@ -97,6 +104,7 @@ router.post('/chat', async (req: Request, res: Response) => {
       data: image.data,
       label: image.label,
     })),
+    dualMode: body.dual_mode,
   };
 
   const services = createBrainServices();
@@ -216,6 +224,9 @@ router.post('/chat', async (req: Request, res: Response) => {
           maturity_stage: response.metadata.maturity,
           entropy_seed: response.metadata.entropySeed,
           entropy: response.metadata.entropy,
+          ...(response.vanilla
+            ? { vanilla: { content: response.vanilla.text, model: response.vanilla.model } }
+            : {}),
         },
       });
     }
