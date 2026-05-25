@@ -52,6 +52,7 @@ import { buildPhantomDeliveryInstructions, buildPrimeDirective, buildYesAndConte
 import { getRangeMemoryStore, extractCategoryKeywords } from './range-memory.js';
 import { analyzeMessageComplexity } from './brevity-control.js';
 import { LLMAdapter, createPrimaryAdapter, type LLMMessage, type LLMMessageContent } from './llm-adapter.js';
+import { buildCoreIdentitySection } from './core-identity.js';
 
 // ── Default config ──────────────────────────────────────────────────────────
 
@@ -234,6 +235,7 @@ function buildFullSystemPrompt(opts: {
 }): string {
   const sections: string[] = [
     BASE_SYSTEM_PROMPT.replace('AIDEN', opts.colleagueName || 'AIDEN'),
+    buildCoreIdentitySection(),
   ];
 
   // Query mode shapes whether AIDEN holds taste or demonstrates range
