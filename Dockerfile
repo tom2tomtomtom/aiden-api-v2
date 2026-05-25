@@ -16,6 +16,7 @@ WORKDIR /app
 
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
+COPY data ./data
 COPY package.json ./
 
 USER aiden
