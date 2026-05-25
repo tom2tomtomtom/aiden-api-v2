@@ -62,6 +62,31 @@ export const MODEL_CONFIGS = {
   },
 } as const;
 
+// ── Prompt-caching helper ─────────────────────────────────────────────────────
+
+/**
+ * Wrap a system-prompt string in an Anthropic content-block array carrying
+ * `cache_control: { type: 'ephemeral' }` so the prefix is cached for 5 minutes.
+ *
+ * Why: CORE_IDENTITY + BASE_SYSTEM_PROMPT are static across turns. Caching
+ * them drops the input-token cost on a cache hit to 10% of the normal rate,
+ * which is roughly a 70% saving on a typical chat turn. The break-even is
+ * three requests within the cache TTL, which any active conversation hits.
+ *
+ * Returns undefined when the input is undefined so callers don't accidentally
+ * send an empty system message.
+ */
+export function toCacheableSystem(system: string | undefined): Anthropic.TextBlockParam[] | undefined {
+  if (!system) return undefined;
+  return [
+    {
+      type: 'text',
+      text: system,
+      cache_control: { type: 'ephemeral' },
+    },
+  ];
+}
+
 // ── LLM Adapter class ─────────────────────────���──────────────────────────────
 
 /**
@@ -187,7 +212,7 @@ export class LLMAdapter {
       model: callConfig.modelId,
       max_tokens: options.maxOutputTokens ?? callConfig.maxOutputTokens ?? 4096,
       temperature: options.temperature ?? callConfig.temperature ?? 0.7,
-      system: options.system,
+      system: toCacheableSystem(options.system),
       messages: options.messages,
     });
 
@@ -229,7 +254,7 @@ export class LLMAdapter {
       model: providerConfig.modelId,
       max_tokens: options.maxOutputTokens ?? providerConfig.maxOutputTokens ?? 4096,
       temperature: options.temperature ?? providerConfig.temperature ?? 0.7,
-      system: options.system,
+      system: toCacheableSystem(options.system),
       messages,
     });
 
