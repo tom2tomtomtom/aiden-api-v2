@@ -183,6 +183,17 @@ export interface NuclearBrainConfig {
 export interface BrainResponse {
   text: string;
   metadata: BrainMetadata;
+  /**
+   * Populated when dualMode is enabled on the input. Contains the parallel
+   * vanilla (no-system-prompt) generation against the same conversation
+   * history. Undefined otherwise.
+   */
+  vanilla?: VanillaResponse;
+}
+
+export interface VanillaResponse {
+  text: string;
+  model: string;
 }
 
 export interface BrainMetadata {

@@ -125,6 +125,14 @@ export interface BrainInput {
   recentRangeAnswers?: string[];
   /** Base64 image attachments for direct visual judgement. */
   visionAttachments?: VisionAttachment[];
+  /**
+   * Dual response mode. When true, processMessage runs a second vanilla
+   * generation in parallel with the phantom-augmented one. Same model, same
+   * conversation history, same user message, but NO system prompt. Used by
+   * the Subjectivity portal to demonstrate the delta between vanilla Claude
+   * and Claude routed through the phantom memory layer.
+   */
+  dualMode?: boolean;
 }
 
 export interface VisionAttachment {
@@ -512,14 +520,32 @@ export async function processMessage(
     console.log('══════════════════════════════════════\n');
   }
 
-  // Call LLM
+  // Call LLM (and, if dualMode is on, fire a parallel vanilla generation
+  // against the same conversation history with NO system prompt).
   const adapter = services.llmAdapter ?? createPrimaryAdapter();
-  const result = await adapter.generateText({
+  const augmentedCall = adapter.generateText({
     system: systemPrompt,
     prompt: message,
     temperature: adjustedTemp,
     messages: llmMessages,
   });
+
+  const vanillaCall = input.dualMode
+    ? adapter
+        .generateText({
+          // No system prompt. Vanilla means vanilla.
+          prompt: message,
+          temperature: adjustedTemp,
+          messages: llmMessages,
+        })
+        .catch((err) => {
+          // Vanilla failures must not break the augmented response.
+          console.warn('[NuclearBrain] dualMode vanilla generation failed:', err);
+          return null;
+        })
+    : Promise.resolve(null);
+
+  const [result, vanillaResult] = await Promise.all([augmentedCall, vanillaCall]);
 
   // ── Phase 7: Post-response processing ──────────────────────────────────
 
@@ -550,6 +576,9 @@ export async function processMessage(
 
   // ── Return response + metadata ──────────────────────────────────────────
 
+  const vanillaModelId =
+    (adapter as unknown as { primaryConfig?: { modelId?: string } }).primaryConfig?.modelId ?? 'unknown';
+
   return {
     text: result.text,
     metadata: {
@@ -566,6 +595,9 @@ export async function processMessage(
       entropySeed,
       entropy,
     },
+    ...(vanillaResult
+      ? { vanilla: { text: vanillaResult.text, model: vanillaModelId } }
+      : {}),
   };
 }
 
