@@ -46,6 +46,13 @@ const MessagesQuerySchema = z.object({
   before: z.string().datetime().optional(),
 });
 
+const PostMessageSchema = z.object({
+  role: z.enum(['user', 'assistant', 'system']),
+  content: z.string().min(1),
+  phantoms_fired: z.array(z.unknown()).optional(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+});
+
 // ── List ──────────────────────────────────────────────────────────────────────
 
 router.get('/conversations', async (req: Request, res: Response) => {
@@ -303,6 +310,62 @@ router.get('/conversations/:id/messages', async (req: Request, res: Response) =>
     return;
   }
   res.json({ success: true, data: { messages: data ?? [] } });
+});
+
+// ── Append message (write-only, no brain invocation) ─────────────────────────
+
+router.post('/conversations/:id/messages', async (req: Request, res: Response) => {
+  const tenantId = getTenantId(req);
+  if (!tenantId) {
+    res.status(401).json({ success: false, error: 'Invalid tenant' });
+    return;
+  }
+  const id = String(req.params.id ?? '');
+  if (!UUID_RE.test(id)) {
+    res.status(400).json({ success: false, error: 'Invalid conversation id' });
+    return;
+  }
+  const parsed = PostMessageSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ success: false, error: 'Validation failed', details: parsed.error.flatten().fieldErrors });
+    return;
+  }
+  const supabase = getSupabase();
+
+  const { data: conv } = await supabase
+    .from('conversations')
+    .select('id')
+    .eq('tenant_id', tenantId)
+    .eq('id', id)
+    .maybeSingle();
+  if (!conv) {
+    res.status(404).json({ success: false, error: 'Conversation not found' });
+    return;
+  }
+
+  const { data, error } = await supabase
+    .from('messages')
+    .insert({
+      conversation_id: id,
+      role: parsed.data.role,
+      content: parsed.data.content,
+      phantoms_fired: parsed.data.phantoms_fired ?? null,
+    })
+    .select('id, role, content, created_at, phantoms_fired')
+    .single();
+
+  if (error) {
+    res.status(500).json({ success: false, error: error.message });
+    return;
+  }
+
+  // Bump conversation updated_at
+  await supabase
+    .from('conversations')
+    .update({ updated_at: new Date().toISOString() })
+    .eq('id', id);
+
+  res.status(201).json({ success: true, data });
 });
 
 export default router;
