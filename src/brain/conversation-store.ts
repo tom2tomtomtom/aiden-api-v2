@@ -5,23 +5,40 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
 export class ConversationStore {
   // Returns the conversations table UUID for this (tenantId, conversationId) pair, creating if needed.
-  async getOrCreate(conversationId: string, tenantId: string): Promise<string | null> {
+  // workspaceId is stamped on insert, and backfilled on existing rows that predate the partition.
+  async getOrCreate(
+    conversationId: string,
+    tenantId: string,
+    workspaceId?: string | null,
+  ): Promise<string | null> {
     if (!UUID_RE.test(tenantId)) return null;
 
     const supabase = getSupabase();
     try {
       const { data: existing } = await supabase
         .from('conversations')
-        .select('id')
+        .select('id, workspace_id')
         .eq('tenant_id', tenantId)
         .eq('conversation_id', conversationId)
         .maybeSingle();
 
-      if (existing) return existing.id as string;
+      if (existing) {
+        if (workspaceId && !existing.workspace_id) {
+          await supabase
+            .from('conversations')
+            .update({ workspace_id: workspaceId })
+            .eq('id', existing.id);
+        }
+        return existing.id as string;
+      }
 
       const { data: created, error } = await supabase
         .from('conversations')
-        .insert({ tenant_id: tenantId, conversation_id: conversationId })
+        .insert({
+          tenant_id: tenantId,
+          conversation_id: conversationId,
+          workspace_id: workspaceId ?? null,
+        })
         .select('id')
         .single();
 

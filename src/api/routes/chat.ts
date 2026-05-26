@@ -47,6 +47,7 @@ const VisionImageSchema = z.object({
 export const ChatRequestSchema = z.object({
   message: z.string().min(1, 'Message is required'),
   conversation_id: z.string().optional(),
+  workspace_id: z.string().uuid().optional(),
   model: z.string().optional(),
   personality_mode: z.enum(['collaborator', 'challenger', 'collaborative']).optional(),
   campaign_id: z.string().optional(),
@@ -85,7 +86,7 @@ router.post('/chat', async (req: Request, res: Response) => {
 
   // Load conversation history from DB
   const store = getConversationStore();
-  const conversationRowId = await store.getOrCreate(conversationId, tenantId);
+  const conversationRowId = await store.getOrCreate(conversationId, tenantId, body.workspace_id);
   const conversationHistory: ConversationExchange[] = conversationRowId
     ? await store.getRecentExchanges(conversationRowId, 10)
     : [];

@@ -29,6 +29,8 @@ import territoriesRouter from './routes/generate/territories.js';
 import bigIdeaRouter from './routes/generate/big-idea.js';
 import copySuiteRouter from './routes/generate/copy-suite.js';
 import feedbackRouter from './routes/feedback.js';
+import conversationsRouter from './routes/conversations.js';
+import searchRouter from './routes/search.js';
 
 // ── Create App ────────────────────────────────────────────────────────────────
 
@@ -65,6 +67,8 @@ export function createApp(): express.Application {
 
   // Mount protected route handlers
   protectedRouter.use(chatRouter);
+  protectedRouter.use(conversationsRouter);
+  protectedRouter.use(searchRouter);
   protectedRouter.use(jobsRouter);
   protectedRouter.use(workflowRouter);
   protectedRouter.use(usageRouter);
