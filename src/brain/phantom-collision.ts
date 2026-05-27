@@ -158,5 +158,8 @@ export function buildCollisionContext(collisions: PhantomCollision[]): string {
   for (const collision of collisions) {
     lines.push(collision.injectionPrompt);
   }
+  lines.push(
+    'When these tensions pull against an established direction (client context, prior commitments, agreed tone), hold the commitment unless there is a real, nameable reason to break it. If you break it, you must be able to defend why in one line. Do not blend or hedge to escape the tension. Commit to one position.',
+  );
   return lines.join('\n\n');
 }
