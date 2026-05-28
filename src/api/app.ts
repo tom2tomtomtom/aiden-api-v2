@@ -39,7 +39,7 @@ export function createApp(): express.Application {
 
   // ── Global middleware (before routes) ─────────────────────────────────────
 
-  app.use(express.json());
+  app.use(express.json({ limit: process.env.AIDEN_JSON_BODY_LIMIT || '15mb' }));
 
   // Security headers on all responses
   app.use(securityHeadersMiddleware);
