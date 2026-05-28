@@ -1,8 +1,7 @@
 /**
- * LLM Adapter - Multi-provider LLM access with failover
+ * LLM Adapter - Direct LLM access
  *
  * Primary: Claude Sonnet via Anthropic direct
- * Fallback: Claude Sonnet via OpenRouter
  *
  * No Kimi. No Chinese models. Anthropic-first.
  *
@@ -24,7 +23,7 @@ import { config } from '../config/index.js';
 
 // ── Provider configuration ───────────────────────────────────────────────────
 
-export type LLMProvider = 'anthropic' | 'openrouter' | 'openai';
+export type LLMProvider = 'anthropic' | 'openai';
 
 export interface LLMModelConfig {
   provider: LLMProvider;
@@ -90,21 +89,17 @@ export function toCacheableSystem(system: string | undefined): Anthropic.TextBlo
 // ── LLM Adapter class ─────────────────────────���──────────────────────────────
 
 /**
- * Multi-provider LLM adapter with automatic failover.
+ * Direct provider adapter.
  *
- * Provides a unified interface for text generation across
- * Anthropic direct and OpenRouter fallback.
+ * Provides a unified interface for Anthropic direct and optional OpenAI calls.
  */
 export class LLMAdapter {
   private primaryConfig: LLMModelConfig;
-  private fallbackConfig?: LLMModelConfig;
   private anthropicClient: Anthropic | null = null;
-  private openRouterClient: Anthropic | null = null;
   private openAIProvider: OpenAIProvider | null = null;
 
-  constructor(primaryConfig: LLMModelConfig, fallbackConfig?: LLMModelConfig) {
+  constructor(primaryConfig: LLMModelConfig) {
     this.primaryConfig = primaryConfig;
-    this.fallbackConfig = fallbackConfig;
   }
 
   private getAnthropicClient(): Anthropic {
@@ -114,16 +109,6 @@ export class LLMAdapter {
       });
     }
     return this.anthropicClient;
-  }
-
-  private getOpenRouterClient(): Anthropic {
-    if (!this.openRouterClient) {
-      this.openRouterClient = new Anthropic({
-        apiKey: config.openRouterApiKey,
-        baseURL: 'https://openrouter.ai/api/v1',
-      });
-    }
-    return this.openRouterClient;
   }
 
   private getOpenAIProvider(): OpenAIProvider {
@@ -143,29 +128,13 @@ export class LLMAdapter {
     switch (provider) {
       case 'anthropic':
         return this.getAnthropicClient();
-      case 'openrouter':
-        return this.getOpenRouterClient();
       default:
         throw new Error(`Unknown LLM provider: ${provider}`);
     }
   }
 
-  private hasProviderCredentials(provider: LLMProvider): boolean {
-    switch (provider) {
-      case 'anthropic':
-        return Boolean(config.anthropicApiKey);
-      case 'openrouter':
-        return Boolean(config.openRouterApiKey);
-      case 'openai':
-        return Boolean(config.openaiApiKey);
-      default:
-        return false;
-    }
-  }
-
   /**
    * Generate text (non-streaming).
-   * Attempts primary provider first, falls back if configured.
    */
   async generateText(options: {
     system?: string;
@@ -175,28 +144,7 @@ export class LLMAdapter {
     temperature?: number;
   }): Promise<{ text: string; usage?: { promptTokens: number; completionTokens: number } }> {
     const callConfig = this.primaryConfig;
-
-    try {
-      return await this.callProvider(callConfig, options);
-    } catch (error) {
-      // Attempt fallback if configured
-      if (this.fallbackConfig) {
-        if (!this.hasProviderCredentials(this.fallbackConfig.provider)) {
-          console.warn(
-            `[LLMAdapter] Primary provider failed (${callConfig.provider}/${callConfig.modelId}); ` +
-              `fallback provider ${this.fallbackConfig.provider} is not configured`,
-          );
-          throw error;
-        }
-
-        console.warn(
-          `[LLMAdapter] Primary provider failed (${callConfig.provider}/${callConfig.modelId}), ` +
-            `falling back to ${this.fallbackConfig.provider}/${this.fallbackConfig.modelId}`,
-        );
-        return await this.callProvider(this.fallbackConfig, options);
-      }
-      throw error;
-    }
+    return await this.callProvider(callConfig, options);
   }
 
   /**
@@ -381,17 +329,10 @@ export function createFastAdapter(): LLMAdapter {
 
 /**
  * Create an LLM adapter for primary conversation.
- * Falls back to OpenRouter with Claude Sonnet.
+ * Uses the configured provider directly.
  */
 export function createPrimaryAdapter(): LLMAdapter {
-  const fallback: LLMModelConfig = {
-    provider: 'openrouter',
-    modelId: 'anthropic/claude-sonnet-4-20250514',
-    maxOutputTokens: 4096,
-    temperature: 0.7,
-  };
-
-  return new LLMAdapter(MODEL_CONFIGS.primary, fallback);
+  return new LLMAdapter(MODEL_CONFIGS.primary);
 }
 
 /**
