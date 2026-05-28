@@ -64,7 +64,30 @@ export const ChatRequestSchema = z.object({
   dual_mode: z.boolean().optional().default(false),
 });
 
-type ChatRequest = z.infer<typeof ChatRequestSchema>;
+export type ChatRequest = z.infer<typeof ChatRequestSchema>;
+
+export function buildBrainInputFromChatRequest(
+  body: ChatRequest,
+  conversationId: string,
+  tenantId: string,
+  conversationHistory: ConversationExchange[],
+) {
+  return {
+    message: body.message,
+    conversationId,
+    agencyId: tenantId,
+    personalityMode: (body.personality_mode || 'collaborator') as PersonalityMode,
+    conversationHistory,
+    entropy: body.entropy,
+    entropySeed: body.entropy_seed,
+    visionAttachments: body.images?.map((image) => ({
+      mediaType: image.media_type,
+      data: image.data,
+      label: image.label,
+    })),
+    dualMode: body.dual_mode,
+  };
+}
 
 // ── Route handler ─────────────────────────────────────────────────────────────
 
@@ -92,21 +115,7 @@ router.post('/chat', async (req: Request, res: Response) => {
     : [];
 
   // Build brain input
-  const brainInput = {
-    message: body.message,
-    conversationId,
-    agencyId: tenantId,
-    personalityMode: (body.personality_mode || 'collaborator') as PersonalityMode,
-    conversationHistory,
-    entropy: body.entropy,
-    entropySeed: body.entropy_seed,
-    visionAttachments: body.images?.map((image) => ({
-      mediaType: image.media_type,
-      data: image.data,
-      label: image.label,
-    })),
-    dualMode: body.dual_mode,
-  };
+  const brainInput = buildBrainInputFromChatRequest(body, conversationId, tenantId, conversationHistory);
 
   const services = createBrainServices();
 

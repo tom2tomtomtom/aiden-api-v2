@@ -5,7 +5,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { ChatRequestSchema } from '../../src/api/routes/chat.js';
+import { ChatRequestSchema, buildBrainInputFromChatRequest } from '../../src/api/routes/chat.js';
 
 describe('Chat Endpoint', () => {
   describe('Request Validation', () => {
@@ -121,6 +121,37 @@ describe('Chat Endpoint', () => {
       });
 
       expect(result.success).toBe(false);
+    });
+
+    it('passes validated images through to Brain vision attachments', () => {
+      const parsed = ChatRequestSchema.parse({
+        message: 'Judge this execution directly.',
+        conversation_id: 'conv-vision',
+        personality_mode: 'challenger',
+        images: [
+          {
+            media_type: 'image/png',
+            data: 'data:image/png;base64,aGVsbG8=',
+            label: 'opening frame',
+          },
+        ],
+      });
+
+      const brainInput = buildBrainInputFromChatRequest(
+        parsed,
+        'conv-vision',
+        'tenant-123',
+        [],
+      );
+
+      expect(brainInput.visionAttachments).toEqual([
+        {
+          mediaType: 'image/png',
+          data: 'aGVsbG8=',
+          label: 'opening frame',
+        },
+      ]);
+      expect(brainInput.personalityMode).toBe('challenger');
     });
   });
 
