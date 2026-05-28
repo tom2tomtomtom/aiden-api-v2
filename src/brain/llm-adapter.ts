@@ -150,6 +150,19 @@ export class LLMAdapter {
     }
   }
 
+  private hasProviderCredentials(provider: LLMProvider): boolean {
+    switch (provider) {
+      case 'anthropic':
+        return Boolean(config.anthropicApiKey);
+      case 'openrouter':
+        return Boolean(config.openRouterApiKey);
+      case 'openai':
+        return Boolean(config.openaiApiKey);
+      default:
+        return false;
+    }
+  }
+
   /**
    * Generate text (non-streaming).
    * Attempts primary provider first, falls back if configured.
@@ -168,6 +181,14 @@ export class LLMAdapter {
     } catch (error) {
       // Attempt fallback if configured
       if (this.fallbackConfig) {
+        if (!this.hasProviderCredentials(this.fallbackConfig.provider)) {
+          console.warn(
+            `[LLMAdapter] Primary provider failed (${callConfig.provider}/${callConfig.modelId}); ` +
+              `fallback provider ${this.fallbackConfig.provider} is not configured`,
+          );
+          throw error;
+        }
+
         console.warn(
           `[LLMAdapter] Primary provider failed (${callConfig.provider}/${callConfig.modelId}), ` +
             `falling back to ${this.fallbackConfig.provider}/${this.fallbackConfig.modelId}`,
