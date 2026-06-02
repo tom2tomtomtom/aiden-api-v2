@@ -20,7 +20,7 @@ export const config = {
   llmProvider: parsePrimaryLLMProvider(process.env.AIDEN_LLM_PROVIDER),
   anthropicApiKey: process.env.ANTHROPIC_API_KEY || '',
   openaiApiKey: process.env.OPENAI_API_KEY || '',
-  mainModel: process.env.AIDEN_MAIN_MODEL || 'claude-sonnet-4-20250514',
+  mainModel: process.env.AIDEN_MAIN_MODEL || 'claude-sonnet-4-6',
   openaiModel: process.env.OPENAI_MODEL || 'gpt-5.4',
   fastModel: process.env.AIDEN_FAST_MODEL || 'claude-haiku-4-5-20251001',
 

@@ -24,7 +24,7 @@ describe('Chat Endpoint', () => {
       const result = ChatRequestSchema.safeParse({
         message: 'Write me a campaign strategy',
         conversation_id: 'conv-123',
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-6',
         personality_mode: 'challenger',
         campaign_id: 'camp-456',
         stream: true,
