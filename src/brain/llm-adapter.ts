@@ -36,6 +36,15 @@ export type LLMMessage = MessageParam;
 export type LLMMessageContent = MessageParam['content'];
 type OpenAIUserContentPart = Exclude<UserContent, string>[number];
 
+/** A web-search citation attached to a span of generated text. */
+export interface LLMCitation {
+  /** 1-based footnote index, stable within a single response */
+  index: number;
+  url: string;
+  title: string;
+  cited_text?: string;
+}
+
 /** Default model configurations */
 export const MODEL_CONFIGS = {
   /** Fast analysis model (Haiku) */
@@ -84,6 +93,49 @@ export function toCacheableSystem(system: string | undefined): Anthropic.TextBlo
       cache_control: { type: 'ephemeral' },
     },
   ];
+}
+
+// ── Citation extraction ──────────────────────────────────────────────────────
+
+/**
+ * Join text blocks into a single string, appending inline `[[n]](url)`
+ * markdown markers immediately after each cited span (the API splits text
+ * into blocks at citation boundaries, so adjacency is exact). Sources are
+ * deduped by URL and numbered in order of first appearance.
+ */
+function extractTextAndCitations(content: Anthropic.ContentBlock[]): {
+  text: string;
+  citations: LLMCitation[];
+} {
+  const citations: LLMCitation[] = [];
+  const indexByUrl = new Map<string, number>();
+  let text = '';
+
+  for (const block of content) {
+    if (block.type !== 'text') continue;
+    text += block.text;
+
+    const markers: string[] = [];
+    for (const c of block.citations ?? []) {
+      if (c.type !== 'web_search_result_location') continue;
+      let index = indexByUrl.get(c.url);
+      if (index === undefined) {
+        index = citations.length + 1;
+        indexByUrl.set(c.url, index);
+        citations.push({
+          index,
+          url: c.url,
+          title: c.title ?? c.url,
+          ...(c.cited_text ? { cited_text: c.cited_text } : {}),
+        });
+      }
+      const marker = `[[${index}]](${c.url})`;
+      if (!markers.includes(marker)) markers.push(marker);
+    }
+    if (markers.length > 0) text += ` ${markers.join(' ')}`;
+  }
+
+  return { text, citations };
 }
 
 // ── LLM Adapter class ─────────────────────────���──────────────────────────────
@@ -135,6 +187,11 @@ export class LLMAdapter {
 
   /**
    * Generate text (non-streaming).
+   *
+   * When `webSearch` is true (Anthropic provider only), the native
+   * web_search server tool is attached so the model can search mid-generation.
+   * Cited spans come back with inline `[[n]](url)` markers appended and the
+   * deduped source list in `citations`.
    */
   async generateText(options: {
     system?: string;
@@ -142,7 +199,12 @@ export class LLMAdapter {
     messages?: LLMMessage[];
     maxOutputTokens?: number;
     temperature?: number;
-  }): Promise<{ text: string; usage?: { promptTokens: number; completionTokens: number } }> {
+    webSearch?: boolean;
+  }): Promise<{
+    text: string;
+    citations?: LLMCitation[];
+    usage?: { promptTokens: number; completionTokens: number };
+  }> {
     const callConfig = this.primaryConfig;
     return await this.callProvider(callConfig, options);
   }
@@ -200,10 +262,15 @@ export class LLMAdapter {
       messages?: LLMMessage[];
       maxOutputTokens?: number;
       temperature?: number;
+      webSearch?: boolean;
     },
-  ): Promise<{ text: string; usage?: { promptTokens: number; completionTokens: number } }> {
+  ): Promise<{
+    text: string;
+    citations?: LLMCitation[];
+    usage?: { promptTokens: number; completionTokens: number };
+  }> {
     // Build messages array
-    const messages: LLMMessage[] =
+    let messages: LLMMessage[] =
       options.messages ? [...options.messages] : [{ role: 'user', content: options.prompt }];
 
     if (providerConfig.provider === 'openai') {
@@ -212,32 +279,37 @@ export class LLMAdapter {
 
     const client = this.getAnthropicCompatibleClient(providerConfig.provider);
 
-    // If we have history messages but also a prompt, ensure the prompt is the last user message
-    if (options.messages && options.messages.length > 0) {
-      // Messages already include the user's prompt (last message)
-    } else if (!options.messages) {
-      // Simple prompt-only call
-    }
-
-    const response = await client.messages.create({
+    const baseParams = {
       model: providerConfig.modelId,
       max_tokens: options.maxOutputTokens ?? providerConfig.maxOutputTokens ?? 4096,
       temperature: options.temperature ?? providerConfig.temperature ?? 0.7,
       system: toCacheableSystem(options.system),
-      messages,
-    });
+      ...(options.webSearch
+        ? { tools: [{ type: 'web_search_20260209' as const, name: 'web_search' as const, max_uses: 5 }] }
+        : {}),
+    };
 
-    const text = response.content
-      .filter((block): block is Anthropic.TextBlock => block.type === 'text')
-      .map((block) => block.text)
-      .join('');
+    let response = await client.messages.create({ ...baseParams, messages });
+
+    // Server tools pause the turn when they hit the server-side iteration
+    // limit; re-send with the assistant content appended and it resumes.
+    let continuations = 0;
+    let promptTokens = response.usage.input_tokens;
+    let completionTokens = response.usage.output_tokens;
+    while (response.stop_reason === 'pause_turn' && continuations < 5) {
+      messages = [...messages, { role: 'assistant', content: response.content }];
+      response = await client.messages.create({ ...baseParams, messages });
+      promptTokens += response.usage.input_tokens;
+      completionTokens += response.usage.output_tokens;
+      continuations++;
+    }
+
+    const { text, citations } = extractTextAndCitations(response.content);
 
     return {
       text,
-      usage: {
-        promptTokens: response.usage.input_tokens,
-        completionTokens: response.usage.output_tokens,
-      },
+      ...(citations.length > 0 ? { citations } : {}),
+      usage: { promptTokens, completionTokens },
     };
   }
 
