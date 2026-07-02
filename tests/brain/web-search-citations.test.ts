@@ -52,7 +52,7 @@ describe('LLMAdapter web search + citations', () => {
 
     await adapter.generateText({ prompt: 'with search', webSearch: true });
     expect(anthropicCreateMock.mock.calls[1][0].tools).toEqual([
-      { type: 'web_search_20260209', name: 'web_search', max_uses: 5 },
+      { type: 'web_search_20250305', name: 'web_search', max_uses: 5 },
     ]);
   });
 

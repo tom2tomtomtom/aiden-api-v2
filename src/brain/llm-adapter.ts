@@ -278,8 +278,13 @@ export class LLMAdapter {
       max_tokens: options.maxOutputTokens ?? providerConfig.maxOutputTokens ?? 4096,
       temperature: options.temperature ?? providerConfig.temperature ?? 0.7,
       system: toCacheableSystem(options.system),
+      // web_search_20250305 deliberately, NOT the newer _20260209: the
+      // dynamic-filtering variant routes results through code execution and
+      // returns text blocks WITHOUT citation spans (verified empirically
+      // 2026-07-02). The basic variant binds web_search_result_location
+      // citations to text blocks, which is the whole point here.
       ...(options.webSearch
-        ? { tools: [{ type: 'web_search_20260209' as const, name: 'web_search' as const, max_uses: 5 }] }
+        ? { tools: [{ type: 'web_search_20250305' as const, name: 'web_search' as const, max_uses: 5 }] }
         : {}),
     };
 
