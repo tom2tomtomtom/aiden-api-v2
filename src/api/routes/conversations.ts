@@ -297,7 +297,7 @@ router.get('/conversations/:id/messages', async (req: Request, res: Response) =>
 
   let query = supabase
     .from('messages')
-    .select('id, role, content, phantoms_fired, created_at')
+    .select('id, role, content, phantoms_fired, metadata, created_at')
     .eq('conversation_id', id)
     .order('created_at', { ascending: true })
     .limit(limit);
@@ -350,8 +350,9 @@ router.post('/conversations/:id/messages', async (req: Request, res: Response) =
       role: parsed.data.role,
       content: parsed.data.content,
       phantoms_fired: parsed.data.phantoms_fired ?? null,
+      metadata: parsed.data.metadata ?? null,
     })
-    .select('id, role, content, created_at, phantoms_fired')
+    .select('id, role, content, created_at, phantoms_fired, metadata')
     .single();
 
   if (error) {

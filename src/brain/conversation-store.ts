@@ -87,6 +87,7 @@ export class ConversationStore {
     role: 'user' | 'assistant',
     content: string,
     phantomsFired?: unknown[],
+    metadata?: Record<string, unknown>,
   ): Promise<void> {
     const supabase = getSupabase();
     try {
@@ -95,6 +96,7 @@ export class ConversationStore {
         role,
         content,
         phantoms_fired: phantomsFired ?? null,
+        metadata: metadata ?? null,
       });
     } catch (e) {
       console.error('[ConversationStore] saveMessage error:', e);

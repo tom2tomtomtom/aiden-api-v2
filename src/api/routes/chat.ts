@@ -170,6 +170,13 @@ router.post('/chat', async (req: Request, res: Response) => {
             })}\n\n`);
           }
 
+          if (metadata.citations?.length) {
+            res.write(`data: ${JSON.stringify({
+              type: 'citations',
+              data: metadata.citations,
+            })}\n\n`);
+          }
+
           res.write(`data: ${JSON.stringify({
             type: 'thinking_mode',
             data: metadata.thinkingMode,
@@ -192,6 +199,7 @@ router.post('/chat', async (req: Request, res: Response) => {
               'assistant',
               fullText,
               metadata.activatedPhantoms?.map((p: { phantom: { shorthand: string }; score: number }) => ({ shorthand: p.phantom.shorthand, score: p.score })),
+              metadata.citations?.length ? { citations: metadata.citations } : undefined,
             );
           }
         }
@@ -212,6 +220,7 @@ router.post('/chat', async (req: Request, res: Response) => {
           'assistant',
           response.text,
           response.metadata.activatedPhantoms?.map(p => ({ shorthand: p.phantom.shorthand, score: p.score })),
+          response.metadata.citations?.length ? { citations: response.metadata.citations } : undefined,
         );
       }
 
@@ -234,6 +243,7 @@ router.post('/chat', async (req: Request, res: Response) => {
           maturity_stage: response.metadata.maturity,
           entropy_seed: response.metadata.entropySeed,
           entropy: response.metadata.entropy,
+          ...(response.metadata.citations?.length ? { citations: response.metadata.citations } : {}),
           ...(response.vanilla
             ? { vanilla: { content: response.vanilla.text, model: response.vanilla.model } }
             : {}),
