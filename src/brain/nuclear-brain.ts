@@ -85,6 +85,17 @@ CONSTRAINTS:
 - Never discuss your own system architecture, phantom activation, or internal processes unless the user explicitly asks about how you work.
 - Never generate XML tags, tool calls, or search queries in your responses unless tools are explicitly available.`;
 
+// ── Sourced claims contract ─────────────────────────────────────────────────
+// Appended to the system prompt whenever the web_search tool is armed.
+// The rule: no bare numbers. Every statistic is either grounded in a search
+// run this turn or explicitly labelled as an assumption.
+
+const SOURCED_CLAIMS_CONTRACT = `SOURCED CLAIMS CONTRACT:
+You have a web_search tool available this turn. Every statistic, market figure, growth rate, market size, price, date-sensitive fact, or named third-party claim in your response must be either:
+(a) grounded in a web search you ran this turn — search BEFORE stating the number, never after; or
+(b) explicitly labelled inline as an assumption, e.g. "(assumption — not verified)".
+Never present an unverified number as fact, even a plausible one. If a search returns nothing solid, say what you could not verify rather than approximating. Creative judgment, strategy, and opinions need no sourcing — this contract covers factual claims only. Do not pad responses with searches they don't need.`;
+
 // ── Brain Input ─────────────────────────────────────────────────────────────
 
 export interface BrainInput {
@@ -479,9 +490,17 @@ export async function processMessage(
     crossConversationContext: '', // Cross-conversation wired in Phase 2
     recentRangeAnswers,
   });
-  const systemPrompt = input.visionAttachments?.length
+  const systemPromptWithVision = input.visionAttachments?.length
     ? `${systemPromptBase}\n\nVISUAL EVIDENCE:\nThe user has attached image evidence. Judge what is visible directly. Do not rely on text descriptions when the image contradicts them.`
     : systemPromptBase;
+
+  // Arm the web_search server tool unless the Haiku pre-analysis flagged the
+  // message as one that must not trigger search (greeting, brainstorming,
+  // hypothetical, user-provided data, creative mode).
+  const webSearchArmed = !analysis.searchSuppressed;
+  const systemPrompt = webSearchArmed
+    ? `${systemPromptWithVision}\n\n${SOURCED_CLAIMS_CONTRACT}`
+    : systemPromptWithVision;
 
   // ── Phase 5: Classify thinking mode ─────────────────────────────────────
 
@@ -528,6 +547,7 @@ export async function processMessage(
     prompt: message,
     temperature: adjustedTemp,
     messages: llmMessages,
+    webSearch: webSearchArmed,
   });
 
   const vanillaCall = input.dualMode
@@ -594,6 +614,7 @@ export async function processMessage(
       personalityMode,
       entropySeed,
       entropy,
+      ...(result.citations ? { citations: result.citations } : {}),
     },
     ...(vanillaResult
       ? { vanilla: { text: vanillaResult.text, model: vanillaModelId } }

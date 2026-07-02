@@ -36,14 +36,8 @@ export type LLMMessage = MessageParam;
 export type LLMMessageContent = MessageParam['content'];
 type OpenAIUserContentPart = Exclude<UserContent, string>[number];
 
-/** A web-search citation attached to a span of generated text. */
-export interface LLMCitation {
-  /** 1-based footnote index, stable within a single response */
-  index: number;
-  url: string;
-  title: string;
-  cited_text?: string;
-}
+import type { LLMCitation } from '../types.js';
+export type { LLMCitation };
 
 /** Default model configurations */
 export const MODEL_CONFIGS = {

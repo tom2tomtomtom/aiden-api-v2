@@ -196,6 +196,15 @@ export interface VanillaResponse {
   model: string;
 }
 
+/** A web-search citation attached to a span of generated text. */
+export interface LLMCitation {
+  /** 1-based footnote index, stable within a single response */
+  index: number;
+  url: string;
+  title: string;
+  cited_text?: string;
+}
+
 export interface BrainMetadata {
   analysis: MessageAnalysis;
   activatedPhantoms: PhantomActivationScored[];
@@ -209,6 +218,8 @@ export interface BrainMetadata {
   personalityMode: string;
   entropy: number;
   entropySeed: number;
+  /** Web-search sources cited in the response (present when the model searched). */
+  citations?: LLMCitation[];
 }
 
 // ── Personality Mode ───────────────────────────────────────────────────────
