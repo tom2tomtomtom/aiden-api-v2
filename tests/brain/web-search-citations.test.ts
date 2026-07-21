@@ -93,9 +93,15 @@ describe('LLMAdapter web search + citations', () => {
         apiResponse({ content: [{ type: 'text', text: 'done', citations: null }], usage: { input_tokens: 5, output_tokens: 7 } }),
       );
     const adapter = await makeAdapter();
-    const result = await adapter.generateText({ prompt: 'long search', webSearch: true });
+    const result = await adapter.generateText({
+      prompt: 'long search',
+      webSearch: true,
+      maxOutputTokens: 30,
+    });
 
     expect(anthropicCreateMock).toHaveBeenCalledTimes(2);
+    expect(anthropicCreateMock.mock.calls[0][0].max_tokens).toBe(30);
+    expect(anthropicCreateMock.mock.calls[1][0].max_tokens).toBe(10);
     const secondCallMessages = anthropicCreateMock.mock.calls[1][0].messages;
     expect(secondCallMessages[secondCallMessages.length - 1]).toEqual({
       role: 'assistant',
@@ -103,6 +109,24 @@ describe('LLMAdapter web search + citations', () => {
     });
     expect(result.text).toBe('done');
     expect(result.usage).toEqual({ promptTokens: 15, completionTokens: 27 });
+  });
+
+  it('does not continue after a pause_turn exhausts the output budget', async () => {
+    anthropicCreateMock.mockResolvedValue(apiResponse({
+      content: [{ type: 'server_tool_use', id: 'srvtoolu_1', name: 'web_search', input: { query: 'q' } }],
+      stop_reason: 'pause_turn',
+      usage: { input_tokens: 10, output_tokens: 30 },
+    }));
+    const adapter = await makeAdapter();
+
+    const result = await adapter.generateText({
+      prompt: 'long search',
+      webSearch: true,
+      maxOutputTokens: 30,
+    });
+
+    expect(anthropicCreateMock).toHaveBeenCalledTimes(1);
+    expect(result.usage).toEqual({ promptTokens: 10, completionTokens: 30 });
   });
 
   it('omits citations from the result when nothing was cited', async () => {

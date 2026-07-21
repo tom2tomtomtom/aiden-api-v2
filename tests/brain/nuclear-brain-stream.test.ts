@@ -46,6 +46,32 @@ function services(adapter: LLMAdapter, onResponse = vi.fn(async () => {})): Brai
 }
 
 describe('processMessageStream', () => {
+  it('passes the request-scoped output-token cap to the provider stream', async () => {
+    const calls: Array<Record<string, unknown>> = [];
+    const adapter = {
+      primaryConfig: { provider: 'anthropic', modelId: 'mock-sonnet' },
+      generateText: vi.fn(() => {
+        throw new Error('streaming must not call the buffered adapter path');
+      }),
+      async *streamText(options: Record<string, unknown>) {
+        calls.push(options);
+        yield '{"client_reply":"One idea."}';
+        return { text: '{"client_reply":"One idea."}' };
+      },
+    } as unknown as LLMAdapter;
+
+    const stream = processMessageStream(
+      { ...input, maxOutputTokens: 1600 },
+      services(adapter),
+    );
+    while (!(await stream.next()).done) {
+      // Drain the single provider response.
+    }
+
+    expect(calls).toHaveLength(1);
+    expect(calls[0]?.maxOutputTokens).toBe(1600);
+  });
+
   it('yields the first provider delta before the provider finishes', async () => {
     let releaseSecond!: () => void;
     const secondAllowed = new Promise<void>((resolve) => {

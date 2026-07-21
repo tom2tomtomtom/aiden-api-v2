@@ -21,6 +21,7 @@ interface AdapterCall {
   system?: string;
   prompt: string;
   temperature?: number;
+  maxOutputTokens?: number;
 }
 
 function makeMockAdapter(opts: {
@@ -33,7 +34,12 @@ function makeMockAdapter(opts: {
   const mock = {
     primaryConfig: { modelId: 'claude-sonnet-4-6-mock', provider: 'anthropic' as const },
     async generateText(options: AdapterCall) {
-      calls.push({ system: options.system, prompt: options.prompt, temperature: options.temperature });
+      calls.push({
+        system: options.system,
+        prompt: options.prompt,
+        temperature: options.temperature,
+        maxOutputTokens: options.maxOutputTokens,
+      });
       const isVanilla = options.system === undefined;
       if (isVanilla && opts.failVanilla) {
         throw new Error('simulated vanilla failure');
@@ -98,7 +104,10 @@ describe('dualMode', () => {
       vanillaText: 'plain Sonnet output',
     });
 
-    const response = await processMessage({ ...baseInput, dualMode: true }, makeServices(adapter));
+    const response = await processMessage(
+      { ...baseInput, dualMode: true, maxOutputTokens: 1600 },
+      makeServices(adapter),
+    );
 
     expect(calls.length).toBe(2);
     const augmentedCall = calls.find((c) => c.system !== undefined);
@@ -111,6 +120,8 @@ describe('dualMode', () => {
     expect(augmentedCall!.system).toContain('truth→over→ladder');
     // Vanilla has no system prompt.
     expect(vanillaCall!.system).toBeUndefined();
+    expect(augmentedCall!.maxOutputTokens).toBe(1600);
+    expect(vanillaCall!.maxOutputTokens).toBe(1600);
     // Both texts come back on the response.
     expect(response.text).toBe('augmented with phantoms');
     expect(response.vanilla?.text).toBe('plain Sonnet output');

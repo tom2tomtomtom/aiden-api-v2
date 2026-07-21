@@ -255,9 +255,9 @@ export class LLMAdapter {
     }
 
     const client = this.getAnthropicCompatibleClient(callConfig.provider);
+    const outputBudget = options.maxOutputTokens ?? callConfig.maxOutputTokens ?? 4096;
     const baseParams = {
       model: callConfig.modelId,
-      max_tokens: options.maxOutputTokens ?? callConfig.maxOutputTokens ?? 4096,
       temperature: options.temperature ?? callConfig.temperature ?? 0.7,
       system: toCacheableSystem(options.system),
       ...(options.webSearch
@@ -273,7 +273,11 @@ export class LLMAdapter {
 
     while (true) {
       const markersByBlock = new Map<number, string[]>();
-      const stream = client.messages.stream({ ...baseParams, messages });
+      const stream = client.messages.stream({
+        ...baseParams,
+        max_tokens: Math.max(1, outputBudget - completionTokens),
+        messages,
+      });
       for await (const event of stream) {
         if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
           text += event.delta.text;
@@ -309,7 +313,11 @@ export class LLMAdapter {
       const response = await stream.finalMessage();
       promptTokens += response.usage.input_tokens;
       completionTokens += response.usage.output_tokens;
-      if (response.stop_reason !== 'pause_turn' || continuations >= 5) break;
+      if (
+        response.stop_reason !== 'pause_turn'
+        || continuations >= 5
+        || completionTokens >= outputBudget
+      ) break;
       messages = [...messages, { role: 'assistant', content: response.content }];
       continuations++;
     }
@@ -345,10 +353,10 @@ export class LLMAdapter {
     }
 
     const client = this.getAnthropicCompatibleClient(providerConfig.provider);
+    const outputBudget = options.maxOutputTokens ?? providerConfig.maxOutputTokens ?? 4096;
 
     const baseParams = {
       model: providerConfig.modelId,
-      max_tokens: options.maxOutputTokens ?? providerConfig.maxOutputTokens ?? 4096,
       temperature: options.temperature ?? providerConfig.temperature ?? 0.7,
       system: toCacheableSystem(options.system),
       // web_search_20250305 deliberately, NOT the newer _20260209: the
@@ -361,16 +369,28 @@ export class LLMAdapter {
         : {}),
     };
 
-    let response = await client.messages.create({ ...baseParams, messages });
+    let response = await client.messages.create({
+      ...baseParams,
+      max_tokens: outputBudget,
+      messages,
+    });
 
     // Server tools pause the turn when they hit the server-side iteration
     // limit; re-send with the assistant content appended and it resumes.
     let continuations = 0;
     let promptTokens = response.usage.input_tokens;
     let completionTokens = response.usage.output_tokens;
-    while (response.stop_reason === 'pause_turn' && continuations < 5) {
+    while (
+      response.stop_reason === 'pause_turn'
+      && continuations < 5
+      && completionTokens < outputBudget
+    ) {
       messages = [...messages, { role: 'assistant', content: response.content }];
-      response = await client.messages.create({ ...baseParams, messages });
+      response = await client.messages.create({
+        ...baseParams,
+        max_tokens: Math.max(1, outputBudget - completionTokens),
+        messages,
+      });
       promptTokens += response.usage.input_tokens;
       completionTokens += response.usage.output_tokens;
       continuations++;

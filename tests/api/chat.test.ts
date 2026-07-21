@@ -28,12 +28,19 @@ describe('Chat Endpoint', () => {
         personality_mode: 'challenger',
         campaign_id: 'camp-456',
         stream: true,
+        max_output_tokens: 1600,
       });
       expect(result.success).toBe(true);
       if (result.success) {
         expect(result.data.personality_mode).toBe('challenger');
         expect(result.data.stream).toBe(true);
+        expect(result.data.max_output_tokens).toBe(1600);
       }
+    });
+
+    it('rejects an unsafe output-token budget', () => {
+      expect(ChatRequestSchema.safeParse({ message: 'test', max_output_tokens: 63 }).success).toBe(false);
+      expect(ChatRequestSchema.safeParse({ message: 'test', max_output_tokens: 4097 }).success).toBe(false);
     });
 
     it('rejects empty message', () => {
@@ -138,6 +145,7 @@ describe('Chat Endpoint', () => {
         message: 'Judge this execution directly.',
         conversation_id: 'conv-vision',
         personality_mode: 'challenger',
+        max_output_tokens: 1600,
         images: [
           {
             media_type: 'image/png',
@@ -162,6 +170,7 @@ describe('Chat Endpoint', () => {
         },
       ]);
       expect(brainInput.personalityMode).toBe('challenger');
+      expect(brainInput.maxOutputTokens).toBe(1600);
     });
   });
 

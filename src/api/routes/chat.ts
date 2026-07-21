@@ -52,6 +52,7 @@ export const ChatRequestSchema = z.object({
   personality_mode: z.enum(['collaborator', 'challenger', 'collaborative']).optional(),
   campaign_id: z.string().optional(),
   stream: z.boolean().optional().default(false),
+  max_output_tokens: z.number().int().min(64).max(4096).optional(),
   entropy: z.number().min(0).max(1).optional(),
   entropy_seed: z.number().int().optional(),
   images: z.array(VisionImageSchema).max(MAX_VISION_IMAGES).optional(),
@@ -88,6 +89,7 @@ export function buildBrainInputFromChatRequest(
     conversationHistory,
     entropy: body.entropy,
     entropySeed: body.entropy_seed,
+    maxOutputTokens: body.max_output_tokens,
     visionAttachments: body.images?.map((image) => ({
       mediaType: image.media_type,
       data: image.data,
