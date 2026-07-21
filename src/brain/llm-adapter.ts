@@ -205,15 +205,25 @@ export class LLMAdapter {
 
   /**
    * Stream text response.
-   * Returns an async generator yielding text chunks.
+   * Returns provider deltas immediately, then the same logical result shape as
+   * generateText so callers do not need a second buffered request for metadata.
    */
   async *streamText(options: {
     system?: string;
-    messages: LLMMessage[];
+    prompt?: string;
+    messages?: LLMMessage[];
     maxOutputTokens?: number;
     temperature?: number;
-  }): AsyncGenerator<string, void, unknown> {
+    webSearch?: boolean;
+  }): AsyncGenerator<string, {
+    text: string;
+    citations?: LLMCitation[];
+    usage?: { promptTokens: number; completionTokens: number };
+  }, unknown> {
     const callConfig = this.primaryConfig;
+    let messages: LLMMessage[] = options.messages
+      ? [...options.messages]
+      : [{ role: 'user', content: options.prompt ?? '' }];
 
     if (callConfig.provider === 'openai') {
       const openai = this.getOpenAIProvider();
@@ -222,30 +232,93 @@ export class LLMAdapter {
         maxTokens: options.maxOutputTokens ?? callConfig.maxOutputTokens ?? 4096,
         temperature: options.temperature ?? callConfig.temperature ?? 0.7,
         system: options.system,
-        messages: options.messages as CoreMessage[],
+        messages: this.toOpenAIMessages(messages),
       });
 
-      for await (const text of stream.textStream) {
-        yield text;
+      let text = '';
+      for await (const chunk of stream.textStream) {
+        yield chunk;
+        text += chunk;
       }
-      return;
+      const usage = await stream.usage;
+      return {
+        text,
+        ...(usage
+          ? {
+              usage: {
+                promptTokens: usage.promptTokens,
+                completionTokens: usage.completionTokens,
+              },
+            }
+          : {}),
+      };
     }
 
     const client = this.getAnthropicCompatibleClient(callConfig.provider);
-
-    const stream = client.messages.stream({
+    const baseParams = {
       model: callConfig.modelId,
       max_tokens: options.maxOutputTokens ?? callConfig.maxOutputTokens ?? 4096,
       temperature: options.temperature ?? callConfig.temperature ?? 0.7,
       system: toCacheableSystem(options.system),
-      messages: options.messages,
-    });
+      ...(options.webSearch
+        ? { tools: [{ type: 'web_search_20250305' as const, name: 'web_search' as const, max_uses: 5 }] }
+        : {}),
+    };
+    const citations: LLMCitation[] = [];
+    const citationIndexByUrl = new Map<string, number>();
+    let text = '';
+    let promptTokens = 0;
+    let completionTokens = 0;
+    let continuations = 0;
 
-    for await (const event of stream) {
-      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
-        yield event.delta.text;
+    while (true) {
+      const markersByBlock = new Map<number, string[]>();
+      const stream = client.messages.stream({ ...baseParams, messages });
+      for await (const event of stream) {
+        if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
+          text += event.delta.text;
+          yield event.delta.text;
+        } else if (event.type === 'content_block_delta' && event.delta.type === 'citations_delta') {
+          const citation = event.delta.citation;
+          if (citation.type !== 'web_search_result_location') continue;
+          let index = citationIndexByUrl.get(citation.url);
+          if (index === undefined) {
+            index = citations.length + 1;
+            citationIndexByUrl.set(citation.url, index);
+            citations.push({
+              index,
+              url: citation.url,
+              title: citation.title ?? citation.url,
+              ...(citation.cited_text ? { cited_text: citation.cited_text } : {}),
+            });
+          }
+          const markers = markersByBlock.get(event.index) ?? [];
+          const marker = `[[${index}]](${citation.url})`;
+          if (!markers.includes(marker)) markers.push(marker);
+          markersByBlock.set(event.index, markers);
+        } else if (event.type === 'content_block_stop') {
+          const markers = markersByBlock.get(event.index) ?? [];
+          if (markers.length > 0) {
+            const markerText = ` ${markers.join(' ')}`;
+            text += markerText;
+            yield markerText;
+          }
+        }
       }
+
+      const response = await stream.finalMessage();
+      promptTokens += response.usage.input_tokens;
+      completionTokens += response.usage.output_tokens;
+      if (response.stop_reason !== 'pause_turn' || continuations >= 5) break;
+      messages = [...messages, { role: 'assistant', content: response.content }];
+      continuations++;
     }
+
+    return {
+      text,
+      ...(citations.length > 0 ? { citations } : {}),
+      usage: { promptTokens, completionTokens },
+    };
   }
 
   private async callProvider(

@@ -86,7 +86,10 @@ describe('LLMAdapter OpenAI provider', () => {
       yield 'strategy';
     }
 
-    streamTextMock.mockReturnValue({ textStream: chunks() });
+    streamTextMock.mockReturnValue({
+      textStream: chunks(),
+      usage: Promise.resolve({ promptTokens: 13, completionTokens: 5 }),
+    });
 
     const { LLMAdapter } = await import('../../src/brain/llm-adapter.js');
     const adapter = new LLMAdapter({
@@ -96,15 +99,20 @@ describe('LLMAdapter OpenAI provider', () => {
       temperature: 0.2,
     });
 
-    const streamed: string[] = [];
-    for await (const chunk of adapter.streamText({
+    const stream = adapter.streamText({
       system: 'You are a strategist.',
       messages: [{ role: 'user', content: 'Write the line.' }],
-    })) {
-      streamed.push(chunk);
-    }
+    });
 
-    expect(streamed).toEqual(['Sharp ', 'strategy']);
+    expect(await stream.next()).toEqual({ value: 'Sharp ', done: false });
+    expect(await stream.next()).toEqual({ value: 'strategy', done: false });
+    expect(await stream.next()).toEqual({
+      value: {
+        text: 'Sharp strategy',
+        usage: { promptTokens: 13, completionTokens: 5 },
+      },
+      done: true,
+    });
     expect(streamTextMock).toHaveBeenCalledWith(expect.objectContaining({
       messages: [{ role: 'user', content: 'Write the line.' }],
       maxTokens: 321,
