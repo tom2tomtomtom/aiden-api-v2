@@ -128,6 +128,7 @@ describe('LLMAdapter.streamText', () => {
       prompt: 'Search',
       messages: [{ role: 'user', content: 'Search' }],
       webSearch: true,
+      maxOutputTokens: 30,
     });
 
     expect(await stream.next()).toEqual({ value: 'done', done: false });
@@ -136,10 +137,33 @@ describe('LLMAdapter.streamText', () => {
     expect(finished.value.text).toBe('done');
     expect(finished.value.usage).toEqual({ promptTokens: 15, completionTokens: 27 });
     expect(anthropicStreamMock).toHaveBeenCalledTimes(2);
+    expect(anthropicStreamMock.mock.calls[0]?.[0].max_tokens).toBe(30);
+    expect(anthropicStreamMock.mock.calls[1]?.[0].max_tokens).toBe(10);
     const secondMessages = anthropicStreamMock.mock.calls[1]?.[0].messages;
     expect(secondMessages[secondMessages.length - 1]).toEqual({
       role: 'assistant',
       content: pausedContent,
     });
+  });
+
+  it('does not continue after a pause_turn exhausts the output budget', async () => {
+    anthropicStreamMock.mockReturnValue(providerStream([], message({
+      content: [{ type: 'server_tool_use', id: 'srvtoolu_1', name: 'web_search', input: { query: 'q' } }],
+      stop_reason: 'pause_turn',
+      usage: { input_tokens: 10, output_tokens: 30 },
+    })));
+    const adapter = await makeAdapter();
+    const stream = (adapter.streamText as any)({
+      prompt: 'Search',
+      messages: [{ role: 'user', content: 'Search' }],
+      webSearch: true,
+      maxOutputTokens: 30,
+    });
+
+    const finished = await stream.next();
+
+    expect(finished.done).toBe(true);
+    expect(finished.value.usage.completionTokens).toBe(30);
+    expect(anthropicStreamMock).toHaveBeenCalledTimes(1);
   });
 });

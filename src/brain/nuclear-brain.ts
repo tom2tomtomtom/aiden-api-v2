@@ -132,6 +132,8 @@ export interface BrainInput {
   entropy?: number;
   /** Entropy seed to replay a specific phantom cluster. Auto-generated if omitted. */
   entropySeed?: number;
+  /** Optional per-response output token ceiling across provider continuations. */
+  maxOutputTokens?: number;
   /** Recent range-mode answers for this tenant — injected as exclusion list for range queries. */
   recentRangeAnswers?: string[];
   /** Base64 image attachments for direct visual judgement. */
@@ -548,6 +550,7 @@ export async function processMessage(
     temperature: adjustedTemp,
     messages: llmMessages,
     webSearch: webSearchArmed,
+    maxOutputTokens: input.maxOutputTokens,
   });
 
   const vanillaCall = input.dualMode
@@ -557,6 +560,7 @@ export async function processMessage(
           prompt: message,
           temperature: adjustedTemp,
           messages: llmMessages,
+          maxOutputTokens: input.maxOutputTokens,
         })
         .catch((err) => {
           // Vanilla failures must not break the augmented response.
