@@ -634,10 +634,57 @@ export async function* processMessageStream(
   input: BrainInput,
   services: BrainServices,
 ): AsyncGenerator<string, BrainMetadata, unknown> {
-  // For now, delegate to non-streaming and yield the full response.
-  // Phase 4 will implement true streaming with the LLM adapter's streamText method.
-  const response = await processMessage(input, services);
-  yield response.text;
+  if (input.dualMode) {
+    throw new Error('dualMode is not supported with streaming');
+  }
+
+  const chunks: string[] = [];
+  let finished = false;
+  let wake: (() => void) | null = null;
+  const signal = () => {
+    const pending = wake;
+    wake = null;
+    pending?.();
+  };
+  const adapter = services.llmAdapter ?? createPrimaryAdapter();
+  const streamingAdapter = Object.create(adapter) as LLMAdapter;
+  streamingAdapter.generateText = async (options) => {
+    const providerStream = adapter.streamText(options);
+    while (true) {
+      const item = await providerStream.next();
+      if (item.done) return item.value;
+      chunks.push(item.value);
+      signal();
+    }
+  };
+
+  const responsePromise = processMessage(input, {
+    ...services,
+    llmAdapter: streamingAdapter,
+  });
+  responsePromise.then(
+    () => {
+      finished = true;
+      signal();
+    },
+    () => {
+      finished = true;
+      signal();
+    },
+  );
+
+  while (!finished || chunks.length > 0) {
+    if (chunks.length > 0) {
+      yield chunks.shift()!;
+      continue;
+    }
+    await new Promise<void>((resolve) => {
+      wake = resolve;
+      if (finished || chunks.length > 0) signal();
+    });
+  }
+
+  const response = await responsePromise;
   return response.metadata;
 }
 

@@ -62,6 +62,14 @@ export const ChatRequestSchema = z.object({
    * dual_mode (the client gets a single non-streaming JSON response).
    */
   dual_mode: z.boolean().optional().default(false),
+}).superRefine((body, ctx) => {
+  if (body.stream && body.dual_mode) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ['dual_mode'],
+      message: 'dual_mode is not supported with streaming',
+    });
+  }
 });
 
 export type ChatRequest = z.infer<typeof ChatRequestSchema>;

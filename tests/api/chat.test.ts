@@ -76,6 +76,16 @@ describe('Chat Endpoint', () => {
       }
     });
 
+    it('rejects dual mode with streaming instead of silently dropping vanilla output', () => {
+      const result = ChatRequestSchema.safeParse({
+        message: 'Compare both modes',
+        stream: true,
+        dual_mode: true,
+      });
+
+      expect(result.success).toBe(false);
+    });
+
     it('accepts base64 image attachments for vision review', () => {
       const result = ChatRequestSchema.safeParse({
         message: 'Judge this execution directly.',
